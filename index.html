@@ -93,8 +93,12 @@
     .featured-video-copy .embed-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 18px; }
     .featured-video-copy h3 { font-family: var(--display); font-size: clamp(42px, 5vw, 74px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; margin-bottom: 22px; }
     .featured-video-copy p { color: var(--white-soft); font-size: 15px; line-height: 1.8; max-width: 460px; }
-    .youtube-frame { position: relative; background: #000; aspect-ratio: 16 / 9; min-height: 360px; }
-    .youtube-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-button { display: inline-block; margin-top: 26px; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 14px 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; transition: 0.25s ease; width: fit-content; }
+    .video-button:hover { background: var(--gold); color: var(--black); }
+    .youtube-link-card { position: relative; min-height: 360px; background: linear-gradient(to bottom, rgba(3,3,3,0.12), rgba(3,3,3,0.76)), url("https://img.youtube.com/vi/8YdsLFozZGU/maxresdefault.jpg"); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
+    .youtube-link-card::before { content: "▶"; width: 92px; height: 92px; border: 1px solid rgba(247,243,234,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); background: rgba(3,3,3,0.48); font-size: 36px; padding-left: 7px; transition: 0.25s ease; }
+    .youtube-link-card:hover::before { background: var(--gold); color: var(--black); border-color: var(--gold); }
+    .youtube-link-card span { position: absolute; left: 32px; bottom: 28px; color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; }
     .instagram-embed-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
     .instagram-embed-card { border: 1px solid var(--line); background: var(--black-soft); padding: 18px; min-height: 620px; }
     .instagram-embed-card .embed-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 16px; }
@@ -137,7 +141,7 @@
       .hero-links a { width: 100%; }
       .ornate-text::first-letter { font-size: 6.2rem; }
       .featured-video-copy { padding: 24px; min-height: auto; }
-      .youtube-frame { min-height: 220px; }
+      .youtube-link-card { min-height: 260px; }
       .instagram-embed-card { padding: 12px; min-height: auto; }
       .contact-links { flex-direction: column; align-items: center; }
       .contact-link { width: 100%; max-width: 320px; }
@@ -235,11 +239,12 @@
                 <div class="embed-label">Concierto destacado · Teatro de Rancagua · 2024</div>
                 <h3>La Camorra</h3>
                 <p>Registro del show en el Teatro Regional Lucho Gatica de Rancagua: una referencia central para mostrar escala escénica, presencia interpretativa y el universo de Piazzollamente en vivo.</p>
+                <a class="video-button" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener">Mirar en YouTube</a>
               </div>
             </div>
-            <div class="youtube-frame">
-              <iframe src="https://www.youtube.com/embed/8YdsLFozZGU?si=ia6-YqPxu8GJLOnh" title="La Camorra - Teatro de Rancagua 2024" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+            <a class="youtube-link-card" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener" aria-label="Mirar La Camorra en YouTube">
+              <span>Mirar en YouTube</span>
+            </a>
           </div>
         </article>
 
@@ -263,7 +268,7 @@
           </article>
         </div>
 
-        <p class="video-note">Los reels se cargan desde Instagram. Si alguno no aparece de inmediato, usa el enlace interno del recuadro para abrirlo directamente.</p>
+        <p class="video-note">El registro destacado se abre directamente en YouTube porque el video no permite reproducción incrustada. Los reels se cargan desde Instagram; si alguno no aparece de inmediato, usa el enlace interno del recuadro.</p>
       </div>
     </section>
 
@@ -275,7 +280,7 @@
         <div class="contact-links">
           <a class="contact-link" href="mailto:contacto@valentinagalaz.cl">Email</a>
           <a class="contact-link" href="https://instagram.com/valen.galaz">Instagram</a>
-          <a class="contact-link" href="https://www.youtube.com/embed/8YdsLFozZGU?si=ia6-YqPxu8GJLOnh">YouTube</a>
+          <a class="contact-link" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener">YouTube</a>
           <a class="contact-link" href="#">Spotify</a>
         </div>
       </div>
