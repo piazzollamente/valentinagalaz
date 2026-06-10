@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --black: #030303;
@@ -17,7 +16,6 @@
       --white-soft: rgba(247, 243, 234, 0.72);
       --white-muted: rgba(247, 243, 234, 0.42);
       --gold: #C6A15B;
-      --gold-soft: #E4C987;
       --gold-dark: #8F6A2E;
       --line: rgba(247, 243, 234, 0.14);
       --display: 'Bodoni Moda', serif;
@@ -89,18 +87,12 @@
 
     .videos { background: var(--black); border-bottom: 1px solid var(--line); }
     .video-intro { max-width: 760px; color: var(--white-soft); font-family: var(--serif); font-size: 30px; line-height: 1.22; margin-bottom: 58px; }
-    .video-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-    .video-card { min-height: 520px; padding: 42px; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; }
-    .video-card.main { background: linear-gradient(to bottom, rgba(3,3,3,0.16), rgba(3,3,3,0.9)), var(--portrait-photo); background-size: cover; background-position: center; }
-    .video-card.piazzo { background: linear-gradient(to bottom, rgba(3,3,3,0.16), rgba(3,3,3,0.9)), var(--about-photo); background-size: cover; background-position: center; }
-    .video-card.orq { background: linear-gradient(to bottom, rgba(3,3,3,0.16), rgba(3,3,3,0.9)), var(--hero-photo); background-size: cover; background-position: center; }
-    .video-card.small { min-height: 260px; }
-    .video-card span { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 18px; }
-    .video-card h3 { font-family: var(--display); font-size: clamp(48px, 6vw, 88px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; margin-bottom: 22px; }
-    .video-card.small h3 { font-size: clamp(38px, 4vw, 60px); }
-    .video-card a { color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); width: fit-content; padding-bottom: 8px; }
-    .video-card a:hover { color: var(--gold); }
-    .video-small-stack { display: grid; gap: 1px; background: var(--line); }
+    .instagram-embed-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+    .instagram-embed-card { border: 1px solid var(--line); background: var(--black-soft); padding: 18px; min-height: 620px; }
+    .instagram-embed-card .embed-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 16px; }
+    .instagram-embed-card h3 { font-family: var(--display); font-size: clamp(34px, 3vw, 52px); line-height: 0.9; letter-spacing: -0.06em; font-weight: 500; margin-bottom: 20px; }
+    .instagram-embed-card blockquote.instagram-media { margin: 0 auto !important; min-width: 0 !important; width: 100% !important; max-width: 540px !important; }
+    .video-note { margin-top: 28px; color: var(--white-muted); font-size: 13px; line-height: 1.7; max-width: 760px; }
 
     .contact { min-height: 78vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
     .contact::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(3,3,3,0.74), rgba(3,3,3,0.9)), var(--portrait-photo); background-size: cover; background-position: center; opacity: 0.22; z-index: 0; }
@@ -119,10 +111,11 @@
       .about { grid-template-columns: 1fr; }
       .about-copy { grid-column: auto; }
       .about-photo { min-height: 500px; }
+      .instagram-embed-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 960px) {
       .nav-links { display: none; }
-      .hero, .method-item, .video-grid { grid-template-columns: 1fr; }
+      .hero, .method-item { grid-template-columns: 1fr; }
       .hero-image { min-height: 520px; order: -1; border-left: none; }
       .method-item { gap: 14px; }
     }
@@ -134,7 +127,7 @@
       .hero-image { min-height: 420px; }
       .hero-links a { width: 100%; }
       .ornate-text::first-letter { font-size: 6.2rem; }
-      .video-card, .video-card.small, .video-small-stack .video-card { min-height: 360px; padding: 30px; }
+      .instagram-embed-card { padding: 12px; min-height: auto; }
       .contact-links { flex-direction: column; align-items: center; }
       .contact-link { width: 100%; max-width: 320px; }
     }
@@ -222,14 +215,29 @@
       <div class="container">
         <div class="eyebrow">Videos</div>
         <h2 class="section-title">Cómo suena y cómo se ve.</h2>
-        <p class="video-intro">Tres formatos para mostrar una versatilidad real: intimidad, quinteto y gran formato escénico.</p>
-        <div class="video-grid">
-          <article class="video-card main"><span>Dúo / formato íntimo</span><h3>Presencia cercana</h3><a href="#">Ver video</a></article>
-          <div class="video-small-stack">
-            <article class="video-card small piazzo"><span>Piazzollamente / quinteto</span><h3>Tango y escena</h3><a href="#">Ver video</a></article>
-            <article class="video-card small orq"><span>Orquesta / gran formato</span><h3>Escala escénica</h3><a href="#">Ver video</a></article>
-          </div>
+        <p class="video-intro">Tres formatos para mostrar una versatilidad real: intimidad, quinteto y escena para eventos.</p>
+
+        <div class="instagram-embed-grid">
+          <article class="instagram-embed-card">
+            <div class="embed-label">Dúo / formato íntimo</div>
+            <h3>Presencia cercana</h3>
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DRR2vJOKd8N/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DRR2vJOKd8N/" target="_blank">Ver reel en Instagram</a></blockquote>
+          </article>
+
+          <article class="instagram-embed-card">
+            <div class="embed-label">Piazzollamente / quinteto</div>
+            <h3>Tango y escena</h3>
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DVE6QE_D2dg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DVE6QE_D2dg/" target="_blank">Ver reel en Instagram</a></blockquote>
+          </article>
+
+          <article class="instagram-embed-card">
+            <div class="embed-label">Matrimonios / eventos</div>
+            <h3>Escena íntima</h3>
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DQz9hsHkvrV/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQz9hsHkvrV/" target="_blank">Ver reel en Instagram</a></blockquote>
+          </article>
         </div>
+
+        <p class="video-note">Los videos se cargan desde Instagram. Si alguno no aparece de inmediato, usa el enlace interno del recuadro para abrirlo directamente.</p>
       </div>
     </section>
 
@@ -254,5 +262,7 @@
       <span>Flautista · Gestora cultural</span>
     </div>
   </footer>
+
+  <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
