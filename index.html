@@ -87,6 +87,14 @@
 
     .videos { background: var(--black); border-bottom: 1px solid var(--line); }
     .video-intro { max-width: 760px; color: var(--white-soft); font-family: var(--serif); font-size: 30px; line-height: 1.22; margin-bottom: 58px; }
+    .featured-video { border: 1px solid var(--line); background: var(--black-soft); margin-bottom: 34px; }
+    .featured-video-layout { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: 1px; background: var(--line); }
+    .featured-video-copy { background: var(--black-soft); padding: 34px; display: flex; flex-direction: column; justify-content: space-between; min-height: 360px; }
+    .featured-video-copy .embed-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 18px; }
+    .featured-video-copy h3 { font-family: var(--display); font-size: clamp(42px, 5vw, 74px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; margin-bottom: 22px; }
+    .featured-video-copy p { color: var(--white-soft); font-size: 15px; line-height: 1.8; max-width: 460px; }
+    .youtube-frame { position: relative; background: #000; aspect-ratio: 16 / 9; min-height: 360px; }
+    .youtube-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .instagram-embed-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
     .instagram-embed-card { border: 1px solid var(--line); background: var(--black-soft); padding: 18px; min-height: 620px; }
     .instagram-embed-card .embed-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 16px; }
@@ -111,6 +119,7 @@
       .about { grid-template-columns: 1fr; }
       .about-copy { grid-column: auto; }
       .about-photo { min-height: 500px; }
+      .featured-video-layout { grid-template-columns: 1fr; }
       .instagram-embed-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 960px) {
@@ -127,6 +136,8 @@
       .hero-image { min-height: 420px; }
       .hero-links a { width: 100%; }
       .ornate-text::first-letter { font-size: 6.2rem; }
+      .featured-video-copy { padding: 24px; min-height: auto; }
+      .youtube-frame { min-height: 220px; }
       .instagram-embed-card { padding: 12px; min-height: auto; }
       .contact-links { flex-direction: column; align-items: center; }
       .contact-link { width: 100%; max-width: 320px; }
@@ -215,7 +226,22 @@
       <div class="container">
         <div class="eyebrow">Videos</div>
         <h2 class="section-title">Cómo suena y cómo se ve.</h2>
-        <p class="video-intro">Tres formatos para mostrar una versatilidad real: intimidad, quinteto y escena para eventos.</p>
+        <p class="video-intro">Un registro central desde el Teatro de Rancagua y tres formatos que muestran una versatilidad real: intimidad, quinteto y escena para eventos.</p>
+
+        <article class="featured-video">
+          <div class="featured-video-layout">
+            <div class="featured-video-copy">
+              <div>
+                <div class="embed-label">Concierto destacado · Teatro de Rancagua · 2024</div>
+                <h3>La Camorra</h3>
+                <p>Registro del show en el Teatro Regional Lucho Gatica de Rancagua: una referencia central para mostrar escala escénica, presencia interpretativa y el universo de Piazzollamente en vivo.</p>
+              </div>
+            </div>
+            <div class="youtube-frame">
+              <iframe src="https://www.youtube.com/embed/8YdsLFozZGU?si=ia6-YqPxu8GJLOnh" title="La Camorra - Teatro de Rancagua 2024" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+        </article>
 
         <div class="instagram-embed-grid">
           <article class="instagram-embed-card">
@@ -237,7 +263,7 @@
           </article>
         </div>
 
-        <p class="video-note">Los videos se cargan desde Instagram. Si alguno no aparece de inmediato, usa el enlace interno del recuadro para abrirlo directamente.</p>
+        <p class="video-note">Los reels se cargan desde Instagram. Si alguno no aparece de inmediato, usa el enlace interno del recuadro para abrirlo directamente.</p>
       </div>
     </section>
 
@@ -249,7 +275,7 @@
         <div class="contact-links">
           <a class="contact-link" href="mailto:contacto@valentinagalaz.cl">Email</a>
           <a class="contact-link" href="https://instagram.com/valen.galaz">Instagram</a>
-          <a class="contact-link" href="#">YouTube</a>
+          <a class="contact-link" href="https://www.youtube.com/embed/8YdsLFozZGU?si=ia6-YqPxu8GJLOnh">YouTube</a>
           <a class="contact-link" href="#">Spotify</a>
         </div>
       </div>
