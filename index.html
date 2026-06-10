@@ -57,6 +57,14 @@
     .hero-image { position: relative; min-height: 720px; background: linear-gradient(to right, rgba(3,3,3,0.92), rgba(3,3,3,0.12), rgba(3,3,3,0.76)), linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.92)), var(--hero-photo); background-size: cover; background-position: center; border-left: 1px solid var(--line); }
     .hero-image::after { content: "Elegancia · versatilidad · escena"; position: absolute; right: 34px; bottom: 34px; color: var(--gold); font-family: var(--serif); font-size: 28px; font-style: italic; }
 
+    .release-banner { padding: 0 30px; background: linear-gradient(90deg, rgba(3,3,3,1), rgba(15,15,15,1)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .release-inner { max-width: 1240px; margin: auto; padding: 34px 0; display: grid; grid-template-columns: 0.58fr 1.08fr auto; gap: 34px; align-items: center; }
+    .release-kicker { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.24em; font-weight: 700; }
+    .release-title { font-family: var(--display); font-size: clamp(38px, 4.8vw, 78px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; }
+    .release-copy { color: var(--white-soft); font-family: var(--serif); font-size: clamp(22px, 2vw, 30px); line-height: 1.16; max-width: 620px; }
+    .release-button { border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 15px 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; white-space: nowrap; transition: 0.25s ease; }
+    .release-button:hover { background: var(--gold); color: var(--black); }
+
     .marquee-section { background: var(--black); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 56px 0; }
     .marquee { width: 100%; overflow: hidden; white-space: nowrap; }
     .marquee-track { display: inline-flex; gap: 34px; align-items: center; width: max-content; animation: marquee-left 34s linear infinite; }
@@ -123,6 +131,7 @@
       .about { grid-template-columns: 1fr; }
       .about-copy { grid-column: auto; }
       .about-photo { min-height: 500px; }
+      .release-inner { grid-template-columns: 1fr; gap: 20px; }
       .featured-video-layout { grid-template-columns: 1fr; }
       .instagram-embed-grid { grid-template-columns: 1fr; }
     }
@@ -139,6 +148,9 @@
       .hero { padding-top: 100px; gap: 40px; }
       .hero-image { min-height: 420px; }
       .hero-links a { width: 100%; }
+      .release-banner { padding: 0 22px; }
+      .release-inner { padding: 28px 0; }
+      .release-button { width: 100%; text-align: center; }
       .ornate-text::first-letter { font-size: 6.2rem; }
       .featured-video-copy { padding: 24px; min-height: auto; }
       .youtube-link-card { min-height: 260px; }
@@ -148,7 +160,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <nav>
@@ -177,6 +188,17 @@
         </div>
       </div>
       <div class="hero-image"></div>
+    </section>
+
+    <section class="release-banner" aria-label="Nuevo lanzamiento">
+      <div class="release-inner">
+        <div class="release-kicker">Nuevo lanzamiento</div>
+        <div>
+          <h2 class="release-title">Milonga del Ángel</h2>
+          <p class="release-copy">Piazzollamente presenta una versión desde la flauta traversa del universo de Astor Piazzolla.</p>
+        </div>
+        <a class="release-button" href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noopener">Escuchar en plataformas</a>
+      </div>
     </section>
 
     <section class="marquee-section" aria-label="Trayectoria y universo artístico">
@@ -231,7 +253,6 @@
         <div class="eyebrow">Videos</div>
         <h2 class="section-title">Cómo suena y cómo se ve.</h2>
         <p class="video-intro">Un registro central desde el Teatro de Rancagua y tres formatos que muestran una amplitud escénica real: intimidad, quinteto y escena para eventos.</p>
-
         <article class="featured-video">
           <div class="featured-video-layout">
             <div class="featured-video-copy">
@@ -242,32 +263,14 @@
                 <a class="video-button" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener">Mirar en YouTube</a>
               </div>
             </div>
-            <a class="youtube-link-card" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener" aria-label="Mirar La Camorra en YouTube">
-              <span>Mirar en YouTube</span>
-            </a>
+            <a class="youtube-link-card" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener" aria-label="Mirar La Camorra en YouTube"><span>Mirar en YouTube</span></a>
           </div>
         </article>
-
         <div class="instagram-embed-grid">
-          <article class="instagram-embed-card">
-            <div class="embed-label">Dúo / formato íntimo</div>
-            <h3>Presencia cercana</h3>
-            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DRR2vJOKd8N/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DRR2vJOKd8N/" target="_blank">Ver reel en Instagram</a></blockquote>
-          </article>
-
-          <article class="instagram-embed-card">
-            <div class="embed-label">Piazzollamente / quinteto</div>
-            <h3>Tango y escena</h3>
-            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DVE6QE_D2dg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DVE6QE_D2dg/" target="_blank">Ver reel en Instagram</a></blockquote>
-          </article>
-
-          <article class="instagram-embed-card">
-            <div class="embed-label">Matrimonios / eventos</div>
-            <h3>Escena íntima</h3>
-            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DQz9hsHkvrV/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQz9hsHkvrV/" target="_blank">Ver reel en Instagram</a></blockquote>
-          </article>
+          <article class="instagram-embed-card"><div class="embed-label">Dúo / formato íntimo</div><h3>Presencia cercana</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DRR2vJOKd8N/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DRR2vJOKd8N/" target="_blank">Ver reel en Instagram</a></blockquote></article>
+          <article class="instagram-embed-card"><div class="embed-label">Piazzollamente / quinteto</div><h3>Tango y escena</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DVE6QE_D2dg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DVE6QE_D2dg/" target="_blank">Ver reel en Instagram</a></blockquote></article>
+          <article class="instagram-embed-card"><div class="embed-label">Matrimonios / eventos</div><h3>Escena íntima</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DQz9hsHkvrV/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQz9hsHkvrV/" target="_blank">Ver reel en Instagram</a></blockquote></article>
         </div>
-
         <p class="video-note">El registro destacado se abre directamente en YouTube porque el video no permite reproducción incrustada. Los reels se cargan desde Instagram; si alguno no aparece de inmediato, usa el enlace interno del recuadro.</p>
       </div>
     </section>
@@ -281,19 +284,15 @@
           <a class="contact-link" href="mailto:valen.galaz@gmail.com">Email</a>
           <a class="contact-link" href="https://www.instagram.com/valengalaz/" target="_blank" rel="noopener">Instagram</a>
           <a class="contact-link" href="https://youtube.com/@valentinagalaz?si=HbTRtLUkrGw4Jc_d" target="_blank" rel="noopener">YouTube</a>
-          <a class="contact-link" href="#">Spotify</a>
+          <a class="contact-link" href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noopener">Milonga del Ángel</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <span>© Valentina Galaz</span>
-      <span>Flautista · Gestora cultural</span>
-    </div>
+    <div class="container"><span>© Valentina Galaz</span><span>Flautista · Gestora cultural</span></div>
   </footer>
-
   <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
