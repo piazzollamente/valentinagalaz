@@ -8,291 +8,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --black: #030303;
-      --black-soft: #0B0B0B;
-      --graphite: #151515;
-      --white: #F7F3EA;
-      --white-soft: rgba(247, 243, 234, 0.72);
-      --white-muted: rgba(247, 243, 234, 0.42);
-      --gold: #C6A15B;
-      --gold-dark: #8F6A2E;
-      --line: rgba(247, 243, 234, 0.14);
-      --display: 'Bodoni Moda', serif;
-      --serif: 'Cormorant Garamond', serif;
-      --sans: 'Montserrat', sans-serif;
-      --script: 'Allura', cursive;
-      --hero-photo: url("valentina-galaz-hero.jpg");
-      --about-photo: url("valentina-galaz-espalda.jpg");
-      --portrait-photo: url("valentina-galaz-retrato.png");
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--black); color: var(--white); font-family: var(--sans); line-height: 1.6; }
-    a { color: inherit; text-decoration: none; }
-
-    header { position: fixed; top: 0; width: 100%; z-index: 50; background: rgba(3, 3, 3, 0.84); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
-    nav { max-width: 1240px; margin: auto; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
-    .brand { font-family: var(--display); font-size: 25px; font-weight: 500; letter-spacing: 0.03em; }
-    .nav-links { display: flex; gap: 30px; align-items: center; color: var(--white-soft); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 600; }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta { border: 1px solid var(--gold-dark); color: var(--gold); border-radius: 999px; padding: 10px 15px; }
-    .nav-cta:hover { background: var(--gold); color: var(--black); }
-
-    section { padding: 120px 30px; }
-    .container { max-width: 1240px; margin: auto; }
-    .eyebrow { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.24em; font-weight: 700; margin-bottom: 24px; }
-    .section-title { font-family: var(--display); font-size: clamp(54px, 7vw, 110px); font-weight: 500; letter-spacing: -0.07em; line-height: 0.86; margin-bottom: 44px; }
-    .script-word { font-family: var(--script); color: var(--gold); font-size: 1.85em; font-style: normal; line-height: 0; font-weight: 400; }
-
-    .hero { min-height: 100vh; display: grid; grid-template-columns: 0.95fr 1.05fr; align-items: center; gap: 72px; padding-top: 130px; }
-    .hero-title { font-family: var(--display); font-size: clamp(72px, 9.5vw, 154px); line-height: 0.82; letter-spacing: -0.075em; font-weight: 500; margin-bottom: 30px; }
-    .role { font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--white-soft); margin-bottom: 34px; }
-    .hero-phrase { font-family: var(--serif); font-size: clamp(36px, 4.4vw, 72px); line-height: 0.94; font-style: italic; font-weight: 400; margin-bottom: 34px; max-width: 760px; }
-    .hero-text { max-width: 600px; color: var(--white-soft); font-family: var(--serif); font-size: clamp(23px, 2.2vw, 30px); line-height: 1.28; margin-bottom: 40px; }
-    .hero-links { display: flex; gap: 28px; flex-wrap: wrap; }
-    .hero-links a { color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; transition: 0.25s ease; }
-    .hero-links a:hover { color: var(--gold); padding-bottom: 12px; }
-    .hero-image { position: relative; min-height: 720px; background: linear-gradient(to right, rgba(3,3,3,0.92), rgba(3,3,3,0.12), rgba(3,3,3,0.76)), linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.92)), var(--hero-photo); background-size: cover; background-position: center; border-left: 1px solid var(--line); }
-    .hero-image::after { content: "Elegancia · versatilidad · escena"; position: absolute; right: 34px; bottom: 34px; color: var(--gold); font-family: var(--serif); font-size: 28px; font-style: italic; }
-
-    .release-banner { padding: 0 30px; background: linear-gradient(90deg, rgba(3,3,3,1), rgba(15,15,15,1)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .release-inner { max-width: 1240px; margin: auto; padding: 34px 0; display: grid; grid-template-columns: 0.58fr 1.08fr auto; gap: 34px; align-items: center; }
-    .release-kicker { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.24em; font-weight: 700; }
-    .release-title { font-family: var(--display); font-size: clamp(38px, 4.8vw, 78px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; }
-    .release-copy { color: var(--white-soft); font-family: var(--serif); font-size: clamp(22px, 2vw, 30px); line-height: 1.16; max-width: 620px; }
-    .release-button { border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 15px 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; white-space: nowrap; transition: 0.25s ease; }
-    .release-button:hover { background: var(--gold); color: var(--black); }
-
-    .marquee-section { background: var(--black); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 56px 0; }
-    .marquee { width: 100%; overflow: hidden; white-space: nowrap; }
-    .marquee-track { display: inline-flex; gap: 34px; align-items: center; width: max-content; animation: marquee-left 34s linear infinite; }
-    .marquee-right .marquee-track { animation-name: marquee-right; animation-duration: 38s; }
-    .marquee-track span { font-family: var(--display); font-size: clamp(34px, 5vw, 78px); line-height: 1; letter-spacing: -0.055em; color: var(--white-muted); }
-    .marquee-track span::after { content: "✦"; color: var(--gold); font-size: 0.42em; margin-left: 34px; vertical-align: middle; }
-    .marquee-center { margin: 26px 0; text-align: center; font-family: var(--script); font-size: clamp(72px, 10vw, 160px); line-height: 0.72; color: var(--gold); }
-    @keyframes marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    @keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-    @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; transform: none; } }
-
-    .about { display: grid; grid-template-columns: 0.72fr 0.58fr 0.7fr; gap: 54px; align-items: start; border-bottom: 1px solid var(--line); }
-    .about-copy { grid-column: 1 / span 2; }
-    .about-photo { min-height: 760px; background: linear-gradient(to bottom, rgba(3,3,3,0.04), rgba(3,3,3,0.88)), var(--about-photo); background-size: cover; background-position: center; border: 1px solid var(--line); }
-    .ornate-text { font-family: var(--serif); color: var(--white-soft); font-size: clamp(27px, 3vw, 44px); line-height: 1.22; max-width: 870px; }
-    .ornate-text::first-letter { font-family: var(--script); color: var(--gold); float: left; font-size: 8.3rem; line-height: 0.58; margin-right: 0.16em; margin-top: 0.1em; }
-    .bio-note { margin-top: 42px; max-width: 790px; color: var(--white-muted); font-size: 15px; line-height: 1.85; border-top: 1px solid var(--line); padding-top: 26px; }
-    .bio-points { margin-top: 34px; display: grid; gap: 16px; max-width: 790px; }
-    .bio-point { border-top: 1px solid var(--line); padding-top: 16px; color: var(--white-muted); font-size: 13px; line-height: 1.7; letter-spacing: 0.03em; }
-
-    .method { background: var(--black-soft); border-bottom: 1px solid var(--line); }
-    .method-intro { max-width: 760px; color: var(--white-soft); font-family: var(--serif); font-size: 30px; line-height: 1.22; margin-bottom: 58px; }
-    .method-list { border-top: 1px solid var(--line); }
-    .method-item { display: grid; grid-template-columns: 90px 0.8fr 1.2fr; gap: 36px; align-items: baseline; padding: 38px 0; border-bottom: 1px solid var(--line); }
-    .method-number { color: var(--gold); font-family: var(--display); font-size: 36px; letter-spacing: -0.04em; }
-    .method-title { font-family: var(--display); font-size: clamp(38px, 4.5vw, 70px); line-height: 0.9; letter-spacing: -0.06em; font-weight: 500; }
-    .method-description { color: var(--white-soft); font-size: 15px; line-height: 1.8; max-width: 650px; }
-
-    .videos { background: var(--black); border-bottom: 1px solid var(--line); }
-    .video-intro { max-width: 760px; color: var(--white-soft); font-family: var(--serif); font-size: 30px; line-height: 1.22; margin-bottom: 58px; }
-    .featured-video { border: 1px solid var(--line); background: var(--black-soft); margin-bottom: 34px; }
-    .featured-video-layout { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: 1px; background: var(--line); }
-    .featured-video-copy { background: var(--black-soft); padding: 34px; display: flex; flex-direction: column; justify-content: space-between; min-height: 360px; }
-    .featured-video-copy .embed-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 18px; }
-    .featured-video-copy h3 { font-family: var(--display); font-size: clamp(42px, 5vw, 74px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; margin-bottom: 22px; }
-    .featured-video-copy p { color: var(--white-soft); font-size: 15px; line-height: 1.8; max-width: 460px; }
-    .video-button { display: inline-block; margin-top: 26px; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 14px 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; transition: 0.25s ease; width: fit-content; }
-    .video-button:hover { background: var(--gold); color: var(--black); }
-    .youtube-link-card { position: relative; min-height: 360px; background: linear-gradient(to bottom, rgba(3,3,3,0.12), rgba(3,3,3,0.76)), url("https://img.youtube.com/vi/8YdsLFozZGU/maxresdefault.jpg"); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
-    .youtube-link-card::before { content: "▶"; width: 92px; height: 92px; border: 1px solid rgba(247,243,234,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); background: rgba(3,3,3,0.48); font-size: 36px; padding-left: 7px; transition: 0.25s ease; }
-    .youtube-link-card:hover::before { background: var(--gold); color: var(--black); border-color: var(--gold); }
-    .youtube-link-card span { position: absolute; left: 32px; bottom: 28px; color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; }
-    .instagram-embed-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
-    .instagram-embed-card { border: 1px solid var(--line); background: var(--black-soft); padding: 18px; min-height: 620px; }
-    .instagram-embed-card .embed-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 16px; }
-    .instagram-embed-card h3 { font-family: var(--display); font-size: clamp(34px, 3vw, 52px); line-height: 0.9; letter-spacing: -0.06em; font-weight: 500; margin-bottom: 20px; }
-    .instagram-embed-card blockquote.instagram-media { margin: 0 auto !important; min-width: 0 !important; width: 100% !important; max-width: 540px !important; }
-    .video-note { margin-top: 28px; color: var(--white-muted); font-size: 13px; line-height: 1.7; max-width: 760px; }
-
-    .contact { min-height: 78vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
-    .contact::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(3,3,3,0.74), rgba(3,3,3,0.9)), var(--portrait-photo); background-size: cover; background-position: center; opacity: 0.22; z-index: 0; }
-    .contact .container { position: relative; z-index: 2; }
-    .contact-script { font-family: var(--script); color: var(--gold); font-size: clamp(84px, 11vw, 160px); line-height: 0.6; margin-bottom: 36px; }
-    .contact-title { font-family: var(--display); font-size: clamp(66px, 9vw, 148px); line-height: 0.82; letter-spacing: -0.075em; font-weight: 500; margin-bottom: 34px; }
-    .contact p { max-width: 720px; margin: 0 auto 38px; color: var(--white-soft); font-family: var(--serif); font-size: clamp(25px, 2.5vw, 32px); line-height: 1.24; }
-    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
-    .contact-link { display: inline-block; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 15px 28px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; transition: 0.25s ease; background: rgba(3,3,3,0.35); }
-    .contact-link:hover { background: var(--gold); color: var(--black); }
-
-    footer { border-top: 1px solid var(--line); padding: 34px 30px; color: var(--white-muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; }
-    footer .container { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-
-    @media (max-width: 1080px) {
-      .about { grid-template-columns: 1fr; }
-      .about-copy { grid-column: auto; }
-      .about-photo { min-height: 500px; }
-      .release-inner { grid-template-columns: 1fr; gap: 20px; }
-      .featured-video-layout { grid-template-columns: 1fr; }
-      .instagram-embed-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 960px) {
-      .nav-links { display: none; }
-      .hero, .method-item { grid-template-columns: 1fr; }
-      .hero-image { min-height: 520px; order: -1; border-left: none; }
-      .method-item { gap: 14px; }
-    }
-    @media (max-width: 620px) {
-      section { padding: 86px 22px; }
-      nav { padding: 18px 22px; }
-      .brand { font-size: 22px; }
-      .hero { padding-top: 100px; gap: 40px; }
-      .hero-image { min-height: 420px; }
-      .hero-links a { width: 100%; }
-      .release-banner { padding: 0 22px; }
-      .release-inner { padding: 28px 0; }
-      .release-button { width: 100%; text-align: center; }
-      .ornate-text::first-letter { font-size: 6.2rem; }
-      .featured-video-copy { padding: 24px; min-height: auto; }
-      .youtube-link-card { min-height: 260px; }
-      .instagram-embed-card { padding: 12px; min-height: auto; }
-      .contact-links { flex-direction: column; align-items: center; }
-      .contact-link { width: 100%; max-width: 320px; }
-    }
+    :root { --black:#030303; --black-soft:#0B0B0B; --graphite:#151515; --white:#F7F3EA; --white-soft:rgba(247,243,234,.72); --white-muted:rgba(247,243,234,.42); --gold:#C6A15B; --gold-dark:#8F6A2E; --line:rgba(247,243,234,.14); --display:'Bodoni Moda',serif; --serif:'Cormorant Garamond',serif; --sans:'Montserrat',sans-serif; --script:'Allura',cursive; --hero-photo:url("valentina-galaz-hero.jpg"); --about-photo:url("valentina-galaz-espalda.jpg"); --portrait-photo:url("valentina-galaz-retrato.png"); }
+    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{background:var(--black);color:var(--white);font-family:var(--sans);line-height:1.6} a{color:inherit;text-decoration:none}
+    header{position:fixed;top:0;width:100%;z-index:50;background:rgba(3,3,3,.84);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)} nav{max-width:1240px;margin:auto;padding:20px 30px;display:flex;justify-content:space-between;align-items:center}.brand{font-family:var(--display);font-size:25px;font-weight:500;letter-spacing:.03em}.nav-links{display:flex;gap:30px;align-items:center;color:var(--white-soft);font-size:10px;text-transform:uppercase;letter-spacing:.18em;font-weight:600}.nav-links a:hover{color:var(--gold)}.nav-cta{border:1px solid var(--gold-dark);color:var(--gold);border-radius:999px;padding:10px 15px}.nav-cta:hover{background:var(--gold);color:var(--black)}
+    section{padding:120px 30px}.container{max-width:1240px;margin:auto}.eyebrow{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.24em;font-weight:700;margin-bottom:24px}.section-title{font-family:var(--display);font-size:clamp(54px,7vw,110px);font-weight:500;letter-spacing:-.07em;line-height:.86;margin-bottom:44px}.script-word{font-family:var(--script);color:var(--gold);font-size:1.85em;font-style:normal;line-height:0;font-weight:400}
+    .hero{min-height:100vh;display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:72px;padding-top:130px}.hero-title{font-family:var(--display);font-size:clamp(72px,9.5vw,154px);line-height:.82;letter-spacing:-.075em;font-weight:500;margin-bottom:30px}.role{font-size:12px;text-transform:uppercase;letter-spacing:.22em;color:var(--white-soft);margin-bottom:34px}.hero-phrase{font-family:var(--serif);font-size:clamp(36px,4.4vw,72px);line-height:.94;font-style:italic;font-weight:400;margin-bottom:34px;max-width:760px}.hero-text{max-width:600px;color:var(--white-soft);font-family:var(--serif);font-size:clamp(23px,2.2vw,30px);line-height:1.28;margin-bottom:40px}.hero-links{display:flex;gap:28px;flex-wrap:wrap}.hero-links a{color:var(--white);font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;border-bottom:1px solid var(--gold);padding-bottom:8px;transition:.25s ease}.hero-links a:hover{color:var(--gold);padding-bottom:12px}.hero-image{position:relative;min-height:720px;background:linear-gradient(to right,rgba(3,3,3,.92),rgba(3,3,3,.12),rgba(3,3,3,.76)),linear-gradient(to bottom,rgba(3,3,3,.08),rgba(3,3,3,.92)),var(--hero-photo);background-size:cover;background-position:center;border-left:1px solid var(--line)}.hero-image::after{content:"Elegancia · versatilidad · escena";position:absolute;right:34px;bottom:34px;color:var(--gold);font-family:var(--serif);font-size:28px;font-style:italic}
+    .release-banner{padding:0 30px;background:linear-gradient(90deg,rgba(3,3,3,1),rgba(15,15,15,1));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.release-inner{max-width:1240px;margin:auto;padding:34px 0;display:grid;grid-template-columns:.58fr 1.08fr auto;gap:34px;align-items:center}.release-kicker{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.24em;font-weight:700}.release-title{font-family:var(--display);font-size:clamp(38px,4.8vw,78px);line-height:.88;letter-spacing:-.065em;font-weight:500}.release-copy{color:var(--white-soft);font-family:var(--serif);font-size:clamp(22px,2vw,30px);line-height:1.16;max-width:620px}.release-button{border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:15px 24px;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;white-space:nowrap;transition:.25s ease}.release-button:hover{background:var(--gold);color:var(--black)}
+    .marquee-section{background:var(--black);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:56px 0}.marquee{width:100%;overflow:hidden;white-space:nowrap}.marquee-track{display:inline-flex;gap:34px;align-items:center;width:max-content;animation:marquee-left 34s linear infinite}.marquee-right .marquee-track{animation-name:marquee-right;animation-duration:38s}.marquee-track span{font-family:var(--display);font-size:clamp(34px,5vw,78px);line-height:1;letter-spacing:-.055em;color:var(--white-muted)}.marquee-track span::after{content:"✦";color:var(--gold);font-size:.42em;margin-left:34px;vertical-align:middle}.marquee-center{margin:26px 0;text-align:center;font-family:var(--script);font-size:clamp(72px,10vw,160px);line-height:.72;color:var(--gold)}@keyframes marquee-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes marquee-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}@media(prefers-reduced-motion:reduce){.marquee-track{animation:none;transform:none}}
+    .about{display:grid;grid-template-columns:.72fr .58fr .7fr;gap:54px;align-items:start;border-bottom:1px solid var(--line)}.about-copy{grid-column:1/span 2}.about-photo{min-height:760px;background:linear-gradient(to bottom,rgba(3,3,3,.04),rgba(3,3,3,.88)),var(--about-photo);background-size:cover;background-position:center;border:1px solid var(--line)}.ornate-text{font-family:var(--serif);color:var(--white-soft);font-size:clamp(27px,3vw,44px);line-height:1.22;max-width:870px}.ornate-text::first-letter{font-family:var(--script);color:var(--gold);float:left;font-size:8.3rem;line-height:.58;margin-right:.16em;margin-top:.1em}.bio-note{margin-top:42px;max-width:790px;color:var(--white-muted);font-size:15px;line-height:1.85;border-top:1px solid var(--line);padding-top:26px}.bio-points{margin-top:34px;display:grid;gap:16px;max-width:790px}.bio-point{border-top:1px solid var(--line);padding-top:16px;color:var(--white-muted);font-size:13px;line-height:1.7;letter-spacing:.03em}
+    .method{background:var(--black-soft);border-bottom:1px solid var(--line)}.method-intro{max-width:760px;color:var(--white-soft);font-family:var(--serif);font-size:30px;line-height:1.22;margin-bottom:58px}.method-list{border-top:1px solid var(--line)}.method-item{display:grid;grid-template-columns:90px .8fr 1.2fr;gap:36px;align-items:baseline;padding:38px 0;border-bottom:1px solid var(--line)}.method-number{color:var(--gold);font-family:var(--display);font-size:36px;letter-spacing:-.04em}.method-title{font-family:var(--display);font-size:clamp(38px,4.5vw,70px);line-height:.9;letter-spacing:-.06em;font-weight:500}.method-description{color:var(--white-soft);font-size:15px;line-height:1.8;max-width:650px}
+    .videos{background:var(--black);border-bottom:1px solid var(--line)}.video-intro{max-width:760px;color:var(--white-soft);font-family:var(--serif);font-size:30px;line-height:1.22;margin-bottom:58px}.featured-video{border:1px solid var(--line);background:var(--black-soft);margin-bottom:34px}.featured-video-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:1px;background:var(--line)}.featured-video-copy{background:var(--black-soft);padding:34px;display:flex;flex-direction:column;justify-content:space-between;min-height:360px}.featured-video-copy .embed-label{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;margin-bottom:18px}.featured-video-copy h3{font-family:var(--display);font-size:clamp(42px,5vw,74px);line-height:.88;letter-spacing:-.065em;font-weight:500;margin-bottom:22px}.featured-video-copy p{color:var(--white-soft);font-size:15px;line-height:1.8;max-width:460px}.video-button{display:inline-block;margin-top:26px;border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:14px 24px;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;transition:.25s ease;width:fit-content}.video-button:hover{background:var(--gold);color:var(--black)}.youtube-link-card{position:relative;min-height:360px;background:linear-gradient(to bottom,rgba(3,3,3,.12),rgba(3,3,3,.76)),url("https://img.youtube.com/vi/8YdsLFozZGU/maxresdefault.jpg");background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center}.youtube-link-card::before{content:"▶";width:92px;height:92px;border:1px solid rgba(247,243,234,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);background:rgba(3,3,3,.48);font-size:36px;padding-left:7px;transition:.25s ease}.youtube-link-card:hover::before{background:var(--gold);color:var(--black);border-color:var(--gold)}.youtube-link-card span{position:absolute;left:32px;bottom:28px;color:var(--white);font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;border-bottom:1px solid var(--gold);padding-bottom:8px}.instagram-embed-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}.instagram-embed-card{border:1px solid var(--line);background:var(--black-soft);padding:18px;min-height:620px}.instagram-embed-card .embed-label{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;margin-bottom:16px}.instagram-embed-card h3{font-family:var(--display);font-size:clamp(34px,3vw,52px);line-height:.9;letter-spacing:-.06em;font-weight:500;margin-bottom:20px}.instagram-embed-card blockquote.instagram-media{margin:0 auto!important;min-width:0!important;width:100%!important;max-width:540px!important}.video-note{margin-top:28px;color:var(--white-muted);font-size:13px;line-height:1.7;max-width:760px}
+    .contact{min-height:78vh;display:flex;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden}.contact::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(3,3,3,.74),rgba(3,3,3,.9)),var(--portrait-photo);background-size:cover;background-position:center;opacity:.22;z-index:0}.contact .container{position:relative;z-index:2}.contact-script{font-family:var(--script);color:var(--gold);font-size:clamp(84px,11vw,160px);line-height:.6;margin-bottom:36px}.contact-title{font-family:var(--display);font-size:clamp(66px,9vw,148px);line-height:.82;letter-spacing:-.075em;font-weight:500;margin-bottom:34px}.contact p{max-width:720px;margin:0 auto 38px;color:var(--white-soft);font-family:var(--serif);font-size:clamp(25px,2.5vw,32px);line-height:1.24}.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px}.contact-link{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:15px 28px;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;transition:.25s ease;background:rgba(3,3,3,.35)}.contact-link:hover{background:var(--gold);color:var(--black)}
+    footer{border-top:1px solid var(--line);padding:34px 30px;color:var(--white-muted);font-size:10px;text-transform:uppercase;letter-spacing:.18em}footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:1080px){.about{grid-template-columns:1fr}.about-copy{grid-column:auto}.about-photo{min-height:500px}.release-inner{grid-template-columns:1fr;gap:20px}.featured-video-layout{grid-template-columns:1fr}.instagram-embed-grid{grid-template-columns:1fr}}@media(max-width:960px){.nav-links{display:none}.hero,.method-item{grid-template-columns:1fr}.hero-image{min-height:520px;order:-1;border-left:none}.method-item{gap:14px}}@media(max-width:620px){section{padding:86px 22px}nav{padding:18px 22px}.brand{font-size:22px}.hero{padding-top:100px;gap:40px}.hero-image{min-height:420px}.hero-links a{width:100%}.release-banner{padding:0 22px}.release-inner{padding:28px 0}.release-button{width:100%;text-align:center}.ornate-text::first-letter{font-size:6.2rem}.featured-video-copy{padding:24px;min-height:auto}.youtube-link-card{min-height:260px}.instagram-embed-card{padding:12px;min-height:auto}.contact-links{flex-direction:column;align-items:center}.contact-link{width:100%;max-width:320px}}
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#" class="brand">Valentina Galaz</a>
-      <div class="nav-links">
-        <a href="#quien-soy">Quién soy</a>
-        <a href="#como-lo-hago">Cómo lo hago</a>
-        <a href="#videos">Videos</a>
-        <a href="#contacto" class="nav-cta">Contacto</a>
-      </div>
-    </nav>
-  </header>
-
+  <header><nav><a href="#" class="brand">Valentina Galaz</a><div class="nav-links"><a href="#quien-soy">Quién soy</a><a href="#como-lo-hago">Cómo lo hago</a><a href="#videos">Videos</a><a href="#contacto" class="nav-cta">Contacto</a></div></nav></header>
   <main>
-    <section class="hero container" id="inicio">
-      <div>
-        <div class="eyebrow">Sitio oficial</div>
-        <h1 class="hero-title">Valentina<br>Galaz</h1>
-        <div class="role">Flautista · Gestora cultural</div>
-        <h2 class="hero-phrase"><span class="script-word">Elegancia</span>, versatilidad y escena.</h2>
-        <p class="hero-text">Interpretación, conciertos y proyectos culturales desde la flauta traversa.</p>
-        <div class="hero-links">
-          <a href="#quien-soy">Quién soy</a>
-          <a href="#videos">Ver videos</a>
-          <a href="#contacto">Contacto</a>
-        </div>
-      </div>
-      <div class="hero-image"></div>
-    </section>
-
-    <section class="release-banner" aria-label="Nuevo lanzamiento">
-      <div class="release-inner">
-        <div class="release-kicker">Nuevo lanzamiento</div>
-        <div>
-          <h2 class="release-title">Milonga del Ángel</h2>
-          <p class="release-copy">Piazzollamente presenta una versión desde la flauta traversa del universo de Astor Piazzolla.</p>
-        </div>
-        <a class="release-button" href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noopener">Escuchar en plataformas</a>
-      </div>
-    </section>
-
-    <section class="marquee-section" aria-label="Trayectoria y universo artístico">
-      <div class="marquee marquee-left">
-        <div class="marquee-track">
-          <span>Chile</span><span>Argentina</span><span>Brasil</span><span>Paraguay</span><span>Estados Unidos</span><span>Rancagua</span><span>Santiago</span><span>Mendoza</span><span>Buenos Aires</span><span>Valparaíso</span><span>Asunción</span><span>Nebraska</span>
-          <span>Chile</span><span>Argentina</span><span>Brasil</span><span>Paraguay</span><span>Estados Unidos</span><span>Rancagua</span><span>Santiago</span><span>Mendoza</span><span>Buenos Aires</span><span>Valparaíso</span><span>Asunción</span><span>Nebraska</span>
-        </div>
-      </div>
-      <div class="marquee-center">Sonido, presencia y territorio.</div>
-      <div class="marquee marquee-right">
-        <div class="marquee-track">
-          <span>Orquestas</span><span>Bandas</span><span>Ensambles</span><span>Música de cámara</span><span>Festivales</span><span>Estrenos</span><span>Tango</span><span>Piazzollamente</span><span>Música contemporánea</span>
-          <span>Orquestas</span><span>Bandas</span><span>Ensambles</span><span>Música de cámara</span><span>Festivales</span><span>Estrenos</span><span>Tango</span><span>Piazzollamente</span><span>Música contemporánea</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="quien-soy">
-      <div class="container about">
-        <div class="about-copy">
-          <div class="eyebrow">Quién soy</div>
-          <h2 class="section-title">Una intérprete construida entre escena, territorio y sonido.</h2>
-          <p class="ornate-text">Valentina Galaz es flautista, intérprete y gestora cultural chilena. Licenciada en Flauta Traversa por la Universidad Nacional de Cuyo, en Argentina, ha desarrollado una trayectoria vinculada a la música de cámara, la creación de proyectos escénicos y la circulación de propuestas musicales latinoamericanas.</p>
-          <p class="bio-note">Su trabajo articula interpretación, gestión cultural y presencia escénica, con una búsqueda centrada en el sonido, el relato y la conexión con el público.<br><br>Es directora de Piazzollamente, proyecto dedicado a la música de Astor Piazzolla, donde la flauta traversa ocupa un lugar protagónico dentro de una propuesta que cruza tango, música de cámara, identidad latinoamericana y experiencia en vivo.</p>
-          <div class="bio-points">
-            <div class="bio-point">Licenciada en Flauta Traversa por la Universidad Nacional de Cuyo.</div>
-            <div class="bio-point">Trayectoria escénica en Chile, Argentina, Brasil, Paraguay y Estados Unidos.</div>
-            <div class="bio-point">Directora de Piazzollamente, proyecto dedicado a la música de Astor Piazzolla.</div>
-            <div class="bio-point">Participación en festivales, estrenos, conciertos y proyectos de circulación cultural latinoamericana.</div>
-          </div>
-        </div>
-        <div class="about-photo"></div>
-      </div>
-    </section>
-
-    <section id="como-lo-hago" class="method">
-      <div class="container">
-        <div class="eyebrow">Cómo lo hago</div>
-        <h2 class="section-title">Una misma búsqueda en distintas escalas.</h2>
-        <p class="method-intro">La experiencia artística puede vivir en un dúo íntimo, en un quinteto, en una orquesta o en un espectáculo de gran formato. En todos los casos, el eje es el mismo: relato, presencia y conexión con el público.</p>
-        <div class="method-list">
-          <div class="method-item"><div class="method-number">01</div><h3 class="method-title">Conciertos</h3><p class="method-description">Interpretación en vivo en formatos de cámara, orquesta, dúo, ensamble y proyectos escénicos, con repertorios que cruzan música latinoamericana, tango, música académica y propuestas contemporáneas.</p></div>
-          <div class="method-item"><div class="method-number">02</div><h3 class="method-title">Piazzollamente</h3><p class="method-description">Proyecto dedicado a la música de Astor Piazzolla, dirigido por Valentina Galaz, con flauta traversa en el lugar del bandoneón y una propuesta que vincula excelencia musical, escena e identidad.</p></div>
-          <div class="method-item"><div class="method-number">03</div><h3 class="method-title">Proyectos culturales</h3><p class="method-description">Creación, dirección y circulación de propuestas musicales que articulan interpretación, territorio, comunidad y experiencia escénica.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="videos" class="videos">
-      <div class="container">
-        <div class="eyebrow">Videos</div>
-        <h2 class="section-title">Cómo suena y cómo se ve.</h2>
-        <p class="video-intro">Un registro central desde el Teatro de Rancagua y tres formatos que muestran una amplitud escénica real: intimidad, quinteto y escena para eventos.</p>
-        <article class="featured-video">
-          <div class="featured-video-layout">
-            <div class="featured-video-copy">
-              <div>
-                <div class="embed-label">Concierto destacado · Teatro de Rancagua · 2024</div>
-                <h3>La Camorra</h3>
-                <p>Registro del show en el Teatro Regional Lucho Gatica de Rancagua: una referencia central para mostrar escala escénica, presencia interpretativa y el universo de Piazzollamente en vivo.</p>
-                <a class="video-button" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener">Mirar en YouTube</a>
-              </div>
-            </div>
-            <a class="youtube-link-card" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener" aria-label="Mirar La Camorra en YouTube"><span>Mirar en YouTube</span></a>
-          </div>
-        </article>
-        <div class="instagram-embed-grid">
-          <article class="instagram-embed-card"><div class="embed-label">Dúo / formato íntimo</div><h3>Presencia cercana</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DRR2vJOKd8N/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DRR2vJOKd8N/" target="_blank">Ver reel en Instagram</a></blockquote></article>
-          <article class="instagram-embed-card"><div class="embed-label">Piazzollamente / quinteto</div><h3>Tango y escena</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DVE6QE_D2dg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DVE6QE_D2dg/" target="_blank">Ver reel en Instagram</a></blockquote></article>
-          <article class="instagram-embed-card"><div class="embed-label">Matrimonios / eventos</div><h3>Escena íntima</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DQz9hsHkvrV/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQz9hsHkvrV/" target="_blank">Ver reel en Instagram</a></blockquote></article>
-        </div>
-        <p class="video-note">El registro destacado se abre directamente en YouTube porque el video no permite reproducción incrustada. Los reels se cargan desde Instagram; si alguno no aparece de inmediato, usa el enlace interno del recuadro.</p>
-      </div>
-    </section>
-
-    <section id="contacto" class="contact">
-      <div class="container">
-        <div class="contact-script">Contacto</div>
-        <h2 class="contact-title">Solicitar<br>disponibilidad</h2>
-        <p>Para conciertos, proyectos culturales, colaboraciones artísticas, prensa o programación.</p>
-        <div class="contact-links">
-          <a class="contact-link" href="mailto:valen.galaz@gmail.com">Email</a>
-          <a class="contact-link" href="https://www.instagram.com/valengalaz/" target="_blank" rel="noopener">Instagram</a>
-          <a class="contact-link" href="https://youtube.com/@valentinagalaz?si=HbTRtLUkrGw4Jc_d" target="_blank" rel="noopener">YouTube</a>
-          <a class="contact-link" href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noopener">Milonga del Ángel</a>
-        </div>
-      </div>
-    </section>
+    <section class="hero container" id="inicio"><div><div class="eyebrow">Sitio oficial</div><h1 class="hero-title">Valentina<br>Galaz</h1><div class="role">Flautista · Gestora cultural</div><h2 class="hero-phrase"><span class="script-word">Elegancia</span>, versatilidad y escena.</h2><p class="hero-text">Interpretación, conciertos y proyectos culturales desde la flauta traversa.</p><div class="hero-links"><a href="#quien-soy">Quién soy</a><a href="#videos">Ver videos</a><a href="#contacto">Contacto</a></div></div><div class="hero-image"></div></section>
+    <section class="release-banner" aria-label="Presentación en vivo"><div class="release-inner"><div class="release-kicker">Presentación en vivo</div><div><h2 class="release-title">Sala SCD Plaza Egaña</h2><p class="release-copy">Piazzollamente · 2025 · Milonga del Ángel</p></div><a class="release-button" href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noopener">Escuchar en plataformas</a></div></section>
+    <section class="marquee-section" aria-label="Trayectoria y universo artístico"><div class="marquee marquee-left"><div class="marquee-track"><span>Chile</span><span>Argentina</span><span>Brasil</span><span>Paraguay</span><span>Estados Unidos</span><span>Rancagua</span><span>Santiago</span><span>Mendoza</span><span>Buenos Aires</span><span>Valparaíso</span><span>Asunción</span><span>Nebraska</span><span>Chile</span><span>Argentina</span><span>Brasil</span><span>Paraguay</span><span>Estados Unidos</span><span>Rancagua</span><span>Santiago</span><span>Mendoza</span><span>Buenos Aires</span><span>Valparaíso</span><span>Asunción</span><span>Nebraska</span></div></div><div class="marquee-center">Sonido, presencia y territorio.</div><div class="marquee marquee-right"><div class="marquee-track"><span>Orquestas</span><span>Bandas</span><span>Ensambles</span><span>Música de cámara</span><span>Festivales</span><span>Estrenos</span><span>Tango</span><span>Piazzollamente</span><span>Música contemporánea</span><span>Orquestas</span><span>Bandas</span><span>Ensambles</span><span>Música de cámara</span><span>Festivales</span><span>Estrenos</span><span>Tango</span><span>Piazzollamente</span><span>Música contemporánea</span></div></div></section>
+    <section id="quien-soy"><div class="container about"><div class="about-copy"><div class="eyebrow">Quién soy</div><h2 class="section-title">Una intérprete construida entre escena, territorio y sonido.</h2><p class="ornate-text">Valentina Galaz es flautista, intérprete y gestora cultural chilena. Licenciada en Flauta Traversa por la Universidad Nacional de Cuyo, en Argentina, ha desarrollado una trayectoria vinculada a la música de cámara, la creación de proyectos escénicos y la circulación de propuestas musicales latinoamericanas.</p><p class="bio-note">Su trabajo articula interpretación, gestión cultural y presencia escénica, con una búsqueda centrada en el sonido, el relato y la conexión con el público.<br><br>Es directora de Piazzollamente, proyecto dedicado a la música de Astor Piazzolla, donde la flauta traversa ocupa un lugar protagónico dentro de una propuesta que cruza tango, música de cámara, identidad latinoamericana y experiencia en vivo.</p><div class="bio-points"><div class="bio-point">Licenciada en Flauta Traversa por la Universidad Nacional de Cuyo.</div><div class="bio-point">Trayectoria escénica en Chile, Argentina, Brasil, Paraguay y Estados Unidos.</div><div class="bio-point">Directora de Piazzollamente, proyecto dedicado a la música de Astor Piazzolla.</div><div class="bio-point">Participación en festivales, estrenos, conciertos y proyectos de circulación cultural latinoamericana.</div></div></div><div class="about-photo"></div></div></section>
+    <section id="como-lo-hago" class="method"><div class="container"><div class="eyebrow">Cómo lo hago</div><h2 class="section-title">Una misma búsqueda en distintas escalas.</h2><p class="method-intro">La experiencia artística puede vivir en un dúo íntimo, en un quinteto, en una orquesta o en un espectáculo de gran formato. En todos los casos, el eje es el mismo: relato, presencia y conexión con el público.</p><div class="method-list"><div class="method-item"><div class="method-number">01</div><h3 class="method-title">Conciertos</h3><p class="method-description">Interpretación en vivo en formatos de cámara, orquesta, dúo, ensamble y proyectos escénicos, con repertorios que cruzan música latinoamericana, tango, música académica y propuestas contemporáneas.</p></div><div class="method-item"><div class="method-number">02</div><h3 class="method-title">Piazzollamente</h3><p class="method-description">Proyecto dedicado a la música de Astor Piazzolla, dirigido por Valentina Galaz, con flauta traversa en el lugar del bandoneón y una propuesta que vincula excelencia musical, escena e identidad.</p></div><div class="method-item"><div class="method-number">03</div><h3 class="method-title">Proyectos culturales</h3><p class="method-description">Creación, dirección y circulación de propuestas musicales que articulan interpretación, territorio, comunidad y experiencia escénica.</p></div></div></div></section>
+    <section id="videos" class="videos"><div class="container"><div class="eyebrow">Videos</div><h2 class="section-title">Cómo suena y cómo se ve.</h2><p class="video-intro">Un registro central desde el Teatro de Rancagua y tres formatos que muestran una amplitud escénica real: intimidad, quinteto y escena para eventos.</p><article class="featured-video"><div class="featured-video-layout"><div class="featured-video-copy"><div><div class="embed-label">Concierto destacado · Teatro de Rancagua · 2024</div><h3>La Camorra</h3><p>Registro del show en el Teatro Regional Lucho Gatica de Rancagua: una referencia central para mostrar escala escénica, presencia interpretativa y el universo de Piazzollamente en vivo.</p><a class="video-button" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener">Mirar en YouTube</a></div></div><a class="youtube-link-card" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener" aria-label="Mirar La Camorra en YouTube"><span>Mirar en YouTube</span></a></div></article><div class="instagram-embed-grid"><article class="instagram-embed-card"><div class="embed-label">Dúo / formato íntimo</div><h3>Presencia cercana</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DRR2vJOKd8N/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DRR2vJOKd8N/" target="_blank">Ver reel en Instagram</a></blockquote></article><article class="instagram-embed-card"><div class="embed-label">Piazzollamente / quinteto</div><h3>Tango y escena</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DVE6QE_D2dg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DVE6QE_D2dg/" target="_blank">Ver reel en Instagram</a></blockquote></article><article class="instagram-embed-card"><div class="embed-label">Matrimonios / eventos</div><h3>Escena íntima</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DQz9hsHkvrV/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQz9hsHkvrV/" target="_blank">Ver reel en Instagram</a></blockquote></article></div><p class="video-note">El registro destacado se abre directamente en YouTube porque el video no permite reproducción incrustada. Los reels se cargan desde Instagram; si alguno no aparece de inmediato, usa el enlace interno del recuadro.</p></div></section>
+    <section id="contacto" class="contact"><div class="container"><div class="contact-script">Contacto</div><h2 class="contact-title">Solicitar<br>disponibilidad</h2><p>Para conciertos, proyectos culturales, colaboraciones artísticas, prensa o programación.</p><div class="contact-links"><a class="contact-link" href="mailto:valen.galaz@gmail.com">Email</a><a class="contact-link" href="https://www.instagram.com/valengalaz/" target="_blank" rel="noopener">Instagram</a><a class="contact-link" href="https://youtube.com/@valentinagalaz?si=HbTRtLUkrGw4Jc_d" target="_blank" rel="noopener">YouTube</a><a class="contact-link" href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noopener">Milonga del Ángel</a></div></div></section>
   </main>
-
-  <footer>
-    <div class="container"><span>© Valentina Galaz</span><span>Flautista · Gestora cultural</span></div>
-  </footer>
+  <footer><div class="container"><span>© Valentina Galaz</span><span>Flautista · Gestora cultural</span></div></footer>
   <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
