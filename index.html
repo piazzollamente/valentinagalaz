@@ -8,117 +8,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --black: #030303;
-      --black-soft: #0b0b0b;
-      --white: #f7f3ea;
-      --white-soft: rgba(247, 243, 234, 0.76);
-      --white-muted: rgba(247, 243, 234, 0.48);
-      --gold: #c6a15b;
-      --gold-dark: #8f6a2e;
-      --line: rgba(247, 243, 234, 0.14);
-      --display: 'Bodoni Moda', serif;
-      --serif: 'Cormorant Garamond', serif;
-      --sans: 'Montserrat', sans-serif;
-      --script: 'Allura', cursive;
-      --hero-photo: url("valentina-galaz-hero.jpg");
-      --about-photo: url("valentina-galaz-espalda.jpg");
-      --portrait-photo: url("valentina-galaz-retrato.png");
-      --stage-photo: url("valentina-galaz-escenario.jpg");
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--black); color: var(--white); font-family: var(--sans); line-height: 1.6; }
-    a { color: inherit; text-decoration: none; }
-
-    header { position: fixed; top: 0; width: 100%; z-index: 50; background: rgba(3, 3, 3, 0.84); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
-    nav { max-width: 1240px; margin: auto; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
-    .brand { font-family: var(--display); font-size: 25px; font-weight: 500; letter-spacing: 0.03em; }
-    .nav-links { display: flex; gap: 30px; align-items: center; color: var(--white-soft); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 600; }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta { border: 1px solid var(--gold-dark); color: var(--gold); border-radius: 999px; padding: 10px 15px; }
-    .nav-cta:hover { background: var(--gold); color: var(--black); }
-
-    section { padding: 100px 30px; }
-    .container { max-width: 1240px; margin: auto; }
-    .eyebrow { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.24em; font-weight: 700; margin-bottom: 24px; }
-    .script-word { font-family: var(--script); color: var(--gold); font-size: 1.85em; font-weight: 400; }
-
-    .hero { min-height: 94vh; display: grid; grid-template-columns: 0.95fr 1.05fr; align-items: center; gap: 72px; padding-top: 130px; }
-    .hero-title { font-family: var(--display); font-size: clamp(72px, 9.5vw, 154px); line-height: 0.82; letter-spacing: -0.075em; font-weight: 500; margin-bottom: 30px; }
-    .role { font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--white-soft); margin-bottom: 34px; }
-    .hero-phrase { font-family: var(--serif); font-size: clamp(36px, 4.4vw, 72px); line-height: 0.94; font-style: italic; font-weight: 400; margin-bottom: 34px; max-width: 760px; }
-    .hero-text { max-width: 650px; color: var(--white-soft); font-family: var(--serif); font-size: clamp(23px, 2.2vw, 30px); line-height: 1.28; margin-bottom: 40px; }
-    .hero-links { display: flex; gap: 28px; flex-wrap: wrap; }
-    .hero-links a { color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; transition: 0.25s ease; }
-    .hero-links a:hover { color: var(--gold); padding-bottom: 12px; }
-    .hero-image { min-height: 720px; background: linear-gradient(to right, rgba(3,3,3,0.92), rgba(3,3,3,0.12), rgba(3,3,3,0.76)), linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.92)), var(--hero-photo); background-size: cover; background-position: center; border-left: 1px solid var(--line); }
-
-    .manifesto { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: center; padding: 88px 30px; }
-    .manifesto p { max-width: 1080px; margin: auto; font-family: var(--serif); font-size: clamp(36px, 5vw, 76px); line-height: 1.02; font-style: italic; color: var(--white); }
-    .manifesto span { color: var(--gold); }
-
-    .versatility { background: var(--black-soft); border-bottom: 1px solid var(--line); }
-    .section-title { font-family: var(--display); font-size: clamp(54px, 7vw, 108px); font-weight: 500; letter-spacing: -0.07em; line-height: 0.86; margin-bottom: 44px; }
-    .intro { max-width: 930px; color: rgba(247, 243, 234, 0.88); font-family: var(--serif); font-size: clamp(24px, 2vw, 30px); line-height: 1.28; margin-bottom: 62px; }
-    .paths-grid { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: stretch; padding-top: 26px; }
-    .paths-grid::before { content: ""; position: absolute; left: 0; right: 0; top: 34px; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(198, 161, 91, 0.28) 10%, rgba(198, 161, 91, 0.28) 90%, transparent 100%); }
-    .paths-grid::after { content: ""; position: absolute; top: 34px; left: -18%; width: 18%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(198, 161, 91, 0.08) 10%, rgba(198, 161, 91, 0.95) 50%, rgba(198, 161, 91, 0.08) 90%, transparent 100%); filter: drop-shadow(0 0 6px rgba(198, 161, 91, 0.35)); animation: line-travel 8s ease-in-out infinite; }
-    @keyframes line-travel { 0% { transform: translateX(0); opacity: 0; } 10% { opacity: 1; } 50% { transform: translateX(620%); opacity: 0.95; } 90% { opacity: 1; } 100% { transform: translateX(1240%); opacity: 0; } }
-    .path-card { position: relative; z-index: 1; border: 1px solid var(--line); background: rgba(247, 243, 234, 0.02); padding: 56px 28px 30px; min-height: 330px; overflow: hidden; }
-    .path-card::before { content: ""; position: absolute; top: 28px; left: 28px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 6px rgba(198, 161, 91, 0.08); }
-    .path-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 18px; padding-top: 8px; }
-    .path-card h3 { font-family: var(--display); font-size: clamp(24px, 2.2vw, 42px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 500; margin-bottom: 18px; }
-    .path-card p { color: rgba(247, 243, 234, 0.84); font-size: 16px; line-height: 1.72; }
-
-    .projects { border-bottom: 1px solid var(--line); }
-    .projects-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 34px; align-items: stretch; }
-    .projects-image { min-height: 520px; background: linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.82)), var(--stage-photo); background-size: cover; background-position: center; border: 1px solid var(--line); }
-    .project-list { border: 1px solid var(--line); background: var(--black-soft); padding: 34px; display: grid; gap: 28px; }
-    .project-item { border-top: 1px solid var(--line); padding-top: 22px; }
-    .project-item:first-child { border-top: 0; padding-top: 0; }
-    .project-item .path-label { margin-bottom: 10px; padding-top: 0; }
-    .project-item h3 { font-family: var(--display); font-size: clamp(32px, 4vw, 62px); line-height: 0.9; letter-spacing: -0.06em; font-weight: 500; margin-bottom: 14px; }
-    .project-item p { color: var(--white-soft); font-size: 15px; line-height: 1.75; max-width: 760px; }
-
-    .archive-entry { background: linear-gradient(90deg, #030303, #0f0f0f); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 64px 30px; }
-    .archive-inner { max-width: 1240px; margin: auto; display: grid; grid-template-columns: 0.54fr 1.1fr auto; gap: 34px; align-items: center; }
-    .archive-title { font-family: var(--display); font-size: clamp(38px, 4.8vw, 78px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; }
-    .archive-copy { color: var(--white-soft); font-family: var(--serif); font-size: clamp(22px, 2vw, 30px); line-height: 1.16; max-width: 640px; }
-    .text-link { color: var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; white-space: nowrap; }
-
-    .contact { min-height: 64vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
-    .contact::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(3,3,3,0.74), rgba(3,3,3,0.9)), var(--portrait-photo); background-size: cover; background-position: center; opacity: 0.22; z-index: 0; }
-    .contact .container { position: relative; z-index: 2; }
-    .contact-script { font-family: var(--script); color: var(--gold); font-size: clamp(84px, 11vw, 160px); line-height: 0.6; margin-bottom: 36px; }
-    .contact-title { font-family: var(--display); font-size: clamp(66px, 9vw, 148px); line-height: 0.82; letter-spacing: -0.075em; font-weight: 500; margin-bottom: 34px; }
-    .contact p { max-width: 760px; margin: 0 auto 38px; color: var(--white-soft); font-family: var(--serif); font-size: clamp(25px, 2.5vw, 32px); line-height: 1.24; }
-    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
-    .contact-link { display: inline-block; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 15px 28px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; transition: 0.25s ease; background: rgba(3,3,3,0.35); }
-    .contact-link:hover { background: var(--gold); color: var(--black); }
-
-    footer { border-top: 1px solid var(--line); padding: 34px 30px; color: var(--white-muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; }
-    footer .container { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-
-    @media (prefers-reduced-motion: reduce) { .paths-grid::after { animation: none; } }
-    @media (max-width: 1280px) { .paths-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .paths-grid::before, .paths-grid::after { display: none; } }
-    @media (max-width: 1080px) { .projects-layout, .archive-inner { grid-template-columns: 1fr; } .projects-image { min-height: 460px; } }
-    @media (max-width: 960px) { .nav-links { display: none; } .hero { grid-template-columns: 1fr; } .hero-image { min-height: 520px; order: -1; border-left: none; } }
-    @media (max-width: 700px) { .paths-grid { grid-template-columns: 1fr; } .path-card { min-height: auto; } }
-    @media (max-width: 620px) { section { padding: 86px 22px; } nav { padding: 18px 22px; } .brand { font-size: 22px; } .hero { padding-top: 100px; gap: 40px; } .hero-image { min-height: 420px; } .hero-links a { width: 100%; text-align: center; } .path-card, .project-list { padding: 24px; } .path-card { padding-top: 56px; } .path-card::before { left: 24px; } .archive-entry { padding: 52px 22px; } .contact-links { flex-direction: column; align-items: center; } .contact-link { width: 100%; max-width: 320px; } }
+    :root{--black:#030303;--black-soft:#0b0b0b;--white:#f7f3ea;--white-soft:rgba(247,243,234,.78);--white-muted:rgba(247,243,234,.48);--gold:#c6a15b;--gold-dark:#8f6a2e;--line:rgba(247,243,234,.14);--display:'Bodoni Moda',serif;--serif:'Cormorant Garamond',serif;--sans:'Montserrat',sans-serif;--script:'Allura',cursive;--hero-photo:url('valentina-galaz-hero.jpg');--portrait-photo:url('valentina-galaz-retrato.png');--stage-photo:url('valentina-galaz-escenario.jpg')}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--black);color:var(--white);font-family:var(--sans);line-height:1.6}a{color:inherit;text-decoration:none}
+    header{position:fixed;top:0;width:100%;z-index:50;background:rgba(3,3,3,.84);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}nav{max-width:1240px;margin:auto;padding:20px 30px;display:flex;justify-content:space-between;align-items:center}.brand{font-family:var(--display);font-size:25px;font-weight:500;letter-spacing:.03em}.nav-links{display:flex;gap:30px;align-items:center;color:var(--white-soft);font-size:10px;text-transform:uppercase;letter-spacing:.18em;font-weight:600}.nav-links a:hover{color:var(--gold)}.nav-cta{border:1px solid var(--gold-dark);color:var(--gold);border-radius:999px;padding:10px 15px}.nav-cta:hover{background:var(--gold);color:var(--black)}
+    section{padding:92px 30px}.container{max-width:1240px;margin:auto}.eyebrow{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.24em;font-weight:700;margin-bottom:24px}.script-word{font-family:var(--script);color:var(--gold);font-size:1.85em;font-weight:400}.section-title{font-family:var(--display);font-size:clamp(48px,6.6vw,104px);font-weight:500;letter-spacing:-.07em;line-height:.86;margin-bottom:34px}.text-link{color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;border-bottom:1px solid var(--gold);padding-bottom:8px;white-space:nowrap;width:fit-content}
+    .hero{min-height:88vh;display:grid;grid-template-columns:.96fr 1.04fr;align-items:center;gap:70px;padding-top:132px}.hero-title{font-family:var(--display);font-size:clamp(72px,9.5vw,154px);line-height:.82;letter-spacing:-.075em;font-weight:500;margin-bottom:30px}.role{font-size:12px;text-transform:uppercase;letter-spacing:.22em;color:var(--white-soft);margin-bottom:34px}.hero-phrase{font-family:var(--serif);font-size:clamp(35px,4.3vw,70px);line-height:.96;font-style:italic;font-weight:400;margin-bottom:34px;max-width:760px}.hero-text{max-width:660px;color:var(--white-soft);font-family:var(--serif);font-size:clamp(23px,2.2vw,30px);line-height:1.28;margin-bottom:38px}.hero-links{display:flex;gap:28px;flex-wrap:wrap}.hero-links a{color:var(--white);font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;border-bottom:1px solid var(--gold);padding-bottom:8px;transition:.25s ease}.hero-links a:hover{color:var(--gold);padding-bottom:12px}.hero-image{min-height:680px;background:linear-gradient(to right,rgba(3,3,3,.92),rgba(3,3,3,.12),rgba(3,3,3,.76)),linear-gradient(to bottom,rgba(3,3,3,.08),rgba(3,3,3,.92)),var(--hero-photo);background-size:cover;background-position:center;border-left:1px solid var(--line)}
+    .marquee-section{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:52px 0}.marquee{width:100%;overflow:hidden;white-space:nowrap}.marquee-track{display:inline-flex;gap:34px;width:max-content;animation:marquee-left 34s linear infinite}.marquee-right .marquee-track{animation-name:marquee-right;animation-duration:38s}.marquee-track span{font-family:var(--display);font-size:clamp(34px,5vw,78px);line-height:1;letter-spacing:-.055em;color:var(--white-muted)}.marquee-track span::after{content:'✦';color:var(--gold);font-size:.42em;margin-left:34px;vertical-align:middle}.marquee-center{margin:24px 0;text-align:center;font-family:var(--script);font-size:clamp(72px,10vw,154px);line-height:.72;color:var(--gold)}@keyframes marquee-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes marquee-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+    .overview{background:var(--black-soft);border-bottom:1px solid var(--line)}.overview-intro{max-width:980px;color:rgba(247,243,234,.88);font-family:var(--serif);font-size:clamp(24px,2vw,30px);line-height:1.28;margin-bottom:50px}.overview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.overview-card{border:1px solid var(--line);background:rgba(247,243,234,.02);padding:30px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}.card-label{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;margin-bottom:18px}.overview-card h3{font-family:var(--display);font-size:clamp(27px,2.6vw,46px);line-height:.94;letter-spacing:-.05em;font-weight:500;margin-bottom:18px}.overview-card p{color:rgba(247,243,234,.84);font-size:15px;line-height:1.72}.overview-card .text-link{margin-top:26px}
+    .archive-entry{background:linear-gradient(90deg,#030303,#0f0f0f);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:58px 30px}.archive-inner{max-width:1240px;margin:auto;display:grid;grid-template-columns:.54fr 1.1fr auto;gap:34px;align-items:center}.archive-title{font-family:var(--display);font-size:clamp(38px,4.8vw,78px);line-height:.88;letter-spacing:-.065em;font-weight:500}.archive-copy{color:var(--white-soft);font-family:var(--serif);font-size:clamp(22px,2vw,30px);line-height:1.16;max-width:660px}
+    footer{border-top:1px solid var(--line);padding:34px 30px;color:var(--white-muted);font-size:10px;text-transform:uppercase;letter-spacing:.18em}footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{color:var(--gold)}
+    @media(prefers-reduced-motion:reduce){.marquee-track{animation:none;transform:none}}@media(max-width:1180px){.overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-inner{grid-template-columns:1fr}}@media(max-width:960px){.nav-links{display:none}.hero{grid-template-columns:1fr}.hero-image{min-height:520px;order:-1;border-left:none}}@media(max-width:700px){.overview-grid{grid-template-columns:1fr}.overview-card{min-height:auto}}@media(max-width:620px){section{padding:82px 22px}nav{padding:18px 22px}.brand{font-size:22px}.hero{padding-top:100px;gap:40px}.hero-image{min-height:420px}.hero-links a{width:100%;text-align:center}.archive-entry{padding:52px 22px}footer .container{display:grid;gap:18px}}
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <a href="#" class="brand">Valentina Galaz</a>
+      <a href="index.html" class="brand">Valentina Galaz</a>
       <div class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#versatilidad">Versatilidad</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#archivo">Archivo</a>
-        <a href="#contacto" class="nav-cta">Contacto</a>
+        <a href="index.html">Inicio</a>
+        <a href="recursos.html">Audio y video</a>
+        <a href="historia.html">Historia</a>
+        <a href="archivo.html">Archivo</a>
+        <a href="mailto:valen.galaz@gmail.com" class="nav-cta">Contacto</a>
       </div>
     </nav>
   </header>
@@ -130,71 +41,57 @@
         <h1 class="hero-title">Valentina<br>Galaz</h1>
         <div class="role">Flautista chilena · Intérprete · Directora artística</div>
         <h2 class="hero-phrase"><span class="script-word">Escena</span>, territorio y voz propia.</h2>
-        <p class="hero-text">Desde la flauta traversa, Valentina Galaz construye un lenguaje artístico entre repertorio latinoamericano, música contemporánea, tango, investigación y presencia escénica.</p>
+        <p class="hero-text">Desde la flauta traversa, Valentina Galaz construye un lenguaje artístico entre repertorio latinoamericano, música contemporánea, tango, investigación, formación y presencia escénica.</p>
         <div class="hero-links">
-          <a href="#versatilidad">Ver versatilidad</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#archivo">Archivo artístico</a>
+          <a href="historia.html">Leer historia</a>
+          <a href="recursos.html">Audio y video</a>
+          <a href="archivo.html">Archivo artístico</a>
         </div>
       </div>
       <div class="hero-image" aria-label="Valentina Galaz tocando flauta"></div>
     </section>
 
-    <section class="manifesto" aria-label="Manifiesto artístico">
-      <p>Una flautista chilena cuya voz se construye entre <span>repertorio</span>, territorio, estudio y presencia.</p>
+    <section class="marquee-section" aria-label="Países y territorios de trayectoria">
+      <div class="marquee marquee-left"><div class="marquee-track"><span>Chile</span><span>Argentina</span><span>Brasil</span><span>Paraguay</span><span>Estados Unidos</span><span>Rancagua</span><span>Santiago</span><span>Mendoza</span><span>Buenos Aires</span><span>Chile</span><span>Argentina</span><span>Brasil</span><span>Paraguay</span><span>Estados Unidos</span><span>Rancagua</span><span>Santiago</span><span>Mendoza</span><span>Buenos Aires</span></div></div>
+      <div class="marquee-center">Sonido, presencia y territorio.</div>
+      <div class="marquee marquee-right"><div class="marquee-track"><span>Orquesta</span><span>Cámara</span><span>Contemporánea</span><span>Tango</span><span>Investigación</span><span>Docencia</span><span>Gestión cultural</span><span>Orquesta</span><span>Cámara</span><span>Contemporánea</span><span>Tango</span><span>Investigación</span><span>Docencia</span><span>Gestión cultural</span></div></div>
     </section>
 
-    <section id="versatilidad" class="versatility">
+    <section class="overview">
       <div class="container">
-        <div class="eyebrow">Versatilidad artística</div>
-        <h2 class="section-title">Una trayectoria amplia, un lenguaje propio.</h2>
-        <p class="intro">Su trabajo cruza concierto, música de cámara, repertorio contemporáneo, tango, proyectos escénicos, circulación internacional, formación e investigación, manteniendo siempre una identidad reconocible desde la flauta.</p>
-        <div class="paths-grid">
-          <article class="path-card"><div class="path-label">Escena</div><h3>Presencia en vivo y experiencia escénica</h3><p>Conciertos, ensambles, festivales y proyectos musicales donde la interpretación se articula desde el cuerpo, la escucha y la relación con el espacio.</p></article>
-          <article class="path-card"><div class="path-label">Territorio</div><h3>Circulación entre países y contextos</h3><p>Un recorrido atravesado por Chile, Argentina, Brasil, Paraguay y Estados Unidos, con una sensibilidad artística profundamente latinoamericana.</p></article>
-          <article class="path-card"><div class="path-label">Repertorio</div><h3>Clásico, contemporáneo, latinoamericano y tango</h3><p>Una práctica que cruza música de cámara, orquesta, estrenos, repertorio chileno y latinoamericano, con especial conexión con Astor Piazzolla.</p></article>
-          <article class="path-card"><div class="path-label">Expansión</div><h3>Dirección artística, docencia e investigación</h3><p>La interpretación convive con la formación de flautistas, la escritura, la investigación musical y la creación de propuestas con identidad propia.</p></article>
+        <div class="eyebrow">Presentación general</div>
+        <h2 class="section-title">Una flautista, múltiples territorios.</h2>
+        <p class="overview-intro">Una flautista chilena cuya voz se construye entre repertorio, territorio, estudio y presencia. Su trayectoria cruza escenarios, investigación, proyectos propios, formación de flautistas y circulación internacional.</p>
+        <div class="overview-grid">
+          <article class="overview-card"><div><div class="card-label">Interpretación</div><h3>Escena y repertorio</h3><p>Conciertos, música de cámara, repertorio latinoamericano, contemporáneo, tango y proyectos escénicos.</p></div><a class="text-link" href="recursos.html">Ver registros</a></article>
+          <article class="overview-card"><div><div class="card-label">Trayectoria</div><h3>Historia artística</h3><p>Un recorrido iniciado en Rancagua y expandido por Chile, Argentina, Brasil, Paraguay y Estados Unidos.</p></div><a class="text-link" href="historia.html">Leer historia</a></article>
+          <article class="overview-card"><div><div class="card-label">Antecedentes</div><h3>Archivo documental</h3><p>Tesis, congresos, prensa, festivales, publicaciones y documentos institucionales reunidos como respaldo de trayectoria.</p></div><a class="text-link" href="archivo.html">Abrir archivo</a></article>
+          <article class="overview-card"><div><div class="card-label">Proyectos</div><h3>Versatilidad</h3><p>Interpretación, Piazzollamente, Escuela de Flautistas, investigación, docencia y dirección artística como líneas conectadas.</p></div><a class="text-link" href="historia.html#proyectos">Ver líneas</a></article>
         </div>
       </div>
     </section>
 
-    <section id="proyectos" class="projects">
-      <div class="container projects-layout">
-        <div class="projects-image" aria-label="Valentina Galaz en escenario"></div>
-        <div class="project-list">
-          <div class="eyebrow">Proyectos y líneas de trabajo</div>
-          <article class="project-item"><div class="path-label">Interpretación</div><h3>Flauta, escena y repertorio</h3><p>Trabajo como intérprete en repertorios clásicos, contemporáneos y latinoamericanos, en formatos solistas, de cámara, orquestales y escénicos.</p></article>
-          <article class="project-item"><div class="path-label">Piazzollamente</div><h3>Astor Piazzolla desde la flauta</h3><p>Uno de sus proyectos artísticos: una propuesta de interpretación y dirección en torno al universo de Astor Piazzolla, con la flauta como voz central dentro del ensamble.</p></article>
-          <article class="project-item"><div class="path-label">Formación</div><h3>Escuela de Flautistas</h3><p>Espacio pedagógico donde transmite herramientas técnicas, expresivas y de estudio desde una experiencia construida entre escenarios, investigación y práctica artística.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="archivo" class="archive-entry">
+    <section class="archive-entry">
       <div class="archive-inner">
         <div class="eyebrow">Archivo artístico</div>
         <div>
           <h2 class="archive-title">Publicaciones, prensa y antecedentes.</h2>
-          <p class="archive-copy">Tesis, congresos, festivales, conciertos documentados, prensa internacional y registros institucionales que respaldan una trayectoria entre interpretación, estudio y circulación.</p>
+          <p class="archive-copy">Un espacio para reunir los links, documentos y registros que respaldan una trayectoria entre interpretación, estudio, escena y circulación.</p>
         </div>
-        <a class="text-link" href="mailto:valen.galaz@gmail.com?subject=Archivo%20art%C3%ADstico%20Valentina%20Galaz">Solicitar antecedentes</a>
-      </div>
-    </section>
-
-    <section id="contacto" class="contact">
-      <div class="container">
-        <div class="contact-script">Contacto</div>
-        <h2 class="contact-title">Abrir<br>escena</h2>
-        <p>Para conciertos, programación cultural, prensa, colaboraciones, proyectos especiales y actividades formativas.</p>
-        <div class="contact-links">
-          <a class="contact-link" href="mailto:valen.galaz@gmail.com">Email</a>
-          <a class="contact-link" href="https://www.instagram.com/valengalaz/" target="_blank" rel="noopener">Instagram</a>
-          <a class="contact-link" href="https://youtube.com/@valentinagalaz?si=HbTRtLUkrGw4Jc_d" target="_blank" rel="noopener">YouTube</a>
-        </div>
+        <a class="text-link" href="archivo.html">Ver archivo</a>
       </div>
     </section>
   </main>
 
-  <footer><div class="container"><span>© Valentina Galaz</span><span>Flautista chilena · Intérprete · Directora artística</span></div></footer>
+  <footer>
+    <div class="container">
+      <span>© Valentina Galaz · Flautista chilena</span>
+      <div class="footer-links">
+        <a href="mailto:valen.galaz@gmail.com">valen.galaz@gmail.com</a>
+        <a href="https://www.instagram.com/valengalaz/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@valentinagalaz?si=HbTRtLUkrGw4Jc_d" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
