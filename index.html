@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Valentina Galaz | Flautista chilena · Directora artística</title>
+  <title>Valentina Galaz | Flautista chilena · Intérprete</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,8 +12,8 @@
       --black: #030303;
       --black-soft: #0b0b0b;
       --white: #f7f3ea;
-      --white-soft: rgba(247, 243, 234, 0.72);
-      --white-muted: rgba(247, 243, 234, 0.42);
+      --white-soft: rgba(247, 243, 234, 0.76);
+      --white-muted: rgba(247, 243, 234, 0.48);
       --gold: #c6a15b;
       --gold-dark: #8f6a2e;
       --line: rgba(247, 243, 234, 0.14);
@@ -40,13 +40,12 @@
     .nav-cta { border: 1px solid var(--gold-dark); color: var(--gold); border-radius: 999px; padding: 10px 15px; }
     .nav-cta:hover { background: var(--gold); color: var(--black); }
 
-    section { padding: 120px 30px; }
+    section { padding: 100px 30px; }
     .container { max-width: 1240px; margin: auto; }
     .eyebrow { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.24em; font-weight: 700; margin-bottom: 24px; }
-    .section-title { font-family: var(--display); font-size: clamp(54px, 7vw, 110px); font-weight: 500; letter-spacing: -0.07em; line-height: 0.86; margin-bottom: 44px; }
     .script-word { font-family: var(--script); color: var(--gold); font-size: 1.85em; font-weight: 400; }
 
-    .hero { min-height: 100vh; display: grid; grid-template-columns: 0.95fr 1.05fr; align-items: center; gap: 72px; padding-top: 130px; }
+    .hero { min-height: 94vh; display: grid; grid-template-columns: 0.95fr 1.05fr; align-items: center; gap: 72px; padding-top: 130px; }
     .hero-title { font-family: var(--display); font-size: clamp(72px, 9.5vw, 154px); line-height: 0.82; letter-spacing: -0.075em; font-weight: 500; margin-bottom: 30px; }
     .role { font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--white-soft); margin-bottom: 34px; }
     .hero-phrase { font-family: var(--serif); font-size: clamp(36px, 4.4vw, 72px); line-height: 0.94; font-style: italic; font-weight: 400; margin-bottom: 34px; max-width: 760px; }
@@ -56,85 +55,40 @@
     .hero-links a:hover { color: var(--gold); padding-bottom: 12px; }
     .hero-image { min-height: 720px; background: linear-gradient(to right, rgba(3,3,3,0.92), rgba(3,3,3,0.12), rgba(3,3,3,0.76)), linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.92)), var(--hero-photo); background-size: cover; background-position: center; border-left: 1px solid var(--line); }
 
-    .release-banner { padding: 0 30px; background: linear-gradient(90deg, #030303, #0f0f0f); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .release-inner { max-width: 1240px; margin: auto; padding: 34px 0; display: grid; grid-template-columns: 0.58fr 1.08fr auto; gap: 34px; align-items: center; }
-    .release-kicker { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.24em; font-weight: 700; }
-    .release-title { font-family: var(--display); font-size: clamp(38px, 4.8vw, 78px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; }
-    .release-copy { color: var(--white-soft); font-family: var(--serif); font-size: clamp(22px, 2vw, 30px); line-height: 1.16; max-width: 620px; }
-    .release-button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 15px 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; white-space: nowrap; transition: 0.25s ease; }
-    .release-button:hover { background: var(--gold); color: var(--black); }
-    .spotify-icon { width: 18px; height: 18px; display: inline-flex; flex-shrink: 0; }
-    .spotify-icon svg { width: 18px; height: 18px; display: block; }
+    .manifesto { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: center; padding: 88px 30px; }
+    .manifesto p { max-width: 1080px; margin: auto; font-family: var(--serif); font-size: clamp(36px, 5vw, 76px); line-height: 1.02; font-style: italic; color: var(--white); }
+    .manifesto span { color: var(--gold); }
 
-    .marquee-section { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 56px 0; }
-    .marquee { width: 100%; overflow: hidden; white-space: nowrap; }
-    .marquee-track { display: inline-flex; gap: 34px; width: max-content; animation: marquee-left 34s linear infinite; }
-    .marquee-right .marquee-track { animation-name: marquee-right; animation-duration: 38s; }
-    .marquee-track span { font-family: var(--display); font-size: clamp(34px, 5vw, 78px); line-height: 1; letter-spacing: -0.055em; color: var(--white-muted); }
-    .marquee-track span::after { content: "✦"; color: var(--gold); font-size: 0.42em; margin-left: 34px; vertical-align: middle; }
-    .marquee-center { margin: 26px 0; text-align: center; font-family: var(--script); font-size: clamp(72px, 10vw, 160px); line-height: 0.72; color: var(--gold); }
-    @keyframes marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    @keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-    @media (prefers-reduced-motion: reduce) { .marquee-track, .formats-grid::after { animation: none; transform: none; } }
+    .versatility { background: var(--black-soft); border-bottom: 1px solid var(--line); }
+    .section-title { font-family: var(--display); font-size: clamp(54px, 7vw, 108px); font-weight: 500; letter-spacing: -0.07em; line-height: 0.86; margin-bottom: 44px; }
+    .intro { max-width: 930px; color: rgba(247, 243, 234, 0.88); font-family: var(--serif); font-size: clamp(24px, 2vw, 30px); line-height: 1.28; margin-bottom: 62px; }
+    .paths-grid { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: stretch; padding-top: 26px; }
+    .paths-grid::before { content: ""; position: absolute; left: 0; right: 0; top: 34px; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(198, 161, 91, 0.28) 10%, rgba(198, 161, 91, 0.28) 90%, transparent 100%); }
+    .paths-grid::after { content: ""; position: absolute; top: 34px; left: -18%; width: 18%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(198, 161, 91, 0.08) 10%, rgba(198, 161, 91, 0.95) 50%, rgba(198, 161, 91, 0.08) 90%, transparent 100%); filter: drop-shadow(0 0 6px rgba(198, 161, 91, 0.35)); animation: line-travel 8s ease-in-out infinite; }
+    @keyframes line-travel { 0% { transform: translateX(0); opacity: 0; } 10% { opacity: 1; } 50% { transform: translateX(620%); opacity: 0.95; } 90% { opacity: 1; } 100% { transform: translateX(1240%); opacity: 0; } }
+    .path-card { position: relative; z-index: 1; border: 1px solid var(--line); background: rgba(247, 243, 234, 0.02); padding: 56px 28px 30px; min-height: 330px; overflow: hidden; }
+    .path-card::before { content: ""; position: absolute; top: 28px; left: 28px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 6px rgba(198, 161, 91, 0.08); }
+    .path-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 18px; padding-top: 8px; }
+    .path-card h3 { font-family: var(--display); font-size: clamp(24px, 2.2vw, 42px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 500; margin-bottom: 18px; }
+    .path-card p { color: rgba(247, 243, 234, 0.84); font-size: 16px; line-height: 1.72; }
 
-    .about { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 54px; align-items: start; border-bottom: 1px solid var(--line); }
-    .about-photo { min-height: 760px; background: linear-gradient(to bottom, rgba(3,3,3,0.04), rgba(3,3,3,0.88)), var(--about-photo); background-size: cover; background-position: center; border: 1px solid var(--line); }
-    .ornate-text { font-family: var(--serif); color: rgba(247, 243, 234, 0.86); font-size: clamp(27px, 3vw, 44px); line-height: 1.22; max-width: 870px; }
-    .ornate-text::first-letter { font-family: var(--script); color: var(--gold); float: left; font-size: 8.3rem; line-height: 0.58; margin-right: 0.16em; margin-top: 0.1em; }
-    .ornate-text strong, .bio-note strong { color: var(--white); font-weight: 600; }
-    .about-highlight { display: flex; align-items: flex-start; gap: 16px; margin: 34px 0 26px; max-width: 760px; }
-    .about-highlight-line { width: 36px; height: 1px; background: var(--gold); margin-top: 16px; flex-shrink: 0; }
-    .about-highlight p { font-family: var(--serif); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.25; color: var(--white); font-style: italic; }
-    .about-stage-image { margin: 38px 0 8px; min-height: 620px; background: linear-gradient(to right, rgba(3,3,3,0.10), rgba(3,3,3,0.02), rgba(3,3,3,0.20)), linear-gradient(to bottom, rgba(3,3,3,0.02), rgba(3,3,3,0.52)), var(--stage-photo); background-size: cover; background-position: center; border: 1px solid var(--line); }
-    .bio-note { margin-top: 24px; max-width: 790px; color: rgba(247, 243, 234, 0.82); font-size: 17px; line-height: 1.9; border-top: 1px solid var(--line); padding-top: 24px; }
-    .bio-points { margin-top: 34px; display: grid; gap: 16px; max-width: 790px; }
-    .bio-point { border-top: 1px solid var(--line); padding-top: 16px; color: rgba(247, 243, 234, 0.78); font-size: 16px; line-height: 1.8; letter-spacing: 0.01em; }
-    .bio-label { display: block; color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; margin-bottom: 8px; }
+    .projects { border-bottom: 1px solid var(--line); }
+    .projects-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 34px; align-items: stretch; }
+    .projects-image { min-height: 520px; background: linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.82)), var(--stage-photo); background-size: cover; background-position: center; border: 1px solid var(--line); }
+    .project-list { border: 1px solid var(--line); background: var(--black-soft); padding: 34px; display: grid; gap: 28px; }
+    .project-item { border-top: 1px solid var(--line); padding-top: 22px; }
+    .project-item:first-child { border-top: 0; padding-top: 0; }
+    .project-item .path-label { margin-bottom: 10px; padding-top: 0; }
+    .project-item h3 { font-family: var(--display); font-size: clamp(32px, 4vw, 62px); line-height: 0.9; letter-spacing: -0.06em; font-weight: 500; margin-bottom: 14px; }
+    .project-item p { color: var(--white-soft); font-size: 15px; line-height: 1.75; max-width: 760px; }
 
-    .formats { background: var(--black-soft); border-bottom: 1px solid var(--line); }
-    .formats-intro { max-width: 980px; color: rgba(247, 243, 234, 0.88); font-family: var(--serif); font-size: clamp(24px, 2vw, 30px); line-height: 1.28; margin-bottom: 62px; }
-    .formats-grid { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: stretch; padding-top: 26px; }
-    .formats-grid::before { content: ""; position: absolute; left: 0; right: 0; top: 34px; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(198, 161, 91, 0.28) 10%, rgba(198, 161, 91, 0.28) 90%, transparent 100%); }
-    .formats-grid::after { content: ""; position: absolute; top: 34px; left: -18%; width: 18%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(198, 161, 91, 0.08) 10%, rgba(198, 161, 91, 0.95) 50%, rgba(198, 161, 91, 0.08) 90%, transparent 100%); filter: drop-shadow(0 0 6px rgba(198, 161, 91, 0.35)); animation: formats-line-travel 8s ease-in-out infinite; }
-    @keyframes formats-line-travel { 0% { transform: translateX(0); opacity: 0; } 10% { opacity: 1; } 50% { transform: translateX(620%); opacity: 0.95; } 90% { opacity: 1; } 100% { transform: translateX(1240%); opacity: 0; } }
-    .format-card { position: relative; z-index: 1; border: 1px solid var(--line); background: rgba(247, 243, 234, 0.02); padding: 56px 28px 30px; min-height: 340px; display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden; }
-    .format-card::before { content: ""; position: absolute; top: 28px; left: 28px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 6px rgba(198, 161, 91, 0.08); }
-    .format-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 18px; padding-top: 8px; }
-    .format-card h3 { font-family: var(--display); font-size: clamp(24px, 2.2vw, 42px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 500; margin-bottom: 18px; max-width: 100%; overflow-wrap: anywhere; word-break: normal; hyphens: auto; }
-    .format-card p { color: rgba(247, 243, 234, 0.84); font-size: 16px; line-height: 1.72; max-width: 100%; }
-    .format-card a { display: none !important; }
+    .archive-entry { background: linear-gradient(90deg, #030303, #0f0f0f); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 64px 30px; }
+    .archive-inner { max-width: 1240px; margin: auto; display: grid; grid-template-columns: 0.54fr 1.1fr auto; gap: 34px; align-items: center; }
+    .archive-title { font-family: var(--display); font-size: clamp(38px, 4.8vw, 78px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; }
+    .archive-copy { color: var(--white-soft); font-family: var(--serif); font-size: clamp(22px, 2vw, 30px); line-height: 1.16; max-width: 640px; }
+    .text-link { color: var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; white-space: nowrap; }
 
-    .videos { background: var(--black); border-bottom: 1px solid var(--line); }
-    .video-intro { max-width: 760px; color: rgba(247, 243, 234, 0.82); font-family: var(--serif); font-size: 30px; line-height: 1.22; margin-bottom: 58px; }
-    .featured-video { border: 1px solid var(--line); background: var(--black-soft); margin-bottom: 34px; }
-    .featured-video-layout { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: 1px; background: var(--line); }
-    .featured-video-copy { background: var(--black-soft); padding: 34px; min-height: 360px; }
-    .featured-video-copy .embed-label, .social-card .embed-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 18px; }
-    .featured-video-copy h3 { font-family: var(--display); font-size: clamp(42px, 5vw, 74px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; margin-bottom: 22px; }
-    .featured-video-copy p { color: var(--white-soft); font-size: 15px; line-height: 1.8; max-width: 460px; }
-    .video-button { display: inline-block; margin-top: 26px; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 14px 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; }
-    .video-button:hover { background: var(--gold); color: var(--black); }
-    .youtube-link-card { position: relative; min-height: 360px; background: linear-gradient(to bottom, rgba(3,3,3,0.12), rgba(3,3,3,0.76)), url("https://img.youtube.com/vi/8YdsLFozZGU/maxresdefault.jpg"); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
-    .youtube-link-card::before { content: "▶"; width: 92px; height: 92px; border: 1px solid rgba(247,243,234,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); background: rgba(3,3,3,0.48); font-size: 36px; padding-left: 7px; transition: 0.25s ease; }
-    .youtube-link-card:hover::before { background: var(--gold); color: var(--black); border-color: var(--gold); }
-    .youtube-link-card span { position: absolute; left: 32px; bottom: 28px; color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; }
-    .instagram-embed-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
-    .social-card { min-height: 640px; border: 1px solid var(--line); background: var(--black-soft); display: flex; flex-direction: column; overflow: hidden; transition: 0.3s ease; }
-    .social-card:hover { transform: translateY(-6px); border-color: rgba(198, 161, 91, 0.52); }
-    .social-thumb { position: relative; min-height: 390px; background-size: cover; background-position: center; overflow: hidden; }
-    .social-thumb::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(3,3,3,0.10), rgba(3,3,3,0.76)); z-index: 1; }
-    .social-thumb::after { content: "▶"; position: absolute; inset: 0; margin: auto; width: 74px; height: 74px; border: 1px solid rgba(247,243,234,0.52); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); background: rgba(3,3,3,0.42); font-size: 28px; padding-left: 6px; z-index: 2; transition: 0.25s ease; }
-    .social-card:hover .social-thumb::after { background: var(--gold); color: var(--black); border-color: var(--gold); }
-    .social-thumb-one { background-image: linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.50)), var(--hero-photo); }
-    .social-thumb-two { background-image: linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.50)), var(--stage-photo); }
-    .social-thumb-three { background-image: linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.50)), var(--about-photo); }
-    .social-copy { padding: 28px; display: flex; flex-direction: column; flex: 1; }
-    .social-copy h3 { font-family: var(--display); font-size: clamp(36px, 3vw, 54px); line-height: 0.9; letter-spacing: -0.06em; font-weight: 500; margin-bottom: 20px; }
-    .social-copy p { color: var(--white-soft); font-size: 14px; line-height: 1.75; margin-bottom: 26px; }
-    .social-link { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; width: fit-content; margin-top: auto; }
-    .video-note { margin-top: 28px; color: var(--white-muted); font-size: 13px; line-height: 1.7; max-width: 760px; }
-
-    .contact { min-height: 78vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
+    .contact { min-height: 64vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
     .contact::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(3,3,3,0.74), rgba(3,3,3,0.9)), var(--portrait-photo); background-size: cover; background-position: center; opacity: 0.22; z-index: 0; }
     .contact .container { position: relative; z-index: 2; }
     .contact-script { font-family: var(--script); color: var(--gold); font-size: clamp(84px, 11vw, 160px); line-height: 0.6; margin-bottom: 36px; }
@@ -147,47 +101,12 @@
     footer { border-top: 1px solid var(--line); padding: 34px 30px; color: var(--white-muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; }
     footer .container { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
-    @media (max-width: 1280px) {
-      .formats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .formats-grid::before, .formats-grid::after { display: none; }
-    }
-    @media (max-width: 1080px) {
-      .about { grid-template-columns: 1fr; }
-      .about-photo { min-height: 500px; }
-      .release-inner, .featured-video-layout { grid-template-columns: 1fr; }
-      .instagram-embed-grid { grid-template-columns: 1fr; }
-      .about-stage-image { min-height: 540px; }
-      .social-card { min-height: auto; }
-      .social-thumb { min-height: 440px; }
-    }
-    @media (max-width: 960px) {
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-image { min-height: 520px; order: -1; border-left: none; }
-    }
-    @media (max-width: 700px) {
-      .formats-grid { grid-template-columns: 1fr; }
-      .format-card { min-height: auto; }
-    }
-    @media (max-width: 620px) {
-      section { padding: 86px 22px; }
-      nav { padding: 18px 22px; }
-      .brand { font-size: 22px; }
-      .hero { padding-top: 100px; gap: 40px; }
-      .hero-image { min-height: 420px; }
-      .hero-links a, .release-button { width: 100%; text-align: center; }
-      .release-banner { padding: 0 22px; }
-      .release-inner { padding: 28px 0; }
-      .ornate-text::first-letter { font-size: 6.2rem; }
-      .format-card, .featured-video-copy, .social-copy { padding: 24px; min-height: auto; }
-      .format-card { padding-top: 56px; }
-      .format-card::before { left: 24px; }
-      .about-stage-image { min-height: 440px; margin: 30px 0 4px; }
-      .youtube-link-card { min-height: 260px; }
-      .social-thumb { min-height: 360px; }
-      .contact-links { flex-direction: column; align-items: center; }
-      .contact-link { width: 100%; max-width: 320px; }
-    }
+    @media (prefers-reduced-motion: reduce) { .paths-grid::after { animation: none; } }
+    @media (max-width: 1280px) { .paths-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .paths-grid::before, .paths-grid::after { display: none; } }
+    @media (max-width: 1080px) { .projects-layout, .archive-inner { grid-template-columns: 1fr; } .projects-image { min-height: 460px; } }
+    @media (max-width: 960px) { .nav-links { display: none; } .hero { grid-template-columns: 1fr; } .hero-image { min-height: 520px; order: -1; border-left: none; } }
+    @media (max-width: 700px) { .paths-grid { grid-template-columns: 1fr; } .path-card { min-height: auto; } }
+    @media (max-width: 620px) { section { padding: 86px 22px; } nav { padding: 18px 22px; } .brand { font-size: 22px; } .hero { padding-top: 100px; gap: 40px; } .hero-image { min-height: 420px; } .hero-links a { width: 100%; text-align: center; } .path-card, .project-list { padding: 24px; } .path-card { padding-top: 56px; } .path-card::before { left: 24px; } .archive-entry { padding: 52px 22px; } .contact-links { flex-direction: column; align-items: center; } .contact-link { width: 100%; max-width: 320px; } }
   </style>
 </head>
 <body>
@@ -195,10 +114,10 @@
     <nav>
       <a href="#" class="brand">Valentina Galaz</a>
       <div class="nav-links">
-        <a href="#quien-soy">Relato</a>
-        <a href="#formatos">Lenguaje</a>
-        <a href="#piazzollamente">Piazzollamente</a>
-        <a href="#videos">Registros</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#versatilidad">Versatilidad</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#archivo">Archivo</a>
         <a href="#contacto" class="nav-cta">Contacto</a>
       </div>
     </nav>
@@ -211,88 +130,54 @@
         <h1 class="hero-title">Valentina<br>Galaz</h1>
         <div class="role">Flautista chilena · Intérprete · Directora artística</div>
         <h2 class="hero-phrase"><span class="script-word">Escena</span>, territorio y voz propia.</h2>
-        <p class="hero-text">Una artista formada por la vida, el viaje y la búsqueda de un sonido propio. Desde la flauta traversa, Valentina habita repertorios clásicos, contemporáneos y latinoamericanos con una presencia profundamente escénica.</p>
+        <p class="hero-text">Desde la flauta traversa, Valentina Galaz construye un lenguaje artístico entre repertorio latinoamericano, música contemporánea, tango, investigación y presencia escénica.</p>
         <div class="hero-links">
-          <a href="#quien-soy">Leer relato</a>
-          <a href="#piazzollamente">Piazzollamente</a>
-          <a href="#videos">Ver registros</a>
+          <a href="#versatilidad">Ver versatilidad</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#archivo">Archivo artístico</a>
         </div>
       </div>
-      <div class="hero-image"></div>
+      <div class="hero-image" aria-label="Valentina Galaz tocando flauta"></div>
     </section>
 
-    <section class="marquee-section" aria-label="Trayectoria y universo artístico">
-      <div class="marquee marquee-left"><div class="marquee-track"><span>Chile</span><span>Argentina</span><span>Brasil</span><span>Paraguay</span><span>Estados Unidos</span><span>Rancagua</span><span>Santiago</span><span>Mendoza</span><span>Buenos Aires</span><span>Chile</span><span>Argentina</span><span>Brasil</span><span>Paraguay</span><span>Estados Unidos</span><span>Rancagua</span><span>Santiago</span><span>Mendoza</span><span>Buenos Aires</span></div></div>
-      <div class="marquee-center">Sonido, presencia y territorio.</div>
-      <div class="marquee marquee-right"><div class="marquee-track"><span>Orquestas</span><span>Ensambles</span><span>Música de cámara</span><span>Festivales</span><span>Estrenos</span><span>Música contemporánea</span><span>Proyectos escénicos</span><span>Orquestas</span><span>Ensambles</span><span>Música de cámara</span><span>Festivales</span><span>Estrenos</span><span>Música contemporánea</span><span>Proyectos escénicos</span></div></div>
+    <section class="manifesto" aria-label="Manifiesto artístico">
+      <p>Una flautista chilena cuya voz se construye entre <span>repertorio</span>, territorio, estudio y presencia.</p>
     </section>
 
-    <section id="quien-soy">
-      <div class="container about">
-        <div class="about-copy">
-          <div class="eyebrow">Relato artístico</div>
-          <h2 class="section-title">Una intérprete formada por la escena, el viaje y la búsqueda.</h2>
-          <p class="ornate-text">Valentina Galaz no llega a la música como quien entra a una sala ya iluminada: llega como quien aprende a encender su propia escena. Su historia comienza en Rancagua, entre las primeras clases de flauta, las orquestas infantiles y juveniles, y una intuición temprana: la música sería una forma de atravesar la vida.</p>
-          <div class="about-highlight"><span class="about-highlight-line"></span><p>Una flautista chilena cuya voz se construye entre repertorio, territorio, estudio y presencia.</p></div>
-          <div class="about-stage-image" aria-label="Valentina Galaz tocando flauta en escenario"></div>
-          <p class="bio-note">Desde Rancagua hacia Santiago, Argentina, Brasil, Paraguay y Estados Unidos, su trayectoria se despliega en repertorio clásico, música contemporánea, música latinoamericana, tango y la obra de <strong>Astor Piazzolla</strong>.</p>
-          <p class="bio-note">Formada como <strong>Licenciada en Flauta Traversa</strong> por la Universidad Nacional de Cuyo, su trabajo integra interpretación, investigación musical, docencia, gestión cultural y dirección artística. La flauta aparece en su camino no como instrumento secundario, sino como una voz central: íntima, intensa, latinoamericana y profundamente personal.</p>
-          <div class="bio-points">
-            <div class="bio-point"><span class="bio-label">Origen</span>Rancagua como punto de partida: primeras clases, orquestas juveniles y una relación temprana con la escena.</div>
-            <div class="bio-point"><span class="bio-label">Formación</span>Licenciada en Flauta Traversa por la Universidad Nacional de Cuyo, con estudios y perfeccionamiento en Chile, Argentina y Brasil.</div>
-            <div class="bio-point"><span class="bio-label">Circulación</span>Experiencia artística y formativa en Chile, Argentina, Brasil, Paraguay y Estados Unidos.</div>
-            <div class="bio-point"><span class="bio-label">Presente</span>Directora artística y flautista de Piazzollamente; creadora de espacios de formación desde la Escuela de Flautistas.</div>
-          </div>
-        </div>
-        <div class="about-photo"></div>
-      </div>
-    </section>
-
-    <section id="formatos" class="formats">
+    <section id="versatilidad" class="versatility">
       <div class="container">
         <div class="eyebrow">Versatilidad artística</div>
         <h2 class="section-title">Una trayectoria amplia, un lenguaje propio.</h2>
-        <p class="formats-intro">La versatilidad de Valentina no nace de dispersión, sino de profundidad. Su trabajo cruza concierto, música de cámara, repertorio contemporáneo, tango, proyectos escénicos, circulación internacional, formación y dirección artística, manteniendo siempre una identidad reconocible desde la flauta.</p>
-        <div class="formats-grid">
-          <article class="format-card"><div class="format-label">Escena</div><h3>Presencia en vivo y experiencia escénica</h3><p>Conciertos, ensambles, festivales y proyectos musicales donde la interpretación se articula desde el cuerpo, la escucha y la relación con el espacio.</p></article>
-          <article class="format-card"><div class="format-label">Territorio</div><h3>Circulación entre países y contextos</h3><p>Un recorrido atravesado por Chile, Argentina, Brasil, Paraguay y Estados Unidos, que expande su mirada artística y refuerza una sensibilidad profundamente latinoamericana.</p></article>
-          <article class="format-card"><div class="format-label">Repertorio</div><h3>Clásico, contemporáneo, latinoamericano y tango</h3><p>Su práctica cruza música de cámara, orquesta, estrenos, repertorio chileno y latinoamericano, con una conexión especialmente fuerte con la obra de Astor Piazzolla.</p></article>
-          <article class="format-card"><div class="format-label">Expansión</div><h3>Dirección artística, docencia y gestión cultural</h3><p>La interpretación convive con la investigación musical, la formación de flautistas, la creación de proyectos y la construcción de propuestas con identidad propia.</p></article>
+        <p class="intro">Su trabajo cruza concierto, música de cámara, repertorio contemporáneo, tango, proyectos escénicos, circulación internacional, formación e investigación, manteniendo siempre una identidad reconocible desde la flauta.</p>
+        <div class="paths-grid">
+          <article class="path-card"><div class="path-label">Escena</div><h3>Presencia en vivo y experiencia escénica</h3><p>Conciertos, ensambles, festivales y proyectos musicales donde la interpretación se articula desde el cuerpo, la escucha y la relación con el espacio.</p></article>
+          <article class="path-card"><div class="path-label">Territorio</div><h3>Circulación entre países y contextos</h3><p>Un recorrido atravesado por Chile, Argentina, Brasil, Paraguay y Estados Unidos, con una sensibilidad artística profundamente latinoamericana.</p></article>
+          <article class="path-card"><div class="path-label">Repertorio</div><h3>Clásico, contemporáneo, latinoamericano y tango</h3><p>Una práctica que cruza música de cámara, orquesta, estrenos, repertorio chileno y latinoamericano, con especial conexión con Astor Piazzolla.</p></article>
+          <article class="path-card"><div class="path-label">Expansión</div><h3>Dirección artística, docencia e investigación</h3><p>La interpretación convive con la formación de flautistas, la escritura, la investigación musical y la creación de propuestas con identidad propia.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="piazzollamente" class="release-banner" aria-label="Proyecto artístico principal">
-      <div class="release-inner">
-        <div class="release-kicker">PROYECTO PRINCIPAL</div>
+    <section id="proyectos" class="projects">
+      <div class="container projects-layout">
+        <div class="projects-image" aria-label="Valentina Galaz en escenario"></div>
+        <div class="project-list">
+          <div class="eyebrow">Proyectos y líneas de trabajo</div>
+          <article class="project-item"><div class="path-label">Interpretación</div><h3>Flauta, escena y repertorio</h3><p>Trabajo como intérprete en repertorios clásicos, contemporáneos y latinoamericanos, en formatos solistas, de cámara, orquestales y escénicos.</p></article>
+          <article class="project-item"><div class="path-label">Piazzollamente</div><h3>Astor Piazzolla desde la flauta</h3><p>Uno de sus proyectos artísticos: una propuesta de interpretación y dirección en torno al universo de Astor Piazzolla, con la flauta como voz central dentro del ensamble.</p></article>
+          <article class="project-item"><div class="path-label">Formación</div><h3>Escuela de Flautistas</h3><p>Espacio pedagógico donde transmite herramientas técnicas, expresivas y de estudio desde una experiencia construida entre escenarios, investigación y práctica artística.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="archivo" class="archive-entry">
+      <div class="archive-inner">
+        <div class="eyebrow">Archivo artístico</div>
         <div>
-          <h2 class="release-title">Piazzollamente: la flauta dentro del universo de Astor Piazzolla.</h2>
-          <p class="release-copy">Dirección artística, interpretación y propuesta escénico-musical en torno a la obra de Piazzolla.</p>
+          <h2 class="archive-title">Publicaciones, prensa y antecedentes.</h2>
+          <p class="archive-copy">Tesis, congresos, festivales, conciertos documentados, prensa internacional y registros institucionales que respaldan una trayectoria entre interpretación, estudio y circulación.</p>
         </div>
-        <a class="release-button" href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noopener" aria-label="Escuchar Milonga del Ángel en Spotify">
-          <span class="spotify-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M17.4 16.2c-2.8-1.7-6.4-2.1-10.5-1.1" stroke="#030303" stroke-width="1.5" stroke-linecap="round"/><path d="M18.9 12.8c-3.2-2-8.1-2.5-12-1.4" stroke="#030303" stroke-width="1.8" stroke-linecap="round"/><path d="M19.1 9.4C15.2 7.1 8.8 6.9 5.1 8" stroke="#030303" stroke-width="2" stroke-linecap="round"/></svg></span>
-          <span>Escuchar Milonga</span>
-        </a>
-      </div>
-    </section>
-
-    <section id="videos" class="videos">
-      <div class="container">
-        <div class="eyebrow">Registros</div>
-        <h2 class="section-title">Cómo suena y cómo se ve.</h2>
-        <p class="video-intro">Registros que muestran la amplitud real de su trabajo: gran escenario, música de cámara, formatos íntimos y experiencias en vivo donde la flauta ocupa un lugar protagónico.</p>
-        <article class="featured-video">
-          <div class="featured-video-layout">
-            <div class="featured-video-copy"><div class="embed-label">Concierto destacado · Teatro de Rancagua · 2024</div><h3>La Camorra</h3><p>Registro del show en el Teatro Regional Lucho Gatica de Rancagua: una referencia central para mostrar escala escénica, dirección artística, presencia interpretativa y experiencia en vivo.</p><a class="video-button" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener">Mirar en YouTube</a></div>
-            <a class="youtube-link-card" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noopener" aria-label="Mirar La Camorra en YouTube"><span>Mirar en YouTube</span></a>
-          </div>
-        </article>
-        <div class="instagram-embed-grid">
-          <a class="social-card" href="https://www.instagram.com/reel/DRR2vJOKd8N/" target="_blank" rel="noopener" aria-label="Ver reel de formato íntimo en Instagram"><div class="social-thumb social-thumb-one"></div><div class="social-copy"><div class="embed-label">Dúo / formato íntimo</div><h3>Presencia cercana</h3><p>Un registro de cercanía, respiración y presencia escénica en formato reducido.</p><span class="social-link">Ver en Instagram</span></div></a>
-          <a class="social-card" href="https://www.instagram.com/reel/DVE6QE_D2dg/" target="_blank" rel="noopener" aria-label="Ver reel de música de cámara en Instagram"><div class="social-thumb social-thumb-two"></div><div class="social-copy"><div class="embed-label">Música de cámara / ensamble</div><h3>Presencia en conjunto</h3><p>La flauta dentro de un tejido colectivo: escucha, diálogo y sonido compartido.</p><span class="social-link">Ver en Instagram</span></div></a>
-          <a class="social-card" href="https://www.instagram.com/reel/DQz9hsHkvrV/" target="_blank" rel="noopener" aria-label="Ver reel de eventos y programación en Instagram"><div class="social-thumb social-thumb-three"></div><div class="social-copy"><div class="embed-label">Eventos / programación</div><h3>Música en vivo para distintos contextos</h3><p>Una muestra de versatilidad escénica para programación cultural, eventos y experiencias especiales.</p><span class="social-link">Ver en Instagram</span></div></a>
-        </div>
-        <p class="video-note">Estos registros abren directamente en Instagram para conservar una experiencia visual limpia, rápida y coherente con la estética del sitio.</p>
+        <a class="text-link" href="mailto:valen.galaz@gmail.com?subject=Archivo%20art%C3%ADstico%20Valentina%20Galaz">Solicitar antecedentes</a>
       </div>
     </section>
 
@@ -300,7 +185,7 @@
       <div class="container">
         <div class="contact-script">Contacto</div>
         <h2 class="contact-title">Abrir<br>escena</h2>
-        <p>Para conciertos, proyectos culturales, programación artística, colaboraciones, prensa, eventos especiales y actividades formativas.</p>
+        <p>Para conciertos, programación cultural, prensa, colaboraciones, proyectos especiales y actividades formativas.</p>
         <div class="contact-links">
           <a class="contact-link" href="mailto:valen.galaz@gmail.com">Email</a>
           <a class="contact-link" href="https://www.instagram.com/valengalaz/" target="_blank" rel="noopener">Instagram</a>
