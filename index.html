@@ -75,7 +75,7 @@
     .marquee-center { margin: 26px 0; text-align: center; font-family: var(--script); font-size: clamp(72px, 10vw, 160px); line-height: 0.72; color: var(--gold); }
     @keyframes marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-    @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .marquee-track, .formats-grid::after { animation: none; transform: none; } }
 
     .about { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 54px; align-items: start; border-bottom: 1px solid var(--line); }
     .about-photo { min-height: 760px; background: linear-gradient(to bottom, rgba(3,3,3,0.04), rgba(3,3,3,0.88)), var(--about-photo); background-size: cover; background-position: center; border: 1px solid var(--line); }
@@ -233,7 +233,7 @@
           <div class="eyebrow">Relato artístico</div>
           <h2 class="section-title">Una intérprete formada por la escena, el viaje y la búsqueda.</h2>
           <p class="ornate-text">Valentina Galaz no llega a la música como quien entra a una sala ya iluminada: llega como quien aprende a encender su propia escena. Su historia comienza en Rancagua, entre las primeras clases de flauta, las orquestas infantiles y juveniles, y una intuición temprana: la música sería una forma de atravesar la vida.</p>
-          <div class="about-highlight"><span class="about-highlight-line"></span><p>Una flautista chilena cuya voz se construye entre repertorio, territorio, silencio y presencia.</p></div>
+          <div class="about-highlight"><span class="about-highlight-line"></span><p>Una flautista chilena cuya voz se construye entre repertorio, territorio, estudio y presencia.</p></div>
           <div class="about-stage-image" aria-label="Valentina Galaz tocando flauta en escenario"></div>
           <p class="bio-note">Desde Rancagua hacia Santiago, Argentina, Brasil, Paraguay y Estados Unidos, su trayectoria se despliega en repertorio clásico, música contemporánea, música latinoamericana, tango y la obra de <strong>Astor Piazzolla</strong>.</p>
           <p class="bio-note">Formada como <strong>Licenciada en Flauta Traversa</strong> por la Universidad Nacional de Cuyo, su trabajo integra interpretación, investigación musical, docencia, gestión cultural y dirección artística. La flauta aparece en su camino no como instrumento secundario, sino como una voz central: íntima, intensa, latinoamericana y profundamente personal.</p>
