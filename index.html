@@ -105,7 +105,7 @@
     .featured-video { border: 1px solid var(--line); background: var(--black-soft); margin-bottom: 34px; }
     .featured-video-layout { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: 1px; background: var(--line); }
     .featured-video-copy { background: var(--black-soft); padding: 34px; min-height: 360px; }
-    .featured-video-copy .embed-label, .instagram-embed-card .embed-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 18px; }
+    .featured-video-copy .embed-label, .social-card .embed-label { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 18px; }
     .featured-video-copy h3 { font-family: var(--display); font-size: clamp(42px, 5vw, 74px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; margin-bottom: 22px; }
     .featured-video-copy p { color: var(--white-soft); font-size: 15px; line-height: 1.8; max-width: 460px; }
     .video-button { display: inline-block; margin-top: 26px; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 14px 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; }
@@ -114,10 +114,20 @@
     .youtube-link-card::before { content: "▶"; width: 92px; height: 92px; border: 1px solid rgba(247,243,234,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); background: rgba(3,3,3,0.48); font-size: 36px; padding-left: 7px; transition: 0.25s ease; }
     .youtube-link-card:hover::before { background: var(--gold); color: var(--black); border-color: var(--gold); }
     .youtube-link-card span { position: absolute; left: 32px; bottom: 28px; color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; }
-    .instagram-embed-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
-    .instagram-embed-card { border: 1px solid var(--line); background: var(--black-soft); padding: 18px; min-height: 620px; }
-    .instagram-embed-card h3 { font-family: var(--display); font-size: clamp(34px, 3vw, 52px); line-height: 0.9; letter-spacing: -0.06em; font-weight: 500; margin-bottom: 20px; }
-    .instagram-embed-card blockquote.instagram-media { margin: 0 auto !important; min-width: 0 !important; width: 100% !important; max-width: 540px !important; }
+    .instagram-embed-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+    .social-card { min-height: 640px; border: 1px solid var(--line); background: var(--black-soft); display: flex; flex-direction: column; overflow: hidden; transition: 0.3s ease; }
+    .social-card:hover { transform: translateY(-6px); border-color: rgba(198, 161, 91, 0.52); }
+    .social-thumb { position: relative; min-height: 390px; background-size: cover; background-position: center; overflow: hidden; }
+    .social-thumb::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(3,3,3,0.10), rgba(3,3,3,0.76)); z-index: 1; }
+    .social-thumb::after { content: "▶"; position: absolute; inset: 0; margin: auto; width: 74px; height: 74px; border: 1px solid rgba(247,243,234,0.52); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); background: rgba(3,3,3,0.42); font-size: 28px; padding-left: 6px; z-index: 2; transition: 0.25s ease; }
+    .social-card:hover .social-thumb::after { background: var(--gold); color: var(--black); border-color: var(--gold); }
+    .social-thumb-one { background-image: linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.50)), var(--hero-photo); }
+    .social-thumb-two { background-image: linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.50)), var(--stage-photo); }
+    .social-thumb-three { background-image: linear-gradient(to bottom, rgba(3,3,3,0.08), rgba(3,3,3,0.50)), var(--about-photo); }
+    .social-copy { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+    .social-copy h3 { font-family: var(--display); font-size: clamp(36px, 3vw, 54px); line-height: 0.9; letter-spacing: -0.06em; font-weight: 500; margin-bottom: 20px; }
+    .social-copy p { color: var(--white-soft); font-size: 14px; line-height: 1.75; margin-bottom: 26px; }
+    .social-link { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; width: fit-content; margin-top: auto; }
     .video-note { margin-top: 28px; color: var(--white-muted); font-size: 13px; line-height: 1.7; max-width: 760px; }
 
     .contact { min-height: 78vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
@@ -139,6 +149,8 @@
       .release-inner, .featured-video-layout { grid-template-columns: 1fr; }
       .formats-grid, .instagram-embed-grid { grid-template-columns: 1fr; }
       .about-stage-image { min-height: 540px; }
+      .social-card { min-height: auto; }
+      .social-thumb { min-height: 440px; }
     }
     @media (max-width: 960px) {
       .nav-links { display: none; }
@@ -155,10 +167,10 @@
       .release-banner { padding: 0 22px; }
       .release-inner { padding: 28px 0; }
       .ornate-text::first-letter { font-size: 6.2rem; }
-      .format-card, .featured-video-copy { padding: 24px; min-height: auto; }
+      .format-card, .featured-video-copy, .social-copy { padding: 24px; min-height: auto; }
       .about-stage-image { min-height: 440px; margin: 30px 0 4px; }
       .youtube-link-card { min-height: 260px; }
-      .instagram-embed-card { padding: 12px; min-height: auto; }
+      .social-thumb { min-height: 360px; }
       .contact-links { flex-direction: column; align-items: center; }
       .contact-link { width: 100%; max-width: 320px; }
     }
@@ -262,11 +274,20 @@
           </div>
         </article>
         <div class="instagram-embed-grid">
-          <article class="instagram-embed-card"><div class="embed-label">Dúo / formato íntimo</div><h3>Presencia cercana</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DRR2vJOKd8N/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DRR2vJOKd8N/" target="_blank">Ver reel en Instagram</a></blockquote></article>
-          <article class="instagram-embed-card"><div class="embed-label">Música de cámara / ensamble</div><h3>Presencia en conjunto</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DVE6QE_D2dg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DVE6QE_D2dg/" target="_blank">Ver reel en Instagram</a></blockquote></article>
-          <article class="instagram-embed-card"><div class="embed-label">Eventos / programación</div><h3>Música en vivo para distintos contextos</h3><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DQz9hsHkvrV/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQz9hsHkvrV/" target="_blank">Ver reel en Instagram</a></blockquote></article>
+          <a class="social-card" href="https://www.instagram.com/reel/DRR2vJOKd8N/" target="_blank" rel="noopener" aria-label="Ver reel de formato íntimo en Instagram">
+            <div class="social-thumb social-thumb-one"></div>
+            <div class="social-copy"><div class="embed-label">Dúo / formato íntimo</div><h3>Presencia cercana</h3><p>Un registro de cercanía, respiración y presencia escénica en formato reducido.</p><span class="social-link">Ver en Instagram</span></div>
+          </a>
+          <a class="social-card" href="https://www.instagram.com/reel/DVE6QE_D2dg/" target="_blank" rel="noopener" aria-label="Ver reel de música de cámara en Instagram">
+            <div class="social-thumb social-thumb-two"></div>
+            <div class="social-copy"><div class="embed-label">Música de cámara / ensamble</div><h3>Presencia en conjunto</h3><p>La flauta dentro de un tejido colectivo: escucha, diálogo y sonido compartido.</p><span class="social-link">Ver en Instagram</span></div>
+          </a>
+          <a class="social-card" href="https://www.instagram.com/reel/DQz9hsHkvrV/" target="_blank" rel="noopener" aria-label="Ver reel de eventos y programación en Instagram">
+            <div class="social-thumb social-thumb-three"></div>
+            <div class="social-copy"><div class="embed-label">Eventos / programación</div><h3>Música en vivo para distintos contextos</h3><p>Una muestra de versatilidad escénica para programación cultural, eventos y experiencias especiales.</p><span class="social-link">Ver en Instagram</span></div>
+          </a>
         </div>
-        <p class="video-note">El registro destacado se abre directamente en YouTube porque el video no permite reproducción incrustada. Los reels se cargan desde Instagram; si alguno no aparece de inmediato, usa el enlace interno del recuadro.</p>
+        <p class="video-note">Estos registros abren directamente en Instagram para conservar una experiencia visual limpia, rápida y coherente con la estética del sitio.</p>
       </div>
     </section>
 
@@ -285,6 +306,5 @@
   </main>
 
   <footer><div class="container"><span>© Valentina Galaz</span><span>Flautista chilena · Intérprete · Directora artística</span></div></footer>
-  <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
