@@ -61,8 +61,10 @@
     .release-kicker { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.24em; font-weight: 700; }
     .release-title { font-family: var(--display); font-size: clamp(38px, 4.8vw, 78px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; }
     .release-copy { color: var(--white-soft); font-family: var(--serif); font-size: clamp(22px, 2vw, 30px); line-height: 1.16; max-width: 620px; }
-    .release-button { border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 15px 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; white-space: nowrap; transition: 0.25s ease; }
+    .release-button { display: inline-flex; align-items: center; gap: 12px; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 15px 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; white-space: nowrap; transition: 0.25s ease; }
     .release-button:hover { background: var(--gold); color: var(--black); }
+    .spotify-icon { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .spotify-icon svg { width: 18px; height: 18px; display: block; }
 
     .marquee-section { background: var(--black); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 56px 0; }
     .marquee { width: 100%; overflow: hidden; white-space: nowrap; }
@@ -159,7 +161,7 @@
       .hero-links a { width: 100%; }
       .release-banner { padding: 0 22px; }
       .release-inner { padding: 28px 0; }
-      .release-button { width: 100%; text-align: center; }
+      .release-button { width: 100%; justify-content: center; text-align: center; }
       .ornate-text::first-letter { font-size: 6.2rem; }
       .format-card { padding: 24px; min-height: auto; }
       .featured-video-copy { padding: 24px; min-height: auto; }
@@ -207,7 +209,17 @@
           <h2 class="release-title">Milonga del Ángel ya está llegando a plataformas.</h2>
           <p class="release-copy">Piazzollamente en vivo desde Sala SCD Plaza Egaña · 2025</p>
         </div>
-        <a class="release-button" href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noopener">Escuchar en plataformas</a>
+        <a class="release-button" href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noopener" aria-label="Escuchar Milonga del Ángel en Spotify">
+          <span class="spotify-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="12" fill="currentColor"/>
+              <path d="M17.44 16.18a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.1-10.54-1.13a.75.75 0 1 1-.34-1.46c4.55-1.05 8.46-.61 11.66 1.34a.75.75 0 0 1 .25 1z" fill="#030303"/>
+              <path d="M18.91 12.83a.92.92 0 0 1-1.26.3c-3.23-1.98-8.15-2.55-11.97-1.39a.92.92 0 1 1-.53-1.76c4.36-1.31 9.78-.68 13.46 1.58.43.27.57.83.3 1.27z" fill="#030303"/>
+              <path d="M19.06 9.35c-3.87-2.3-10.27-2.51-13.96-1.39a1.08 1.08 0 0 1-.63-2.07c4.24-1.29 11.29-1.04 15.7 1.58a1.08 1.08 0 1 1-1.11 1.88z" fill="#030303"/>
+            </svg>
+          </span>
+          <span>Escuchar en Spotify</span>
+        </a>
       </div>
     </section>
 
