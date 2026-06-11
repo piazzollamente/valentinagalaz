@@ -82,9 +82,14 @@
     .about-photo { min-height: 760px; background: linear-gradient(to bottom, rgba(3,3,3,0.04), rgba(3,3,3,0.88)), var(--about-photo); background-size: cover; background-position: center; border: 1px solid var(--line); }
     .ornate-text { font-family: var(--serif); color: var(--white-soft); font-size: clamp(27px, 3vw, 44px); line-height: 1.22; max-width: 870px; }
     .ornate-text::first-letter { font-family: var(--script); color: var(--gold); float: left; font-size: 8.3rem; line-height: 0.58; margin-right: 0.16em; margin-top: 0.1em; }
-    .bio-note { margin-top: 42px; max-width: 790px; color: var(--white-muted); font-size: 15px; line-height: 1.85; border-top: 1px solid var(--line); padding-top: 26px; }
+    .ornate-text strong, .bio-note strong { color: var(--white); font-weight: 600; }
+    .about-highlight { display: flex; align-items: flex-start; gap: 16px; margin: 34px 0 26px; max-width: 760px; }
+    .about-highlight-line { width: 36px; height: 1px; background: var(--gold); margin-top: 16px; flex-shrink: 0; }
+    .about-highlight p { font-family: var(--serif); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.25; color: var(--white); font-style: italic; }
+    .bio-note { margin-top: 24px; max-width: 790px; color: var(--white-muted); font-size: 15px; line-height: 1.85; border-top: 1px solid var(--line); padding-top: 24px; }
     .bio-points { margin-top: 34px; display: grid; gap: 16px; max-width: 790px; }
-    .bio-point { border-top: 1px solid var(--line); padding-top: 16px; color: var(--white-muted); font-size: 13px; line-height: 1.7; letter-spacing: 0.03em; }
+    .bio-point { border-top: 1px solid var(--line); padding-top: 16px; color: var(--white-muted); font-size: 14px; line-height: 1.75; letter-spacing: 0.03em; }
+    .bio-label { display: block; color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; margin-bottom: 8px; }
 
     .method { background: var(--black-soft); border-bottom: 1px solid var(--line); }
     .method-intro { max-width: 760px; color: var(--white-soft); font-family: var(--serif); font-size: 30px; line-height: 1.22; margin-bottom: 58px; }
@@ -234,13 +239,15 @@
         <div class="about-copy">
           <div class="eyebrow">Quién soy</div>
           <h2 class="section-title">Una intérprete construida entre escena, territorio y sonido.</h2>
-          <p class="ornate-text">Valentina Galaz es flautista, intérprete y gestora cultural chilena. Licenciada en Flauta Traversa por la Universidad Nacional de Cuyo, en Argentina, ha desarrollado una trayectoria vinculada a la música de cámara, la creación de proyectos escénicos y la circulación de propuestas musicales latinoamericanas.</p>
-          <p class="bio-note">Su trabajo articula interpretación, gestión cultural y presencia escénica, con una búsqueda centrada en el sonido, el relato y la conexión con el público.<br><br>Es directora de Piazzollamente, proyecto dedicado a la música de Astor Piazzolla, donde la flauta traversa ocupa un lugar protagónico dentro de una propuesta que cruza tango, música de cámara, identidad latinoamericana y experiencia en vivo.</p>
+          <p class="ornate-text">Valentina Galaz es <strong>flautista</strong>, <strong>intérprete</strong> y <strong>gestora cultural</strong> chilena. <strong>Licenciada en Flauta Traversa</strong> por la Universidad Nacional de Cuyo, en Argentina, ha desarrollado una trayectoria vinculada a la <strong>música de cámara</strong>, la creación de <strong>proyectos escénicos</strong> y la circulación de <strong>propuestas musicales latinoamericanas</strong>.</p>
+          <div class="about-highlight"><span class="about-highlight-line"></span><p>Interpretación, gestión cultural y presencia escénica como una misma práctica artística.</p></div>
+          <p class="bio-note">Su trabajo articula <strong>interpretación</strong>, <strong>gestión cultural</strong> y <strong>presencia escénica</strong>, con una búsqueda centrada en el <strong>sonido</strong>, el <strong>relato</strong> y la <strong>conexión con el público</strong>.</p>
+          <p class="bio-note">Entre sus experiencias destaca la dirección de <strong>Piazzollamente</strong>, proyecto desde el cual la flauta traversa ocupa un lugar protagónico dentro de una propuesta que cruza música de cámara, identidad latinoamericana y experiencia en vivo.</p>
           <div class="bio-points">
-            <div class="bio-point">Licenciada en Flauta Traversa por la Universidad Nacional de Cuyo.</div>
-            <div class="bio-point">Trayectoria escénica en Chile, Argentina, Brasil, Paraguay y Estados Unidos.</div>
-            <div class="bio-point">Directora de Piazzollamente, proyecto dedicado a la música de Astor Piazzolla.</div>
-            <div class="bio-point">Participación en festivales, estrenos, conciertos y proyectos de circulación cultural latinoamericana.</div>
+            <div class="bio-point"><span class="bio-label">Formación</span>Licenciada en Flauta Traversa por la Universidad Nacional de Cuyo.</div>
+            <div class="bio-point"><span class="bio-label">Trayectoria</span>Experiencia escénica en Chile, Argentina, Brasil, Paraguay y Estados Unidos.</div>
+            <div class="bio-point"><span class="bio-label">Experiencia</span>Participación en festivales, conciertos, estrenos y proyectos de circulación cultural.</div>
+            <div class="bio-point"><span class="bio-label">Dirección artística</span>Directora de Piazzollamente.</div>
           </div>
         </div>
         <div class="about-photo"></div>
