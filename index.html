@@ -85,6 +85,7 @@
     .about-highlight { display: flex; align-items: flex-start; gap: 16px; margin: 34px 0 26px; max-width: 760px; }
     .about-highlight-line { width: 36px; height: 1px; background: var(--gold); margin-top: 16px; flex-shrink: 0; }
     .about-highlight p { font-family: var(--serif); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.25; color: var(--white); font-style: italic; }
+    .about-stage-image { margin: 38px 0 8px; min-height: 620px; background: linear-gradient(to right, rgba(3,3,3,0.10), rgba(3,3,3,0.02), rgba(3,3,3,0.20)), linear-gradient(to bottom, rgba(3,3,3,0.02), rgba(3,3,3,0.52)), var(--stage-photo); background-size: cover; background-position: center; border: 1px solid var(--line); }
     .bio-note { margin-top: 24px; max-width: 790px; color: var(--white-muted); font-size: 15px; line-height: 1.85; border-top: 1px solid var(--line); padding-top: 24px; }
     .bio-points { margin-top: 34px; display: grid; gap: 16px; max-width: 790px; }
     .bio-point { border-top: 1px solid var(--line); padding-top: 16px; color: var(--white-muted); font-size: 14px; line-height: 1.75; letter-spacing: 0.03em; }
@@ -98,13 +99,6 @@
     .format-card h3 { font-family: var(--display); font-size: clamp(34px, 3.5vw, 58px); line-height: 0.9; letter-spacing: -0.06em; font-weight: 500; margin-bottom: 24px; }
     .format-card p { color: var(--white-soft); font-size: 14px; line-height: 1.75; }
     .format-card a { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 8px; width: fit-content; margin-top: 28px; }
-
-    .stage-feature { padding: 0 30px; background: var(--black); border-bottom: 1px solid var(--line); }
-    .stage-feature-inner { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 1px; background: var(--line); border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
-    .stage-image { min-height: 580px; background: linear-gradient(to right, rgba(3,3,3,0.18), rgba(3,3,3,0.04), rgba(3,3,3,0.56)), linear-gradient(to bottom, rgba(3,3,3,0.03), rgba(3,3,3,0.58)), var(--stage-photo); background-size: cover; background-position: center; }
-    .stage-copy { background: var(--black-soft); padding: 42px; display: flex; flex-direction: column; justify-content: center; }
-    .stage-copy h2 { font-family: var(--display); font-size: clamp(40px, 4.5vw, 76px); line-height: 0.88; letter-spacing: -0.065em; font-weight: 500; margin-bottom: 26px; }
-    .stage-copy p { color: var(--white-soft); font-family: var(--serif); font-size: clamp(22px, 2vw, 30px); line-height: 1.2; }
 
     .videos { background: var(--black); border-bottom: 1px solid var(--line); }
     .video-intro { max-width: 760px; color: var(--white-soft); font-family: var(--serif); font-size: 30px; line-height: 1.22; margin-bottom: 58px; }
@@ -140,11 +134,11 @@
     footer .container { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
     @media (max-width: 1080px) {
-      .about, .stage-feature-inner { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
       .about-photo { min-height: 500px; }
       .release-inner, .featured-video-layout { grid-template-columns: 1fr; }
       .formats-grid, .instagram-embed-grid { grid-template-columns: 1fr; }
-      .stage-image { min-height: 420px; }
+      .about-stage-image { min-height: 540px; }
     }
     @media (max-width: 960px) {
       .nav-links { display: none; }
@@ -161,9 +155,8 @@
       .release-banner { padding: 0 22px; }
       .release-inner { padding: 28px 0; }
       .ornate-text::first-letter { font-size: 6.2rem; }
-      .format-card, .featured-video-copy, .stage-copy { padding: 24px; min-height: auto; }
-      .stage-feature { padding: 0 22px; }
-      .stage-image { min-height: 320px; }
+      .format-card, .featured-video-copy { padding: 24px; min-height: auto; }
+      .about-stage-image { min-height: 440px; margin: 30px 0 4px; }
       .youtube-link-card { min-height: 260px; }
       .instagram-embed-card { padding: 12px; min-height: auto; }
       .contact-links { flex-direction: column; align-items: center; }
@@ -214,6 +207,7 @@
           <h2 class="section-title">Una intérprete construida entre escena, territorio y sonido.</h2>
           <p class="ornate-text">Valentina Galaz es <strong>flautista</strong>, <strong>intérprete</strong> y <strong>gestora cultural</strong> chilena. <strong>Licenciada en Flauta Traversa</strong> por la Universidad Nacional de Cuyo, en Argentina, ha desarrollado una trayectoria vinculada a la música de cámara, la creación de proyectos escénicos y la circulación de propuestas musicales latinoamericanas.</p>
           <div class="about-highlight"><span class="about-highlight-line"></span><p>Una práctica artística entre sonido, gestión y escena.</p></div>
+          <div class="about-stage-image" aria-label="Valentina Galaz tocando flauta en escenario"></div>
           <p class="bio-note">Su trabajo articula interpretación, gestión cultural y presencia escénica, con una búsqueda centrada en el <strong>sonido</strong>, el <strong>relato</strong> y la <strong>conexión con el público</strong>.</p>
           <p class="bio-note">Entre sus experiencias destaca la dirección de <strong>Piazzollamente</strong>, proyecto desde el cual la flauta traversa ocupa un lugar protagónico dentro de una propuesta que cruza música de cámara, identidad latinoamericana y experiencia en vivo.</p>
           <div class="bio-points">
@@ -237,17 +231,6 @@
           <article class="format-card"><div><div class="format-label">Eventos privados</div><h3>Matrimonios</h3><p>Música en vivo para ceremonias, cócteles y celebraciones que requieren una presencia elegante, sensible y profesional.</p></div><a href="#contacto">Consultar fecha</a></article>
           <article class="format-card"><div><div class="format-label">Empresas e instituciones</div><h3>Corporativos</h3><p>Intervenciones musicales para lanzamientos, recepciones, encuentros de empresa, actividades culturales y eventos protocolares.</p></div><a href="#contacto">Consultar evento</a></article>
           <article class="format-card"><div><div class="format-label">Creación y colaboración</div><h3>Proyectos culturales</h3><p>Participación en propuestas artísticas, música de cámara y experiencias escénicas diseñadas para contextos culturales específicos.</p></div><a href="#contacto">Consultar proyecto</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="stage-feature" aria-label="Valentina Galaz en escenario">
-      <div class="container stage-feature-inner">
-        <div class="stage-image" role="img" aria-label="Valentina Galaz tocando flauta traversa en escenario junto a contrabajo"></div>
-        <div class="stage-copy">
-          <div class="eyebrow">Escenario real</div>
-          <h2>Concierto y presencia en vivo.</h2>
-          <p>Una imagen para mostrar el oficio escénico en contexto: flauta traversa, ensamble y música en vivo.</p>
         </div>
       </div>
     </section>
