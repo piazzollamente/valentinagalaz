@@ -66,6 +66,8 @@
     .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
     .card{background:rgba(245,239,228,.55);border:1px solid rgba(103,31,34,.16);padding:34px;min-height:260px}
     .role{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+    .intro-video{background:var(--paper);padding:76px 0 96px}
+    .intro-video .video-frame{max-width:960px;margin:0 auto}
     .video-feature{background:#d9d0c3;padding-top:0}
     .video-shell{display:grid;grid-template-columns:minmax(300px,4fr) minmax(0,8fr);gap:56px;align-items:center;border-top:1px solid var(--line);padding-top:58px}
     .video-copy{min-width:0}
@@ -117,8 +119,10 @@
       .side,.main{grid-column:auto}
       .main{margin-top:36px}
       .cards{grid-template-columns:1fr}
+      .intro-video{padding:52px 0 76px}
       .video-copy h2{font-size:clamp(2.45rem,10vw,4.2rem);max-width:100%}
       .video-frame{margin-top:34px}
+      .intro-video .video-frame{margin-top:0}
       .gallery-grid{display:block}
       .photo{margin-bottom:18px}
       .press{grid-template-columns:1fr;gap:8px;padding:24px 0}
@@ -158,6 +162,14 @@
           <h1 class="serif">Valentina<br><span class="italic">Galaz</span></h1>
           <p class="lead">Flautista chilena nacida en Rancagua, intérprete escénica y gestora cultural. Más de veinte años de trayectoria entre orquestas, música de cámara, festivales latinoamericanos, investigación musical y proyectos autorales.</p>
           <div class="cta"><a href="#trayectoria">Ver trayectoria →</a><a href="#proyectos">Explorar proyectos</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-video" id="presentacion">
+      <div class="wrap">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/3ZHAfiqiZbk?si=5h0EKJUFDaYzHELr" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </section>
