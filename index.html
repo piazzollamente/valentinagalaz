@@ -62,23 +62,40 @@
     .year{font-family:Georgia,"Times New Roman",serif;color:var(--burgundy);font-size:1.55rem;line-height:1.15;overflow-wrap:normal;word-break:normal}
     .item h3,.card h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.6rem;margin:0 0 8px}
     .item p,.card p{margin:0;color:#6a5f56;line-height:1.65}
+    .trajectory-layout{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:38px;align-items:start}
+    .trajectory-layout .side{grid-column:span 3}
+    .trajectory-main{grid-column:4/span 9;min-width:0}
     .spiral-intro{margin:0 0 34px;color:#6a5f56;line-height:1.75;max-width:760px;font-size:1.04rem}
-    .spiral-timeline{position:relative;min-height:720px;margin-top:34px;border-top:1px solid var(--line);overflow:hidden}
-    .spiral-timeline:before{content:"";position:absolute;left:50%;top:50%;width:620px;height:520px;transform:translate(-50%,-50%) rotate(-18deg);border:1.5px solid rgba(103,31,34,.34);border-radius:52% 48% 54% 46%;box-shadow:inset 0 0 0 58px rgba(199,170,117,.06), inset 0 0 0 118px rgba(103,31,34,.055), inset 0 0 0 178px rgba(199,170,117,.055);opacity:.78}
-    .spiral-timeline:after{content:"";position:absolute;left:50%;top:50%;width:230px;height:175px;transform:translate(-50%,-50%) rotate(-18deg);border:1px solid rgba(199,170,117,.55);border-radius:50%;opacity:.9}
-    .spiral-node{position:absolute;z-index:2;width:min(250px,28vw)}
-    .spiral-node:nth-child(1){left:3%;top:10%}
-    .spiral-node:nth-child(2){right:2%;top:8%}
-    .spiral-node:nth-child(3){right:8%;top:37%}
-    .spiral-node:nth-child(4){left:38%;top:43%;width:270px}
-    .spiral-node:nth-child(5){left:6%;top:45%}
-    .spiral-node:nth-child(6){right:5%;bottom:5%;width:285px}
-    .spiral-node:nth-child(7){left:11%;bottom:4%;width:290px}
+    .spiral-timeline{position:relative;min-height:850px;margin-top:34px;border-top:1px solid var(--line);overflow:visible;isolation:isolate}
+    .spiral-timeline:before{content:"";position:absolute;left:50%;top:51%;width:760px;height:610px;transform:translate(-50%,-50%) rotate(-18deg) scale(.96);border:1.5px solid rgba(103,31,34,.32);border-radius:52% 48% 54% 46%;box-shadow:inset 0 0 0 74px rgba(199,170,117,.055), inset 0 0 0 150px rgba(103,31,34,.045), inset 0 0 0 236px rgba(199,170,117,.05);opacity:.36;transition:opacity 1.5s ease,transform 1.7s cubic-bezier(.2,.65,.2,1)}
+    .spiral-timeline:after{content:"";position:absolute;left:50%;top:51%;width:270px;height:205px;transform:translate(-50%,-50%) rotate(-18deg) scale(.94);border:1px solid rgba(199,170,117,.55);border-radius:50%;opacity:.28;transition:opacity 1.5s ease .15s,transform 1.7s cubic-bezier(.2,.65,.2,1) .15s}
+    .spiral-timeline.is-visible:before{opacity:.82;transform:translate(-50%,-50%) rotate(-18deg) scale(1)}
+    .spiral-timeline.is-visible:after{opacity:.9;transform:translate(-50%,-50%) rotate(-18deg) scale(1)}
+    .spiral-node{position:absolute;z-index:2;width:min(255px,25vw);padding:14px 16px;border-radius:2px;background:linear-gradient(180deg,rgba(232,224,212,.82),rgba(232,224,212,.36));opacity:0;transform:translateY(22px);filter:blur(1px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.65,.2,1),filter .8s ease,background .35s ease,box-shadow .35s ease}
+    .spiral-timeline.is-visible .spiral-node{opacity:1;transform:translateY(0);filter:blur(0)}
+    .spiral-timeline.is-visible .spiral-node:nth-child(1){transition-delay:.08s}
+    .spiral-timeline.is-visible .spiral-node:nth-child(2){transition-delay:.22s}
+    .spiral-timeline.is-visible .spiral-node:nth-child(3){transition-delay:.36s}
+    .spiral-timeline.is-visible .spiral-node:nth-child(4){transition-delay:.50s}
+    .spiral-timeline.is-visible .spiral-node:nth-child(5){transition-delay:.64s}
+    .spiral-timeline.is-visible .spiral-node:nth-child(6){transition-delay:.78s}
+    .spiral-timeline.is-visible .spiral-node:nth-child(7){transition-delay:.92s}
+    .spiral-node:nth-child(1){left:0;top:9%}
+    .spiral-node:nth-child(2){right:0;top:6%}
+    .spiral-node:nth-child(3){right:7%;top:33%;width:245px}
+    .spiral-node:nth-child(4){left:38%;top:42%;width:240px}
+    .spiral-node:nth-child(5){left:0;top:47%;width:255px}
+    .spiral-node:nth-child(6){right:3%;bottom:6%;width:275px}
+    .spiral-node:nth-child(7){left:8%;bottom:5%;width:285px}
     .spiral-point{display:flex;align-items:center;gap:14px;margin-bottom:10px}
-    .spiral-number{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;background:rgba(245,239,228,.72);font-family:Georgia,"Times New Roman",serif;color:var(--burgundy)}
+    .spiral-number{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;background:rgba(245,239,228,.82);font-family:Georgia,"Times New Roman",serif;color:var(--burgundy);box-shadow:0 0 0 0 rgba(199,170,117,.2);transition:background .35s ease,box-shadow .35s ease,transform .35s ease}
     .spiral-date{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-    .spiral-node h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.35rem;line-height:1.16;margin:0 0 8px;color:var(--burgundy)}
-    .spiral-node p{margin:0;color:#6a5f56;line-height:1.55;font-size:.94rem}
+    .spiral-node h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.32rem;line-height:1.16;margin:0 0 8px;color:var(--burgundy);transition:color .35s ease}
+    .spiral-node p{margin:0;color:#6a5f56;line-height:1.5;font-size:.92rem;max-width:32ch}
+    .spiral-timeline:hover .spiral-node{opacity:.52}
+    .spiral-timeline:hover .spiral-node:hover{opacity:1;background:rgba(245,239,228,.82);box-shadow:0 18px 46px rgba(25,21,18,.08);transition-delay:0s}
+    .spiral-node:hover .spiral-number{background:var(--ivory);box-shadow:0 0 0 8px rgba(199,170,117,.18);transform:scale(1.04)}
+    .spiral-node:hover h3{color:#4d1114}
     .projects{background:#d9d0c3}
     .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
     .card{background:rgba(245,239,228,.55);border:1px solid rgba(103,31,34,.16);padding:34px;min-height:260px}
@@ -127,17 +144,20 @@
       .video-copy h2{font-size:clamp(2.35rem,4vw,3.5rem)}
       .press{grid-template-columns:minmax(120px,150px) minmax(0,1fr) minmax(86px,118px);gap:20px}
       .date{letter-spacing:.14em}
-      .spiral-timeline{min-height:780px}
-      .spiral-node{width:min(235px,30vw)}
-      .spiral-node:nth-child(4){left:35%;width:250px}
+      .spiral-timeline{min-height:900px}
+      .spiral-timeline:before{width:650px;height:560px}
+      .spiral-node{width:min(225px,30vw);padding:12px 14px}
+      .spiral-node:nth-child(4){left:34%;width:220px}
+      .spiral-node h3{font-size:1.22rem}
+      .spiral-node p{font-size:.88rem}
     }
     @media(max-width:900px){
       .menu{display:none}
       .wrap{width:min(100% - 44px,1220px)}
       .hero-content{padding-bottom:80px}
-      .grid,.footer-grid,.video-shell{display:block}
-      .side,.main{grid-column:auto}
-      .main{margin-top:36px}
+      .grid,.footer-grid,.video-shell,.trajectory-layout{display:block}
+      .side,.main,.trajectory-main{grid-column:auto}
+      .main,.trajectory-main{margin-top:36px}
       .cards{grid-template-columns:1fr}
       .intro-video{padding:52px 0 76px}
       .video-copy h2{font-size:clamp(2.45rem,10vw,4.2rem);max-width:100%}
@@ -151,7 +171,8 @@
       .item{grid-template-columns:1fr;gap:8px}
       .spiral-timeline{min-height:0;margin-top:30px;padding:8px 0 0 24px;border-top:0;border-left:1px solid var(--line);overflow:visible}
       .spiral-timeline:before,.spiral-timeline:after{display:none}
-      .spiral-node,.spiral-node:nth-child(n){position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;padding:0 0 30px 20px}
+      .spiral-node,.spiral-node:nth-child(n){position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;padding:0 0 30px 20px;background:transparent;opacity:0;transform:translateY(16px);filter:none;box-shadow:none}
+      .spiral-timeline:hover .spiral-node,.spiral-timeline:hover .spiral-node:hover{opacity:1;background:transparent;box-shadow:none}
       .spiral-node:before{content:"";position:absolute;left:-31px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:1px solid var(--gold)}
       .spiral-point{margin-bottom:8px}
       .spiral-number{width:30px;height:30px;font-size:.9rem}
@@ -172,6 +193,11 @@
       .date{letter-spacing:.12em}
       .spiral-intro{font-size:1rem}
       .spiral-date{letter-spacing:.14em}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .spiral-timeline:before,.spiral-timeline:after,.spiral-node,.spiral-number,.photo img{transition:none!important}
+      .spiral-node{opacity:1;transform:none;filter:none}
     }
   </style>
 </head>
@@ -219,9 +245,9 @@
     </section>
 
     <section class="section" id="trayectoria">
-      <div class="wrap grid">
+      <div class="wrap trajectory-layout">
         <div class="side"><p class="eyebrow"><span class="rule"></span>Trayectoria</p><h2>Cartografía<br><span>de una voz</span>.</h2></div>
-        <div class="main">
+        <div class="trajectory-main">
           <p class="spiral-intro">Un recorrido artístico construido entre Rancagua, Chile, Argentina y distintos espacios de circulación latinoamericana. Cada etapa abre una forma distinta de comprender la flauta: como oficio, desplazamiento, memoria, archivo y presencia escénica.</p>
           <div class="spiral-timeline" aria-label="Línea de tiempo de trayectoria artística">
             <article class="spiral-node">
@@ -354,5 +380,24 @@
       </div>
     </div>
   </footer>
+  <script>
+    (() => {
+      const spiral = document.querySelector('.spiral-timeline');
+      if (!spiral) return;
+      if (!('IntersectionObserver' in window)) {
+        spiral.classList.add('is-visible');
+        return;
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.24 });
+      observer.observe(spiral);
+    })();
+  </script>
 </body>
 </html>
