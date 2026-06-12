@@ -62,6 +62,23 @@
     .year{font-family:Georgia,"Times New Roman",serif;color:var(--burgundy);font-size:1.55rem;line-height:1.15;overflow-wrap:normal;word-break:normal}
     .item h3,.card h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.6rem;margin:0 0 8px}
     .item p,.card p{margin:0;color:#6a5f56;line-height:1.65}
+    .spiral-intro{margin:0 0 34px;color:#6a5f56;line-height:1.75;max-width:760px;font-size:1.04rem}
+    .spiral-timeline{position:relative;min-height:720px;margin-top:34px;border-top:1px solid var(--line);overflow:hidden}
+    .spiral-timeline:before{content:"";position:absolute;left:50%;top:50%;width:620px;height:520px;transform:translate(-50%,-50%) rotate(-18deg);border:1.5px solid rgba(103,31,34,.34);border-radius:52% 48% 54% 46%;box-shadow:inset 0 0 0 58px rgba(199,170,117,.06), inset 0 0 0 118px rgba(103,31,34,.055), inset 0 0 0 178px rgba(199,170,117,.055);opacity:.78}
+    .spiral-timeline:after{content:"";position:absolute;left:50%;top:50%;width:230px;height:175px;transform:translate(-50%,-50%) rotate(-18deg);border:1px solid rgba(199,170,117,.55);border-radius:50%;opacity:.9}
+    .spiral-node{position:absolute;z-index:2;width:min(250px,28vw)}
+    .spiral-node:nth-child(1){left:3%;top:10%}
+    .spiral-node:nth-child(2){right:2%;top:8%}
+    .spiral-node:nth-child(3){right:8%;top:37%}
+    .spiral-node:nth-child(4){left:38%;top:43%;width:270px}
+    .spiral-node:nth-child(5){left:6%;top:45%}
+    .spiral-node:nth-child(6){right:5%;bottom:5%;width:285px}
+    .spiral-node:nth-child(7){left:11%;bottom:4%;width:290px}
+    .spiral-point{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+    .spiral-number{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;background:rgba(245,239,228,.72);font-family:Georgia,"Times New Roman",serif;color:var(--burgundy)}
+    .spiral-date{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+    .spiral-node h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.35rem;line-height:1.16;margin:0 0 8px;color:var(--burgundy)}
+    .spiral-node p{margin:0;color:#6a5f56;line-height:1.55;font-size:.94rem}
     .projects{background:#d9d0c3}
     .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
     .card{background:rgba(245,239,228,.55);border:1px solid rgba(103,31,34,.16);padding:34px;min-height:260px}
@@ -110,6 +127,9 @@
       .video-copy h2{font-size:clamp(2.35rem,4vw,3.5rem)}
       .press{grid-template-columns:minmax(120px,150px) minmax(0,1fr) minmax(86px,118px);gap:20px}
       .date{letter-spacing:.14em}
+      .spiral-timeline{min-height:780px}
+      .spiral-node{width:min(235px,30vw)}
+      .spiral-node:nth-child(4){left:35%;width:250px}
     }
     @media(max-width:900px){
       .menu{display:none}
@@ -129,6 +149,14 @@
       .press{grid-template-columns:1fr;gap:8px;padding:24px 0}
       .section{padding:86px 0}
       .item{grid-template-columns:1fr;gap:8px}
+      .spiral-timeline{min-height:0;margin-top:30px;padding:8px 0 0 24px;border-top:0;border-left:1px solid var(--line);overflow:visible}
+      .spiral-timeline:before,.spiral-timeline:after{display:none}
+      .spiral-node,.spiral-node:nth-child(n){position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;padding:0 0 30px 20px}
+      .spiral-node:before{content:"";position:absolute;left:-31px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:1px solid var(--gold)}
+      .spiral-point{margin-bottom:8px}
+      .spiral-number{width:30px;height:30px;font-size:.9rem}
+      .spiral-node h3{font-size:1.45rem}
+      .spiral-node p{font-size:1rem;max-width:620px}
       .p1,.p2,.p3,.p4,.p5,.p6,.p7{aspect-ratio:auto}
       .photo img{min-height:320px}
       .footer-side{margin-top:36px}
@@ -142,6 +170,8 @@
       .video-copy h2{font-size:clamp(2.4rem,11vw,3rem)}
       .footer-grid h2{font-size:3rem}
       .date{letter-spacing:.12em}
+      .spiral-intro{font-size:1rem}
+      .spiral-date{letter-spacing:.14em}
     }
   </style>
 </head>
@@ -190,13 +220,46 @@
 
     <section class="section" id="trayectoria">
       <div class="wrap grid">
-        <div class="side"><p class="eyebrow"><span class="rule"></span>Trayectoria</p><h2>Archivo<br><span>biográfico</span>.</h2></div>
-        <div class="main timeline">
-          <div class="item"><div class="year">2006</div><div><h3>Inicios en Rancagua</h3><p>Primeras clases de flauta en Rancagua, Chile, y participación en orquestas infantiles y juveniles.</p></div></div>
-          <div class="item"><div class="year">Chile · Argentina</div><div><h3>Formación y música de cámara</h3><p>Estudios de flauta traversa en Chile y Argentina, con desarrollo en repertorio académico, música de cámara y actividad universitaria.</p></div></div>
-          <div class="item"><div class="year">2015</div><div><h3>Cirilo Vila y repertorio chileno</h3><p>Concierto homenaje a Cirilo Vila en Estados Unidos / Nebraska y desarrollo de una línea de investigación e interpretación vinculada a su obra.</p></div></div>
-          <div class="item"><div class="year">Latinoamérica</div><div><h3>Circulación artística</h3><p>Experiencia artística y formativa en Chile, Argentina, Brasil, Paraguay y Estados Unidos, entre orquesta, escena, música contemporánea y repertorio latinoamericano.</p></div></div>
-          <div class="item"><div class="year">Actualidad</div><div><h3>Proyectos autorales</h3><p>Dirección artística de Piazzollamente y desarrollo de propuestas donde la flauta ocupa un lugar central dentro del lenguaje escénico y musical.</p></div></div>
+        <div class="side"><p class="eyebrow"><span class="rule"></span>Trayectoria</p><h2>Cartografía<br><span>de una voz</span>.</h2></div>
+        <div class="main">
+          <p class="spiral-intro">Un recorrido artístico construido entre Rancagua, Chile, Argentina y distintos espacios de circulación latinoamericana. Cada etapa abre una forma distinta de comprender la flauta: como oficio, desplazamiento, memoria, archivo y presencia escénica.</p>
+          <div class="spiral-timeline" aria-label="Línea de tiempo de trayectoria artística">
+            <article class="spiral-node">
+              <div class="spiral-point"><span class="spiral-number">1</span><span class="spiral-date">2006</span></div>
+              <h3>Rancagua: origen de la voz</h3>
+              <p>Primeras clases de flauta, orquestas infantiles y juveniles, y comienzo de una relación vital con la escena.</p>
+            </article>
+            <article class="spiral-node">
+              <div class="spiral-point"><span class="spiral-number">2</span><span class="spiral-date">Chile · Argentina</span></div>
+              <h3>El viaje formativo</h3>
+              <p>Estudios en Chile y formación universitaria en Argentina, con desarrollo en repertorio académico, música de cámara y práctica escénica.</p>
+            </article>
+            <article class="spiral-node">
+              <div class="spiral-point"><span class="spiral-number">3</span><span class="spiral-date">2013–2014</span></div>
+              <h3>Primera expansión latinoamericana</h3>
+              <p>Becas, movilidad académica y circulación entre Argentina, Brasil y Chile.</p>
+            </article>
+            <article class="spiral-node">
+              <div class="spiral-point"><span class="spiral-number">4</span><span class="spiral-date">2015</span></div>
+              <h3>Cirilo Vila: memoria y territorio</h3>
+              <p>Interpretación e investigación en torno al repertorio chileno contemporáneo, con circulación en Valparaíso y Estados Unidos.</p>
+            </article>
+            <article class="spiral-node">
+              <div class="spiral-point"><span class="spiral-number">5</span><span class="spiral-date">2018–2021</span></div>
+              <h3>Archivo, investigación y repertorio</h3>
+              <p>Participación en proyectos latinoamericanos, actividad académica y desarrollo de una línea propia de investigación musical.</p>
+            </article>
+            <article class="spiral-node">
+              <div class="spiral-point"><span class="spiral-number">6</span><span class="spiral-date">2021–actualidad</span></div>
+              <h3>Piazzollamente: la flauta al centro</h3>
+              <p>Dirección artística de un proyecto dedicado a la música de Astor Piazzolla, con adaptaciones para flauta dentro del lenguaje del quinteto.</p>
+            </article>
+            <article class="spiral-node">
+              <div class="spiral-point"><span class="spiral-number">7</span><span class="spiral-date">Actualidad</span></div>
+              <h3>Una práctica escénica propia</h3>
+              <p>Cruce entre interpretación, gestión cultural, tango, repertorio latinoamericano, archivo e investigación musical.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
