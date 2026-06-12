@@ -66,6 +66,11 @@
     .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
     .card{background:rgba(245,239,228,.55);border:1px solid rgba(103,31,34,.16);padding:34px;min-height:260px}
     .role{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+    .video-feature{background:#d9d0c3;padding-top:0}
+    .video-shell{display:grid;grid-template-columns:minmax(220px,3fr) minmax(0,9fr);gap:46px;align-items:center;border-top:1px solid var(--line);padding-top:58px}
+    .video-copy p{margin:16px 0 0;color:#6a5f56;line-height:1.7;max-width:420px}
+    .video-frame{position:relative;aspect-ratio:16/9;background:#000;border:1px solid rgba(103,31,34,.2);overflow:hidden;box-shadow:0 24px 70px rgba(25,21,18,.16)}
+    .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
     .gallery{background:var(--ink);color:var(--ivory)}
     .gallery h2 span{color:var(--gold)}
     .gallery-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;margin-top:60px}
@@ -98,10 +103,11 @@
       .menu{display:none}
       .wrap{width:min(100% - 44px,1220px)}
       .hero-content{padding-bottom:80px}
-      .grid,.footer-grid{display:block}
+      .grid,.footer-grid,.video-shell{display:block}
       .side,.main{grid-column:auto}
       .main{margin-top:36px}
       .cards{grid-template-columns:1fr}
+      .video-frame{margin-top:34px}
       .gallery-grid{display:block}
       .photo{margin-bottom:18px}
       .press{grid-template-columns:1fr;gap:8px;padding:24px 0}
@@ -180,6 +186,19 @@
       </div>
     </section>
 
+    <section class="section video-feature" id="video">
+      <div class="wrap video-shell">
+        <div class="video-copy">
+          <p class="eyebrow"><span class="rule"></span>Video</p>
+          <h2>Archivo<br><span>audiovisual</span>.</h2>
+          <p>Selección de registros en video vinculados a la trayectoria artística, proyectos escénicos y repertorios interpretados por Valentina Galaz.</p>
+        </div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/videoseries?si=iX5FmqQm_Ze_eQ8Y&amp;list=PLZxdRdaEsOPkbja2SL1t1yS_rwrIPzPoK" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
     <section class="section gallery" id="galeria">
       <div class="wrap">
         <p class="eyebrow"><span class="rule"></span>Galería</p><h2>Registro<br><span>de escena</span>.</h2>
@@ -215,9 +234,6 @@
           <div class="press"><div class="source">Entrevista</div><a href="https://open.spotify.com/episode/3spUNK2yrEL9ldQ5SPEyjP" target="_blank" rel="noreferrer">Conversación en Spotify</a><div class="date">Podcast</div></div>
           <div class="press"><div class="source">Piazzollamente</div><a href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noreferrer">Milonga del Ángel — Piazzollamente</a><div class="date">Audio</div></div>
           <div class="press"><div class="source">Piazzollamente</div><a href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noreferrer">Registro audiovisual del proyecto</a><div class="date">YouTube</div></div>
-          <div class="press"><div class="source">Piazzollamente</div><a href="https://www.instagram.com/reel/DRR2vJOKd8N/" target="_blank" rel="noreferrer">Fragmento escénico — Instagram Reel</a><div class="date">Reel</div></div>
-          <div class="press"><div class="source">Piazzollamente</div><a href="https://www.instagram.com/reel/DVE6QE_D2dg/" target="_blank" rel="noreferrer">Fragmento audiovisual — Instagram Reel</a><div class="date">Reel</div></div>
-          <div class="press"><div class="source">Piazzollamente</div><a href="https://www.instagram.com/reel/DQz9hsHkvrV/" target="_blank" rel="noreferrer">Registro escénico breve — Instagram Reel</a><div class="date">Reel</div></div>
         </div>
       </div>
     </section>
