@@ -14,6 +14,29 @@
     <meta property="og:locale" content="es_CL" />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function () {
+        try {
+          var originalSetItem = Storage.prototype.setItem;
+          Storage.prototype.setItem = function (key, value) {
+            try {
+              return originalSetItem.call(this, key, value);
+            } catch (error) {
+              if (error && (error.name === "QuotaExceededError" || error.code === 22 || String(error).indexOf("QuotaExceeded") !== -1)) {
+                try {
+                  if (String(key).indexOf("cache/") === 0 || String(key).indexOf("user-") !== -1) {
+                    this.removeItem(key);
+                    return;
+                  }
+                } catch (_) {}
+                return;
+              }
+              throw error;
+            }
+          };
+        } catch (_) {}
+      })();
+    </script>
     <script type="module" crossorigin src="assets/site-valentina-galaz.js"></script>
     <link rel="stylesheet" crossorigin href="assets/site-valentina-galaz.css">
   </head>
