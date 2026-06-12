@@ -120,13 +120,31 @@
     .p4{grid-column:span 5;aspect-ratio:4/5}
     .p5{grid-column:span 7;aspect-ratio:16/10}
     .p6,.p7{grid-column:span 6;aspect-ratio:16/9}
-    .press-list{display:grid;gap:0;min-width:0;max-width:900px}
-    .press{display:grid;grid-template-columns:minmax(130px,170px) minmax(0,1fr) minmax(96px,140px);gap:28px;padding:28px 0;border-top:1px solid var(--line);align-items:center;min-width:0}
-    .press .source{color:var(--burgundy);font-family:Georgia,"Times New Roman",serif;font-size:1.15rem;line-height:1.25;min-width:0}
-    .press a{display:block;color:var(--ink);text-decoration:none;line-height:1.35;min-width:0;overflow-wrap:break-word;word-break:normal}
-    .press a:hover{text-decoration:underline}
-    .date{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);line-height:1.35;min-width:0}
-    .archive-intro{margin:0 0 26px;color:#6a5f56;line-height:1.7;max-width:760px}
+    .archive-intro{margin:0 0 30px;color:#6a5f56;line-height:1.7;max-width:760px}
+    .archive-pyramid{display:grid;gap:22px;max-width:980px;isolation:isolate}
+    .archive-tier{display:grid;gap:22px;align-items:stretch}
+    .archive-tier.focus{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 7%}
+    .archive-tier.middle{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 2.5%}
+    .archive-tier.base{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .archive-dossier{position:relative;display:flex;flex-direction:column;min-height:100%;padding:30px;border:1px solid rgba(103,31,34,.18);background:linear-gradient(180deg,rgba(245,239,228,.58),rgba(232,224,212,.22));box-shadow:0 20px 60px rgba(25,21,18,.055);opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.65,.2,1),box-shadow .35s ease,border-color .35s ease,background .35s ease}
+    .archive-pyramid.is-visible .archive-dossier{opacity:1;transform:translateY(0)}
+    .archive-pyramid.is-visible .archive-tier:nth-child(1) .archive-dossier:nth-child(1){transition-delay:.08s}
+    .archive-pyramid.is-visible .archive-tier:nth-child(1) .archive-dossier:nth-child(2){transition-delay:.18s}
+    .archive-pyramid.is-visible .archive-tier:nth-child(2) .archive-dossier:nth-child(1){transition-delay:.30s}
+    .archive-pyramid.is-visible .archive-tier:nth-child(2) .archive-dossier:nth-child(2){transition-delay:.42s}
+    .archive-pyramid.is-visible .archive-tier:nth-child(3) .archive-dossier:nth-child(1){transition-delay:.54s}
+    .archive-pyramid.is-visible .archive-tier:nth-child(3) .archive-dossier:nth-child(2){transition-delay:.66s}
+    .archive-dossier:before{content:"";position:absolute;left:30px;right:30px;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.72}
+    .archive-dossier:hover{border-color:rgba(103,31,34,.32);background:rgba(245,239,228,.68);box-shadow:0 26px 70px rgba(25,21,18,.09)}
+    .archive-kicker{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+    .archive-dossier h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(1.55rem,2.4vw,2.05rem);line-height:1.08;margin:0 0 12px;color:var(--burgundy)}
+    .archive-dossier p{margin:0 0 22px;color:#6a5f56;line-height:1.6;font-size:.98rem}
+    .archive-records{display:grid;gap:12px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}
+    .archive-record{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline;text-decoration:none;color:var(--ink);padding:0 0 12px;border-bottom:1px solid rgba(103,31,34,.12)}
+    .archive-record:last-child{padding-bottom:0;border-bottom:0}
+    .archive-record span:first-child{line-height:1.35;overflow-wrap:break-word}
+    .archive-record span:last-child{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+    .archive-record:hover span:first-child{text-decoration:underline}
     .small-link{display:inline-block;margin-top:16px;color:var(--burgundy);text-decoration:none;text-transform:uppercase;letter-spacing:.18em;font-size:.76rem}
     footer{background:var(--burgundy-dark);color:var(--ivory);padding:82px 0}
     .footer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
@@ -142,14 +160,14 @@
       .year{font-size:1.45rem}
       .video-shell{grid-template-columns:minmax(270px,4fr) minmax(0,8fr);gap:38px}
       .video-copy h2{font-size:clamp(2.35rem,4vw,3.5rem)}
-      .press{grid-template-columns:minmax(120px,150px) minmax(0,1fr) minmax(86px,118px);gap:20px}
-      .date{letter-spacing:.14em}
       .spiral-timeline{min-height:900px}
       .spiral-timeline:before{width:650px;height:560px}
       .spiral-node{width:min(225px,30vw);padding:12px 14px}
       .spiral-node:nth-child(4){left:34%;width:220px}
       .spiral-node h3{font-size:1.22rem}
       .spiral-node p{font-size:.88rem}
+      .archive-dossier{padding:26px}
+      .archive-tier.focus{padding:0 3%}
     }
     @media(max-width:900px){
       .menu{display:none}
@@ -165,8 +183,6 @@
       .intro-video .video-frame{margin-top:0}
       .gallery-grid{display:block}
       .photo{margin-bottom:18px}
-      .press-list{max-width:100%}
-      .press{grid-template-columns:1fr;gap:8px;padding:24px 0}
       .section{padding:86px 0}
       .item{grid-template-columns:1fr;gap:8px}
       .spiral-timeline{min-height:0;margin-top:30px;padding:8px 0 0 24px;border-top:0;border-left:1px solid var(--line);overflow:visible}
@@ -178,6 +194,11 @@
       .spiral-number{width:30px;height:30px;font-size:.9rem}
       .spiral-node h3{font-size:1.45rem}
       .spiral-node p{font-size:1rem;max-width:620px}
+      .archive-pyramid{gap:16px}
+      .archive-tier,.archive-tier.focus,.archive-tier.middle,.archive-tier.base{grid-template-columns:1fr;padding:0;gap:16px}
+      .archive-dossier{padding:24px}
+      .archive-record{grid-template-columns:1fr;gap:4px}
+      .archive-record span:last-child{white-space:normal}
       .p1,.p2,.p3,.p4,.p5,.p6,.p7{aspect-ratio:auto}
       .photo img{min-height:320px}
       .footer-side{margin-top:36px}
@@ -190,14 +211,14 @@
       .section h2{font-size:clamp(2.25rem,12vw,3.2rem)}
       .video-copy h2{font-size:clamp(2.4rem,11vw,3rem)}
       .footer-grid h2{font-size:3rem}
-      .date{letter-spacing:.12em}
-      .spiral-intro{font-size:1rem}
+      .spiral-intro,.archive-intro{font-size:1rem}
       .spiral-date{letter-spacing:.14em}
+      .archive-dossier h3{font-size:1.45rem}
     }
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
-      .spiral-timeline:before,.spiral-timeline:after,.spiral-node,.spiral-number,.photo img{transition:none!important}
-      .spiral-node{opacity:1;transform:none;filter:none}
+      .spiral-timeline:before,.spiral-timeline:after,.spiral-node,.spiral-number,.photo img,.archive-dossier{transition:none!important}
+      .spiral-node,.archive-dossier{opacity:1;transform:none;filter:none}
     }
   </style>
 </head>
@@ -332,24 +353,74 @@
     <section class="section" id="prensa">
       <div class="wrap grid">
         <div class="side"><p class="eyebrow"><span class="rule"></span>Archivo</p><h2>Prensa,<br><span>registros</span>.</h2></div>
-        <div class="main press-list">
-          <p class="archive-intro">Selección de antecedentes externos organizados como archivo de trayectoria: investigación musical, circulación internacional, festivales, registros audiovisuales, publicaciones y proyectos.</p>
-          <div class="press"><div class="source">Investigación</div><a href="https://www.academia.edu/39768545/_El_silencio_como_metáfora_en_la_obra_Hojas_de_otoño_égloga_para_solo_de_flauta_de_Cirilo_Vila_Valentina_Galaz" target="_blank" rel="noreferrer">El silencio como metáfora en Hojas de otoño, de Cirilo Vila</a><div class="date">2019 · Tesina</div></div>
-          <div class="press"><div class="source">Investigación</div><a href="https://www.beethovenfm.cl/evento/xi-congreso-de-la-sociedad-chilena-de-musicologia/" target="_blank" rel="noreferrer">XI Congreso de la Sociedad Chilena de Musicología</a><div class="date">2021</div></div>
-          <div class="press"><div class="source">Archivo musical</div><a href="https://www.registromuseoschile.cl/663/w3-article-54713.html" target="_blank" rel="noreferrer">Homenaje a Cirilo Vila a dos Flautas</a><div class="date">2015</div></div>
-          <div class="press"><div class="source">Festival</div><a href="https://www.imuspucv.cl/festival-darwin-vargas-2015/" target="_blank" rel="noreferrer">Festival Darwin Vargas 2015</a><div class="date">2015</div></div>
-          <div class="press"><div class="source">Festival</div><a href="https://www.pucv.cl/pucv/site/docs/20151013/20151013124734/programa_darwin_vargas_2015.pdf" target="_blank" rel="noreferrer">Programa Festival Darwin Vargas 2015</a><div class="date">2015 · PDF</div></div>
-          <div class="press"><div class="source">Circulación</div><a href="https://www.abc.com.py/edicion-impresa/artes-espectaculos/la-consagracion-de-la-primavera-un-desafio-musical-y-coreografico-1723522.html" target="_blank" rel="noreferrer">La consagración de la primavera: un desafío musical y coreográfico</a><div class="date">2018</div></div>
-          <div class="press"><div class="source">Argentina</div><a href="https://fad.uncuyo.edu.ar/este-jueves-23-sube-al-teatro-quintanila-el-concierto-ellas-en-el-marco-de-la-agenda-del-mes-de-las-mujeres" target="_blank" rel="noreferrer">Concierto Ellas — Universidad Nacional de Cuyo / FAD</a><div class="date">Concierto</div></div>
-          <div class="press"><div class="source">Argentina</div><a href="https://fad.uncuyo.edu.ar/alumnos-de-las-carreras-musicales-brindaran-un-concierto-el-4-y-5-de-diciembre" target="_blank" rel="noreferrer">Concierto de alumnos de las carreras musicales</a><div class="date">Concierto</div></div>
-          <div class="press"><div class="source">Argentina</div><a href="https://www.uncuyo.edu.ar/extension/upload/programa-cum.pdf" target="_blank" rel="noreferrer">Guido López Gavilán en concierto — Coro Universitario de Mendoza</a><div class="date">2019 · PDF</div></div>
-          <div class="press"><div class="source">Argentina</div><a href="https://fad.uncuyo.edu.ar/aprueban-dictado-de-musica-de-camara-en-ingles" target="_blank" rel="noreferrer">Música de cámara en inglés</a><div class="date">Archivo</div></div>
-          <div class="press"><div class="source">Mendoza</div><a href="https://www.mendoza.gov.ar/prensa/la-sala-elina-alba-se-llenara-de-musica-clasica-y-popular/" target="_blank" rel="noreferrer">La Sala Elina Alba se llenará de música clásica y popular</a><div class="date">Prensa</div></div>
-          <div class="press"><div class="source">Mendoza</div><a href="https://www.mendoza.gov.ar/prensa/la-sala-elina-alba-albergo-una-velada-de-musica-clasica-y-popular/" target="_blank" rel="noreferrer">La Sala Elina Alba albergó una velada de música clásica y popular</a><div class="date">Prensa</div></div>
-          <div class="press"><div class="source">Publicación</div><a href="https://thebabelflute.com/the-challenge-of-online-classes/" target="_blank" rel="noreferrer">The Challenge of Online Classes — The Babel Flute</a><div class="date">Artículo</div></div>
-          <div class="press"><div class="source">Entrevista</div><a href="https://open.spotify.com/episode/3spUNK2yrEL9ldQ5SPEyjP" target="_blank" rel="noreferrer">Conversación en Spotify</a><div class="date">Podcast</div></div>
-          <div class="press"><div class="source">Piazzollamente</div><a href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noreferrer">Milonga del Ángel — Piazzollamente</a><div class="date">2026 · Audio</div></div>
-          <div class="press"><div class="source">Piazzollamente</div><a href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noreferrer">Registro audiovisual del proyecto</a><div class="date">Video</div></div>
+        <div class="main">
+          <p class="archive-intro">Selección de antecedentes externos organizados como archivo curatorial. Los registros se agrupan por líneas de trabajo, territorios y proyectos vinculados: investigación musical, circulación, escena universitaria, publicaciones y registros audiovisuales.</p>
+          <div class="archive-pyramid" aria-label="Archivo de prensa y registros agrupado por dossiers">
+            <div class="archive-tier focus">
+              <article class="archive-dossier">
+                <div class="archive-kicker">Dossier central</div>
+                <h3>Cirilo Vila</h3>
+                <p>Investigación, interpretación y archivo en torno a repertorio chileno contemporáneo, memoria musical y obra para flauta.</p>
+                <div class="archive-records">
+                  <a class="archive-record" href="https://www.academia.edu/39768545/_El_silencio_como_metáfora_en_la_obra_Hojas_de_otoño_égloga_para_solo_de_flauta_de_Cirilo_Vila_Valentina_Galaz" target="_blank" rel="noreferrer"><span>El silencio como metáfora en Hojas de otoño, de Cirilo Vila</span><span>2019 · Tesina de Licenciatura UNCuyo</span></a>
+                  <a class="archive-record" href="https://www.registromuseoschile.cl/663/w3-article-54713.html" target="_blank" rel="noreferrer"><span>Homenaje a Cirilo Vila a dos Flautas</span><span>2015</span></a>
+                  <a class="archive-record" href="https://www.beethovenfm.cl/evento/xi-congreso-de-la-sociedad-chilena-de-musicologia/" target="_blank" rel="noreferrer"><span>XI Congreso de la Sociedad Chilena de Musicología</span><span>2021</span></a>
+                </div>
+              </article>
+              <article class="archive-dossier">
+                <div class="archive-kicker">Proyecto autoral</div>
+                <h3>Piazzollamente</h3>
+                <p>Registros vinculados al proyecto dedicado a la música de Astor Piazzolla, con la flauta como voz central dentro del lenguaje escénico del tango.</p>
+                <div class="archive-records">
+                  <a class="archive-record" href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noreferrer"><span>Milonga del Ángel — Piazzollamente</span><span>2026 · Audio</span></a>
+                  <a class="archive-record" href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noreferrer"><span>Registro audiovisual del proyecto</span><span>Video</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="archive-tier middle">
+              <article class="archive-dossier">
+                <div class="archive-kicker">Festival y circulación</div>
+                <h3>Valparaíso · Paraguay</h3>
+                <p>Antecedentes de circulación artística latinoamericana, festivales, programas y participación en proyectos escénicos de gran formato.</p>
+                <div class="archive-records">
+                  <a class="archive-record" href="https://www.imuspucv.cl/festival-darwin-vargas-2015/" target="_blank" rel="noreferrer"><span>Festival Darwin Vargas 2015</span><span>2015</span></a>
+                  <a class="archive-record" href="https://www.pucv.cl/pucv/site/docs/20151013/20151013124734/programa_darwin_vargas_2015.pdf" target="_blank" rel="noreferrer"><span>Programa Festival Darwin Vargas 2015</span><span>2015 · PDF</span></a>
+                  <a class="archive-record" href="https://www.abc.com.py/edicion-impresa/artes-espectaculos/la-consagracion-de-la-primavera-un-desafio-musical-y-coreografico-1723522.html" target="_blank" rel="noreferrer"><span>La consagración de la primavera: un desafío musical y coreográfico</span><span>2018</span></a>
+                </div>
+              </article>
+              <article class="archive-dossier">
+                <div class="archive-kicker">Formación y escena</div>
+                <h3>UNCuyo · Mendoza</h3>
+                <p>Programas, conciertos y registros de prensa vinculados a la etapa argentina, la actividad universitaria y la escena musical en Mendoza.</p>
+                <div class="archive-records">
+                  <a class="archive-record" href="https://fad.uncuyo.edu.ar/este-jueves-23-sube-al-teatro-quintanila-el-concierto-ellas-en-el-marco-de-la-agenda-del-mes-de-las-mujeres" target="_blank" rel="noreferrer"><span>Concierto Ellas — Universidad Nacional de Cuyo / FAD</span><span>Concierto</span></a>
+                  <a class="archive-record" href="https://fad.uncuyo.edu.ar/alumnos-de-las-carreras-musicales-brindaran-un-concierto-el-4-y-5-de-diciembre" target="_blank" rel="noreferrer"><span>Concierto de alumnos de las carreras musicales</span><span>Concierto</span></a>
+                  <a class="archive-record" href="https://www.uncuyo.edu.ar/extension/upload/programa-cum.pdf" target="_blank" rel="noreferrer"><span>Guido López Gavilán en concierto — Coro Universitario de Mendoza</span><span>2019 · PDF</span></a>
+                  <a class="archive-record" href="https://fad.uncuyo.edu.ar/aprueban-dictado-de-musica-de-camara-en-ingles" target="_blank" rel="noreferrer"><span>Música de cámara en inglés</span><span>Archivo</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="archive-tier base">
+              <article class="archive-dossier">
+                <div class="archive-kicker">Prensa territorial</div>
+                <h3>Mendoza</h3>
+                <p>Notas de prensa asociadas a programación musical, escena local y circulación en espacios culturales de la provincia.</p>
+                <div class="archive-records">
+                  <a class="archive-record" href="https://www.mendoza.gov.ar/prensa/la-sala-elina-alba-se-llenara-de-musica-clasica-y-popular/" target="_blank" rel="noreferrer"><span>La Sala Elina Alba se llenará de música clásica y popular</span><span>Prensa</span></a>
+                  <a class="archive-record" href="https://www.mendoza.gov.ar/prensa/la-sala-elina-alba-albergo-una-velada-de-musica-clasica-y-popular/" target="_blank" rel="noreferrer"><span>La Sala Elina Alba albergó una velada de música clásica y popular</span><span>Prensa</span></a>
+                </div>
+              </article>
+              <article class="archive-dossier">
+                <div class="archive-kicker">Publicaciones y conversación</div>
+                <h3>Artículos · Podcast</h3>
+                <p>Registros escritos y sonoros que amplían el archivo hacia la conversación pública, la reflexión profesional y la circulación digital.</p>
+                <div class="archive-records">
+                  <a class="archive-record" href="https://thebabelflute.com/the-challenge-of-online-classes/" target="_blank" rel="noreferrer"><span>The Challenge of Online Classes — The Babel Flute</span><span>Artículo</span></a>
+                  <a class="archive-record" href="https://open.spotify.com/episode/3spUNK2yrEL9ldQ5SPEyjP" target="_blank" rel="noreferrer"><span>Conversación en Spotify</span><span>Podcast</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -382,10 +453,10 @@
   </footer>
   <script>
     (() => {
-      const spiral = document.querySelector('.spiral-timeline');
-      if (!spiral) return;
+      const revealBlocks = document.querySelectorAll('.spiral-timeline, .archive-pyramid');
+      if (!revealBlocks.length) return;
       if (!('IntersectionObserver' in window)) {
-        spiral.classList.add('is-visible');
+        revealBlocks.forEach((block) => block.classList.add('is-visible'));
         return;
       }
       const observer = new IntersectionObserver((entries) => {
@@ -395,8 +466,8 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.24 });
-      observer.observe(spiral);
+      }, { threshold: 0.18 });
+      revealBlocks.forEach((block) => observer.observe(block));
     })();
   </script>
 </body>
