@@ -163,15 +163,20 @@
     .archive-record span:last-child{display:block;text-align:right;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.35;white-space:normal;overflow-wrap:break-word}
     .archive-record:hover span:first-child{text-decoration:underline}
     .small-link{display:inline-block;margin-top:16px;color:var(--burgundy);text-decoration:none;text-transform:uppercase;letter-spacing:.18em;font-size:.76rem}
-    footer{background:var(--burgundy-dark);color:var(--ivory);padding:82px 0}
-    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
-    .footer-grid h2{font-family:Georgia,"Times New Roman",serif;font-size:3.6rem;font-weight:400;margin:0 0 20px}
-    .footer-copy{color:rgba(245,239,228,.72);line-height:1.7;max-width:560px;margin:0}
-    .footer-side{display:grid;gap:28px;align-content:start}
-    .footer-label{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
-    .footer-projects,.footer-contact{display:flex;flex-wrap:wrap;gap:14px 22px}
-    .footer-projects a,.footer-contact a{color:var(--gold);text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem}
-    .footer-projects a:hover,.footer-contact a:hover{text-decoration:underline}
+    footer{background:var(--burgundy-dark);color:var(--ivory);padding:64px 0 0}
+    .footer-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:clamp(34px,6vw,78px);align-items:start;padding-bottom:40px}
+    .footer-grid h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(3rem,5vw,4.25rem);line-height:.96;font-weight:400;margin:0 0 18px}
+    .footer-copy{color:rgba(245,239,228,.76);line-height:1.68;max-width:520px;margin:0;font-size:1.02rem}
+    .footer-side{display:grid;grid-template-columns:1fr;gap:26px;align-content:start;padding-top:16px}
+    .footer-group{padding-top:18px;border-top:1px solid rgba(245,239,228,.16)}
+    .footer-label{font-family:Georgia,"Times New Roman",serif;font-size:1.18rem;letter-spacing:.01em;color:var(--ivory);margin:0 0 12px;font-weight:400}
+    .footer-projects,.footer-contact{display:grid;gap:9px}
+    .footer-projects a,.footer-contact a{position:relative;width:max-content;max-width:100%;color:rgba(245,239,228,.82);text-decoration:none;letter-spacing:.02em;font-size:.96rem;line-height:1.45;transition:color .25s ease,transform .25s ease}
+    .footer-projects a:after,.footer-contact a:after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;opacity:.9}
+    .footer-projects a:hover,.footer-contact a:hover{color:var(--gold);transform:translateX(3px)}
+    .footer-projects a:hover:after,.footer-contact a:hover:after{transform:scaleX(1)}
+    .footer-bottom{border-top:1px solid rgba(245,239,228,.14);padding:16px 0 18px;color:rgba(245,239,228,.54);font-size:.78rem;line-height:1.5}
+    .footer-bottom .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     @media(max-width:1080px){
       .item{grid-template-columns:minmax(150px,175px) minmax(0,1fr);gap:24px}
       .year{font-size:1.45rem}
@@ -224,16 +229,21 @@
       .p5{aspect-ratio:16/9}
       .photo img{height:auto;min-height:0}
       .p5 img{height:100%;object-position:18% 50%}
-      .footer-side{margin-top:36px}
+      footer{padding-top:54px}
+      .footer-grid{padding-bottom:34px}
+      .footer-side{margin-top:28px;padding-top:0}
     }
     @media(max-width:520px){
       .wrap{width:min(100% - 32px,1220px)}
       .hero h1{font-size:clamp(3.1rem,17vw,4.8rem)}
-      .eyebrow,.cta a,.small-link,.footer-projects a,.footer-contact a{letter-spacing:.16em}
+      .eyebrow,.cta a,.small-link{letter-spacing:.16em}
       .rule{width:34px;margin-right:12px}
       .section h2{font-size:clamp(2.25rem,12vw,3.2rem)}
       .video-copy h2{font-size:clamp(2.4rem,11vw,3rem)}
       .footer-grid h2{font-size:3rem}
+      .footer-copy{font-size:1rem}
+      .footer-bottom .wrap{display:block}
+      .footer-bottom span+span{display:block;margin-top:4px}
       .spiral-intro,.archive-intro{font-size:1rem}
       .spiral-date{letter-spacing:.14em}
       .archive-dossier h3{font-size:1.45rem}
@@ -454,23 +464,29 @@
       <div>
         <p class="eyebrow"><span class="rule"></span>Contacto</p>
         <h2>Valentina<br><span class="italic" style="color:var(--gold)">Galaz</span></h2>
-        <p class="footer-copy">Para conciertos, colaboraciones artísticas, prensa, programación cultural o proyectos escénicos. Revisa también mis proyectos Escuela de Flautistas y Piazzollamente.</p>
+        <p class="footer-copy">Para conciertos, colaboraciones artísticas, prensa, programación cultural o proyectos escénicos.</p>
       </div>
       <div class="footer-side">
-        <div>
+        <div class="footer-group">
           <p class="footer-label">Proyectos</p>
           <div class="footer-projects">
-            <a href="https://escueladeflautistas.cl/" target="_blank" rel="noreferrer">escueladeflautistas.cl</a>
-            <a href="https://piazzollamente.cl/" target="_blank" rel="noreferrer">piazzollamente.cl</a>
+            <a href="https://escueladeflautistas.cl/" target="_blank" rel="noreferrer">Escuela de Flautistas</a>
+            <a href="https://piazzollamente.cl/" target="_blank" rel="noreferrer">Piazzollamente</a>
           </div>
         </div>
-        <div>
+        <div class="footer-group">
           <p class="footer-label">Contacto directo</p>
           <div class="footer-contact">
             <a href="tel:+56981527088">+56 9 8152 7088</a>
             <a href="mailto:valen.galaz@gmail.com">valen.galaz@gmail.com</a>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap">
+        <span>© 2026 Valentina Galaz. Todos los derechos reservados.</span>
+        <span>Sitio creado para Valentina Galaz.</span>
       </div>
     </div>
   </footer>
