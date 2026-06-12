@@ -86,12 +86,12 @@
     .p4{grid-column:span 5;aspect-ratio:4/5}
     .p5{grid-column:span 7;aspect-ratio:16/10}
     .p6,.p7{grid-column:span 6;aspect-ratio:16/9}
-    .press-list{display:grid;gap:0;min-width:0}
-    .press{display:grid;grid-template-columns:minmax(130px,170px) minmax(0,1fr) minmax(82px,130px);gap:28px;padding:28px 0;border-top:1px solid var(--line);align-items:center;min-width:0}
-    .press .source{color:var(--burgundy);font-family:Georgia,"Times New Roman",serif;font-size:1.15rem;line-height:1.25}
-    .press a{color:var(--ink);text-decoration:none;line-height:1.35;min-width:0}
+    .press-list{display:grid;gap:0;min-width:0;max-width:900px}
+    .press{display:grid;grid-template-columns:minmax(130px,170px) minmax(0,1fr) minmax(96px,140px);gap:28px;padding:28px 0;border-top:1px solid var(--line);align-items:center;min-width:0}
+    .press .source{color:var(--burgundy);font-family:Georgia,"Times New Roman",serif;font-size:1.15rem;line-height:1.25;min-width:0}
+    .press a{display:block;color:var(--ink);text-decoration:none;line-height:1.35;min-width:0;overflow-wrap:break-word;word-break:normal}
     .press a:hover{text-decoration:underline}
-    .date{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);line-height:1.35}
+    .date{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);line-height:1.35;min-width:0}
     .archive-intro{margin:0 0 26px;color:#6a5f56;line-height:1.7;max-width:760px}
     .small-link{display:inline-block;margin-top:16px;color:var(--burgundy);text-decoration:none;text-transform:uppercase;letter-spacing:.18em;font-size:.76rem}
     footer{background:var(--burgundy-dark);color:var(--ivory);padding:82px 0}
@@ -108,7 +108,7 @@
       .year{font-size:1.45rem}
       .video-shell{grid-template-columns:minmax(270px,4fr) minmax(0,8fr);gap:38px}
       .video-copy h2{font-size:clamp(2.35rem,4vw,3.5rem)}
-      .press{grid-template-columns:minmax(120px,150px) minmax(0,1fr) minmax(70px,105px);gap:20px}
+      .press{grid-template-columns:minmax(120px,150px) minmax(0,1fr) minmax(86px,118px);gap:20px}
       .date{letter-spacing:.14em}
     }
     @media(max-width:900px){
@@ -125,6 +125,7 @@
       .intro-video .video-frame{margin-top:0}
       .gallery-grid{display:block}
       .photo{margin-bottom:18px}
+      .press-list{max-width:100%}
       .press{grid-template-columns:1fr;gap:8px;padding:24px 0}
       .section{padding:86px 0}
       .item{grid-template-columns:1fr;gap:8px}
@@ -140,6 +141,7 @@
       .section h2{font-size:clamp(2.25rem,12vw,3.2rem)}
       .video-copy h2{font-size:clamp(2.4rem,11vw,3rem)}
       .footer-grid h2{font-size:3rem}
+      .date{letter-spacing:.12em}
     }
   </style>
 </head>
@@ -249,16 +251,16 @@
           <div class="press"><div class="source">Festival</div><a href="https://www.imuspucv.cl/festival-darwin-vargas-2015/" target="_blank" rel="noreferrer">Festival Darwin Vargas 2015</a><div class="date">2015</div></div>
           <div class="press"><div class="source">Festival</div><a href="https://www.pucv.cl/pucv/site/docs/20151013/20151013124734/programa_darwin_vargas_2015.pdf" target="_blank" rel="noreferrer">Programa Festival Darwin Vargas 2015</a><div class="date">2015 · PDF</div></div>
           <div class="press"><div class="source">Circulación</div><a href="https://www.abc.com.py/edicion-impresa/artes-espectaculos/la-consagracion-de-la-primavera-un-desafio-musical-y-coreografico-1723522.html" target="_blank" rel="noreferrer">La consagración de la primavera: un desafío musical y coreográfico</a><div class="date">2018</div></div>
-          <div class="press"><div class="source">Argentina</div><a href="https://fad.uncuyo.edu.ar/este-jueves-23-sube-al-teatro-quintanila-el-concierto-ellas-en-el-marco-de-la-agenda-del-mes-de-las-mujeres" target="_blank" rel="noreferrer">Concierto Ellas — Universidad Nacional de Cuyo / FAD</a><div class="date">UNCuyo</div></div>
-          <div class="press"><div class="source">Argentina</div><a href="https://fad.uncuyo.edu.ar/alumnos-de-las-carreras-musicales-brindaran-un-concierto-el-4-y-5-de-diciembre" target="_blank" rel="noreferrer">Concierto de alumnos de las carreras musicales</a><div class="date">UNCuyo</div></div>
+          <div class="press"><div class="source">Argentina</div><a href="https://fad.uncuyo.edu.ar/este-jueves-23-sube-al-teatro-quintanila-el-concierto-ellas-en-el-marco-de-la-agenda-del-mes-de-las-mujeres" target="_blank" rel="noreferrer">Concierto Ellas — Universidad Nacional de Cuyo / FAD</a><div class="date">Concierto</div></div>
+          <div class="press"><div class="source">Argentina</div><a href="https://fad.uncuyo.edu.ar/alumnos-de-las-carreras-musicales-brindaran-un-concierto-el-4-y-5-de-diciembre" target="_blank" rel="noreferrer">Concierto de alumnos de las carreras musicales</a><div class="date">Concierto</div></div>
           <div class="press"><div class="source">Argentina</div><a href="https://www.uncuyo.edu.ar/extension/upload/programa-cum.pdf" target="_blank" rel="noreferrer">Guido López Gavilán en concierto — Coro Universitario de Mendoza</a><div class="date">2019 · PDF</div></div>
-          <div class="press"><div class="source">Argentina</div><a href="https://fad.uncuyo.edu.ar/aprueban-dictado-de-musica-de-camara-en-ingles" target="_blank" rel="noreferrer">Música de cámara en inglés</a><div class="date">UNCuyo</div></div>
+          <div class="press"><div class="source">Argentina</div><a href="https://fad.uncuyo.edu.ar/aprueban-dictado-de-musica-de-camara-en-ingles" target="_blank" rel="noreferrer">Música de cámara en inglés</a><div class="date">Archivo</div></div>
           <div class="press"><div class="source">Mendoza</div><a href="https://www.mendoza.gov.ar/prensa/la-sala-elina-alba-se-llenara-de-musica-clasica-y-popular/" target="_blank" rel="noreferrer">La Sala Elina Alba se llenará de música clásica y popular</a><div class="date">Prensa</div></div>
           <div class="press"><div class="source">Mendoza</div><a href="https://www.mendoza.gov.ar/prensa/la-sala-elina-alba-albergo-una-velada-de-musica-clasica-y-popular/" target="_blank" rel="noreferrer">La Sala Elina Alba albergó una velada de música clásica y popular</a><div class="date">Prensa</div></div>
           <div class="press"><div class="source">Publicación</div><a href="https://thebabelflute.com/the-challenge-of-online-classes/" target="_blank" rel="noreferrer">The Challenge of Online Classes — The Babel Flute</a><div class="date">Artículo</div></div>
           <div class="press"><div class="source">Entrevista</div><a href="https://open.spotify.com/episode/3spUNK2yrEL9ldQ5SPEyjP" target="_blank" rel="noreferrer">Conversación en Spotify</a><div class="date">Podcast</div></div>
           <div class="press"><div class="source">Piazzollamente</div><a href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noreferrer">Milonga del Ángel — Piazzollamente</a><div class="date">2026 · Audio</div></div>
-          <div class="press"><div class="source">Piazzollamente</div><a href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noreferrer">Registro audiovisual del proyecto</a><div class="date">YouTube</div></div>
+          <div class="press"><div class="source">Piazzollamente</div><a href="https://www.youtube.com/watch?v=8YdsLFozZGU" target="_blank" rel="noreferrer">Registro audiovisual del proyecto</a><div class="date">Video</div></div>
         </div>
       </div>
     </section>
