@@ -3,42 +3,164 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Valentina Galaz</title>
+  <title>Interpretación — Valentina Galaz</title>
+  <meta name="description" content="Trayectoria interpretativa de Valentina Galaz: flauta traversa, música de cámara, repertorio contemporáneo, música latinoamericana y escena.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon-vg.svg?v=2">
   <link rel="shortcut icon" href="../assets/favicon-vg.svg?v=2">
-  <meta name="theme-color" content="#162A52">
+  <meta name="theme-color" content="#18B368">
   <style>
-    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7;--area:var(--blue);--area-text:var(--white)}
+    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7;--soft:#eefaf3;--ink:#26334f}
     *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;background:var(--white);color:var(--blue);font-family:Arial,Helvetica,sans-serif}
-    body{min-height:100svh;padding:16px}
-    .page{position:relative;min-height:calc(100svh - 32px);border:2px solid var(--blue);display:grid;grid-template-rows:auto 1fr;overflow:hidden;background:var(--white)}
-    header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px clamp(22px,4vw,54px);border-bottom:2px solid var(--blue)}
-    .brand{display:block;width:min(280px,46vw)}
-    .brand img{display:block;width:100%;height:auto}
-    .back{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
-    .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);min-height:0}
-    .panel{position:relative;overflow:hidden;background:var(--area);color:var(--area-text);padding:clamp(38px,7vw,92px);display:flex;flex-direction:column;justify-content:center}
-    .panel:before{content:"";position:absolute;width:clamp(120px,18vw,260px);aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-8%;top:-14%;opacity:.28}
-    .panel:after{content:"";position:absolute;width:clamp(80px,11vw,150px);aspect-ratio:1;background:rgba(255,255,255,.16);right:-3%;bottom:-8%;transform:rotate(45deg)}
-    .num{position:relative;z-index:1;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;opacity:.78}
-    h1{position:relative;z-index:1;margin:24px 0 0;font-size:clamp(2.8rem,8vw,7.8rem);line-height:.86;letter-spacing:-.065em;text-transform:uppercase;overflow-wrap:anywhere}
-    .info{padding:clamp(38px,6vw,82px);display:flex;flex-direction:column;justify-content:center;background:var(--white)}
-    .eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--fuchsia);margin:0 0 18px}
-    .info p{margin:0;max-width:520px;font-size:clamp(1rem,1.45vw,1.2rem);line-height:1.7;color:#48536d}
-    .rule{width:42px;height:4px;background:var(--green);margin:28px 0 0}
-    @media(max-width:760px){body{padding:8px}.page{min-height:calc(100svh - 16px)}header{padding:16px 18px;gap:14px}.brand{width:min(210px,55vw)}.back{font-size:.58rem;letter-spacing:.12em}.hero{grid-template-columns:1fr;grid-template-rows:auto auto}.panel{min-height:43svh;padding:42px 24px}h1{font-size:clamp(2.6rem,16vw,5.2rem);max-width:100%}.info{padding:34px 24px 42px}}
+    html{scroll-behavior:smooth;overflow-x:hidden;background:var(--white)}
+    body{margin:0;background:var(--white);color:var(--blue);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    .shell{position:relative;margin:16px;border:2px solid var(--blue);overflow:hidden;background:var(--white)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px clamp(20px,4vw,54px);border-bottom:2px solid var(--blue);background:var(--white);position:relative;z-index:10}
+    .brand{width:min(280px,48vw)}
+    .brand img{width:100%;height:auto}
+    .back{text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:.65rem;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
+
+    .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);min-height:calc(100svh - 105px)}
+    .hero-copy{position:relative;display:flex;flex-direction:column;justify-content:center;padding:clamp(44px,7vw,98px);background:var(--green);color:var(--white);overflow:hidden}
+    .hero-copy:before{content:"";position:absolute;width:260px;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-80px;top:-80px;opacity:.26}
+    .hero-copy:after{content:"";position:absolute;width:140px;aspect-ratio:1;background:var(--fuchsia);right:-38px;bottom:-42px;transform:rotate(45deg)}
+    .kicker{position:relative;z-index:2;margin:0;font-size:.68rem;letter-spacing:.23em;text-transform:uppercase;font-weight:800}
+    h1{position:relative;z-index:2;margin:22px 0 28px;font-size:clamp(3.5rem,8.3vw,8rem);line-height:.82;letter-spacing:-.07em;text-transform:uppercase;max-width:8ch}
+    .hero-text{position:relative;z-index:2;margin:0;max-width:660px;font-size:clamp(1.02rem,1.45vw,1.26rem);line-height:1.7}
+    .hero-note{position:relative;z-index:2;margin-top:30px;max-width:520px;padding-left:18px;border-left:4px solid var(--fuchsia);font-size:.9rem;line-height:1.55;color:rgba(255,255,255,.84)}
+    .hero-photo{position:relative;min-height:640px;background:var(--blue);overflow:hidden}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 24%}
+    .hero-photo:after{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.6);pointer-events:none}
+    .photo-label{position:absolute;left:26px;bottom:24px;background:var(--white);color:var(--blue);padding:10px 14px;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+
+    .intro{padding:clamp(70px,9vw,130px) clamp(24px,7vw,110px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,7vw,100px);align-items:start}
+    .intro-title{margin:0;font-size:clamp(2.6rem,5.5vw,5.8rem);line-height:.9;letter-spacing:-.06em;text-transform:uppercase}
+    .intro-title span{color:var(--fuchsia)}
+    .intro-copy{font-size:clamp(1.05rem,1.45vw,1.25rem);line-height:1.78;color:#48536d}
+    .intro-copy p{margin:0 0 22px}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--blue);border-bottom:2px solid var(--blue)}
+    .stat{min-height:190px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;border-right:2px solid var(--blue)}
+    .stat:last-child{border-right:0}
+    .stat:nth-child(1){background:var(--blue);color:var(--white)}
+    .stat:nth-child(2){background:var(--green);color:var(--white)}
+    .stat:nth-child(3){background:var(--fuchsia);color:var(--white)}
+    .stat:nth-child(4){background:var(--white);color:var(--blue)}
+    .stat strong{font-size:clamp(2.4rem,4vw,4.4rem);line-height:.9;letter-spacing:-.06em}
+    .stat span{font-size:.72rem;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+
+    .journey{padding:clamp(72px,9vw,125px) clamp(24px,7vw,110px);background:var(--soft)}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:42px}
+    .section-head h2{margin:0;font-size:clamp(2.7rem,6vw,6.3rem);line-height:.87;letter-spacing:-.065em;text-transform:uppercase;max-width:8ch}
+    .section-head p{margin:0;max-width:480px;color:#56617a;line-height:1.65}
+    .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .moment{position:relative;min-height:270px;padding:26px;border:2px solid var(--blue);background:var(--white);overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+    .moment:hover{transform:translateY(-5px);box-shadow:10px 10px 0 rgba(22,42,82,.13)}
+    .moment:nth-child(2),.moment:nth-child(5){background:var(--green);color:var(--white)}
+    .moment:nth-child(3){background:var(--fuchsia);color:var(--white)}
+    .year{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800;opacity:.78}
+    .moment h3{margin:55px 0 12px;font-size:clamp(1.35rem,2.2vw,2.1rem);line-height:.95;letter-spacing:-.04em;text-transform:uppercase}
+    .moment p{margin:0;line-height:1.6;font-size:.92rem;max-width:34ch}
+    .moment:after{content:"";position:absolute;width:74px;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-28px;top:-28px;opacity:.25}
+
+    .visual-story{display:grid;grid-template-columns:1.05fr .95fr;min-height:620px;border-top:2px solid var(--blue);border-bottom:2px solid var(--blue)}
+    .visual-photo{min-height:620px;overflow:hidden;background:var(--blue)}
+    .visual-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .visual-copy{position:relative;padding:clamp(46px,7vw,100px);display:flex;flex-direction:column;justify-content:center;background:var(--blue);color:var(--white);overflow:hidden}
+    .visual-copy:before{content:"";position:absolute;width:170px;aspect-ratio:1;background:var(--fuchsia);border-radius:50%;right:-55px;top:-55px}
+    .visual-copy h2{position:relative;z-index:2;margin:0 0 24px;font-size:clamp(2.8rem,5.8vw,6rem);line-height:.88;letter-spacing:-.06em;text-transform:uppercase;max-width:8ch}
+    .visual-copy p{position:relative;z-index:2;margin:0;max-width:560px;line-height:1.75;font-size:clamp(1rem,1.35vw,1.18rem);color:rgba(255,255,255,.82)}
+    .visual-copy .line{position:relative;z-index:2;width:44px;height:5px;background:var(--green);margin-top:30px}
+
+    .territories{padding:clamp(72px,9vw,125px) clamp(24px,7vw,110px)}
+    .territories h2{margin:0 0 42px;font-size:clamp(2.7rem,6vw,6.2rem);line-height:.88;letter-spacing:-.06em;text-transform:uppercase}
+    .country-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .country{min-height:150px;border:2px solid var(--blue);display:grid;place-items:center;text-align:center;padding:20px;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800}
+    .country:nth-child(2),.country:nth-child(5){background:var(--green);color:var(--white)}
+    .country:nth-child(3){background:var(--fuchsia);color:var(--white)}
+    .closing{margin:54px 0 0;max-width:850px;font-size:clamp(1.25rem,2.2vw,2rem);line-height:1.45;letter-spacing:-.02em;color:var(--ink)}
+
+    footer{background:var(--green);color:var(--white);padding:34px clamp(24px,7vw,110px);display:flex;justify-content:space-between;gap:20px;align-items:center}
+    footer a{text-decoration:none;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:4px}
+    footer span{font-size:.72rem;opacity:.78}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}.hero-photo{min-height:520px}.intro{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:2px solid var(--blue)}.timeline{grid-template-columns:repeat(2,1fr)}.visual-story{grid-template-columns:1fr}.visual-photo{min-height:500px}.country-grid{grid-template-columns:repeat(2,1fr)}.country:last-child{grid-column:1/-1}
+    }
+    @media(max-width:620px){
+      .shell{margin:8px}.brand{width:min(205px,55vw)}header{padding:15px 16px;gap:12px}.back{font-size:.55rem;letter-spacing:.1em}.hero{min-height:0}.hero-copy{padding:48px 24px 54px}.hero-photo{min-height:430px}.hero-photo img{object-position:center 20%}h1{font-size:clamp(3.1rem,18vw,5rem)}.intro{padding:62px 24px}.stats{grid-template-columns:1fr}.stat{min-height:145px;border-right:0;border-bottom:2px solid var(--blue)}.stat:last-child{border-bottom:0}.section-head{display:block}.section-head p{margin-top:24px}.timeline{grid-template-columns:1fr}.moment{min-height:230px}.visual-photo{min-height:430px}.visual-copy{padding:58px 24px}.territories{padding:62px 24px}.country-grid{grid-template-columns:1fr}.country:last-child{grid-column:auto}.country{min-height:110px}footer{align-items:flex-start;flex-direction:column}
+    }
   </style>
 </head>
 <body>
-  <main class="page">
-    <header><a class="brand" href="../" aria-label="Volver al inicio"><img src="../assets/Fondo%20marfil.png" alt="Valentina Galaz"></a><a class="back" href="../">← Volver al inicio</a></header>
-    <section class="hero"><div class="panel"><div class="num" id="num"></div><h1 id="title"></h1></div><div class="info"><p class="eyebrow">Área de trabajo</p><p id="description"></p><span class="rule" aria-hidden="true"></span></div></section>
+  <main class="shell">
+    <header>
+      <a class="brand" href="../" aria-label="Volver al inicio"><img src="../assets/Fondo%20marfil.png" alt="Valentina Galaz"></a>
+      <a class="back" href="../">← Volver al inicio</a>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">02 · Interpretación</p>
+        <h1>Una vida en escena</h1>
+        <p class="hero-text">La flauta ha sido mi forma de moverme por el mundo, de pensar y también de decir cosas que no sabría explicar de otra manera.</p>
+        <p class="hero-note">Mi recorrido no pertenece a un solo repertorio: cruza orquesta, música de cámara, creación contemporánea, música latinoamericana y tango.</p>
+      </div>
+      <div class="hero-photo">
+        <img src="../assets/valentina-galaz-escenario-azul.jpg" alt="Valentina Galaz interpretando flauta en escena">
+        <span class="photo-label">Flauta · escena · presencia</span>
+      </div>
+    </section>
+
+    <section class="intro">
+      <h2 class="intro-title">No vine a ocupar un lugar <span>pequeño</span>.</h2>
+      <div class="intro-copy">
+        <p>Comencé tocando en orquestas infantiles y juveniles en Rancagua. Después llegaron Santiago, Mendoza, Brasil, Paraguay y Estados Unidos. Cada viaje cambió mi manera de escuchar y también la forma en que entiendo la flauta.</p>
+        <p>Me interesa una interpretación viva: técnicamente rigurosa, pero atravesada por el cuerpo, la respiración, el riesgo y la emoción. No pienso la flauta como un adorno dentro del conjunto, sino como una voz capaz de sostener el centro de la escena.</p>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Resumen de trayectoria">
+      <article class="stat"><strong>20+</strong><span>Años construyendo una voz propia</span></article>
+      <article class="stat"><strong>5</strong><span>Países de experiencia artística y formativa</span></article>
+      <article class="stat"><strong>∞</strong><span>Repertorios, formatos y cruces escénicos</span></article>
+      <article class="stat"><strong>1</strong><span>Flauta puesta deliberadamente al centro</span></article>
+    </section>
+
+    <section class="journey">
+      <div class="section-head">
+        <h2>El recorrido</h2>
+        <p>No es una lista de certificados. Es la historia de cómo fui ampliando mi lenguaje, mis territorios y mi manera de estar frente al público.</p>
+      </div>
+      <div class="timeline">
+        <article class="moment"><span class="year">2006 · Rancagua</span><h3>El comienzo</h3><p>Primeras clases, orquestas infantiles y juveniles, y la certeza temprana de que la música iba a ocupar un lugar central en mi vida.</p></article>
+        <article class="moment"><span class="year">Chile · Argentina</span><h3>Formarse lejos</h3><p>Estudié en Chile y luego migré a Mendoza, donde consolidé mi formación universitaria, la música de cámara y el repertorio académico.</p></article>
+        <article class="moment"><span class="year">2013 · Brasil</span><h3>Abrir el mapa</h3><p>La movilidad académica en UNESP amplió mi relación con la flauta, los festivales y una comunidad musical latinoamericana mucho más grande.</p></article>
+        <article class="moment"><span class="year">2015 · Estados Unidos</span><h3>Memoria chilena</h3><p>La obra de Cirilo Vila me llevó a unir interpretación, investigación y circulación internacional en un mismo gesto artístico.</p></article>
+        <article class="moment"><span class="year">2018 · Paraguay</span><h3>La escala del cuerpo</h3><p>Fui invitada a interpretar <em>La consagración de la primavera</em> con la Orquesta Universidad del Norte en Asunción: una experiencia física, colectiva y monumental.</p></article>
+        <article class="moment"><span class="year">Actualidad</span><h3>Una escena propia</h3><p>Hoy mi trabajo reúne interpretación, dirección artística, tango, repertorio latinoamericano, investigación y creación de proyectos propios.</p></article>
+      </div>
+    </section>
+
+    <section class="visual-story">
+      <div class="visual-photo"><img src="../assets/valentina-galaz-escenario-rojo-contrabajo.jpg" alt="Valentina Galaz en escena junto a contrabajo"></div>
+      <div class="visual-copy">
+        <h2>La flauta como voz central</h2>
+        <p>Durante mucho tiempo la flauta fue ubicada en lugares previsibles. Mi búsqueda ha sido otra: darle peso, carácter, sensualidad, tensión y una presencia escénica que no necesite pedir permiso.</p>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <section class="territories">
+      <h2>Territorios recorridos</h2>
+      <div class="country-grid">
+        <div class="country">Chile</div><div class="country">Argentina</div><div class="country">Brasil</div><div class="country">Paraguay</div><div class="country">Estados Unidos</div>
+      </div>
+      <p class="closing">Cada escenario me enseñó algo distinto. Pero en todos busqué lo mismo: que la flauta sonara como una voz humana, reconocible y propia.</p>
+    </section>
+
+    <footer><span>Interpretación · Valentina Galaz</span><a href="../">Volver al inicio →</a></footer>
   </main>
-  <script>
-    const key=location.pathname.split('/').filter(Boolean).pop()||'';
-    const areas={'investigacion':{num:'01',title:'Investigación',color:'#162a52',text:'#ffffff',description:'Investigación musical, repertorio latinoamericano, archivo y pensamiento crítico en torno a la interpretación.'},'interpretacion':{num:'02',title:'Interpretación',color:'#18b368',text:'#ffffff',description:'Trayectoria como flautista, música de cámara, repertorio contemporáneo y práctica escénica.'},'piazzollamente':{num:'03',title:'Piazzollamente',color:'#e63aa7',text:'#ffffff',description:'Dirección artística y flauta en un proyecto dedicado a la música de Astor Piazzolla.'},'escuela-de-flautistas':{num:'04',title:'Escuela de Flautistas',color:'#ffffff',text:'#162a52',description:'Formación para flautistas que integra técnica, sonido, interpretación y desarrollo artístico.'}};
-    const area=areas[key]||areas.investigacion;document.documentElement.style.setProperty('--area',area.color);document.documentElement.style.setProperty('--area-text',area.text);document.getElementById('num').textContent=area.num;document.getElementById('title').textContent=area.title;document.getElementById('description').textContent=area.description;document.title=area.title+' — Valentina Galaz';
-  </script>
 </body>
 </html>
