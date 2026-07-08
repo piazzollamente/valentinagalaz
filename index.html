@@ -7,21 +7,23 @@
   <meta name="description" content="Valentina Galaz — investigación, interpretación, Piazzollamente y Escuela de Flautistas.">
   <link rel="canonical" href="https://valentinagalaz.cl/">
   <style>
-    :root{--ivory:#fbf7e9;--blue:#09235b;--yellow:#dfa02e;--red:#c8322d;--green:#2f8587;--ease:cubic-bezier(.2,.75,.25,1)}
+    :root{--ivory:#fbf7e9;--blue:#09235b;--yellow:#dfa02e;--red:#c8322d;--green:#2f8587;--sand:#dec6aa;--ease:cubic-bezier(.2,.75,.25,1)}
     *{box-sizing:border-box}
     html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--ivory);font-family:Arial,Helvetica,sans-serif;color:var(--blue)}
+    body{min-height:100dvh}
     a{color:inherit}
-    .home{position:fixed;inset:0;display:grid;grid-template-columns:minmax(420px,46vw) minmax(0,1fr);overflow:hidden;background:var(--ivory)}
+    .home{position:fixed;inset:0;min-height:100dvh;display:grid;grid-template-columns:minmax(420px,46vw) minmax(0,1fr);overflow:hidden;background:var(--ivory)}
     .frame{position:absolute;inset:14px;border:2px solid var(--blue);pointer-events:none;z-index:20}
     .identity{position:relative;z-index:4;display:flex;flex-direction:column;min-width:0;padding:clamp(36px,5vh,64px) clamp(30px,4vw,64px) clamp(28px,4vh,52px)}
-    .logo{width:min(100%,720px);opacity:0;transform:translateY(-14px);animation:in .75s var(--ease) .05s forwards}
-    .logo img{display:block;width:100%;height:auto}
-    .role{margin:18px 3px 0;font-size:clamp(.64rem,.75vw,.82rem);line-height:1.5;letter-spacing:.17em;text-transform:uppercase;font-weight:700;opacity:0;animation:in .7s var(--ease) .25s forwards}
+    .logo{width:min(100%,720px);opacity:0;transform:translateY(-14px);clip-path:inset(0 100% 0 0);animation:logoIn .9s var(--ease) .05s forwards}
+    .logo picture,.logo img{display:block;width:100%;height:auto}
+    .logo img{object-fit:contain}
+    .role{margin:18px 3px 0;font-size:clamp(.64rem,.75vw,.82rem);line-height:1.5;letter-spacing:.17em;text-transform:uppercase;font-weight:700;opacity:0;animation:in .7s var(--ease) .3s forwards}
     .role:before{content:"";display:inline-block;width:34px;height:3px;background:var(--red);margin-right:12px;vertical-align:middle}
     .nav-title{margin-top:auto;margin-bottom:12px;font-size:.62rem;letter-spacing:.21em;text-transform:uppercase;font-weight:800;opacity:.65}
     .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    .card{--c:var(--blue);position:relative;min-height:clamp(100px,15vh,146px);padding:18px;overflow:hidden;background:var(--c);color:var(--ivory);text-decoration:none;opacity:0;transform:translateY(16px);animation:cardIn .65s var(--ease) forwards;transition:transform .4s var(--ease),box-shadow .4s var(--ease),filter .4s var(--ease)}
-    .card:nth-child(1){animation-delay:.38s}.card:nth-child(2){animation-delay:.48s}.card:nth-child(3){animation-delay:.58s}.card:nth-child(4){animation-delay:.68s}
+    .card{--c:var(--blue);position:relative;min-height:clamp(100px,15vh,146px);padding:18px;overflow:hidden;background:var(--c);color:var(--ivory);text-decoration:none;opacity:0;transform:translateY(18px);animation:cardIn .7s var(--ease) forwards;transition:transform .4s var(--ease),box-shadow .4s var(--ease),filter .4s var(--ease);will-change:transform}
+    .card:nth-child(1){animation-delay:.42s}.card:nth-child(2){animation-delay:.52s}.card:nth-child(3){animation-delay:.62s}.card:nth-child(4){animation-delay:.72s}
     .card.yellow{--c:var(--yellow);color:var(--blue)}.card.red{--c:var(--red)}.card.green{--c:var(--green)}
     .card:before{content:"";position:absolute;width:96px;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-40px;top:-48px;opacity:.32;transition:transform .55s var(--ease),border-radius .55s var(--ease)}
     .card:after{content:"";position:absolute;width:55px;height:55px;right:-14px;bottom:-20px;background:rgba(255,255,255,.18);transform:rotate(45deg);transition:transform .55s var(--ease)}
@@ -30,23 +32,58 @@
     .card:hover:after,.card:focus-visible:after{transform:translate(-20px,-12px) rotate(0)}
     .card-top{position:relative;z-index:2;display:flex;justify-content:space-between;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.85}
     .card h2{position:absolute;z-index:2;left:18px;right:18px;bottom:16px;margin:0;font-size:clamp(.95rem,1.45vw,1.42rem);line-height:.92;letter-spacing:-.035em;text-transform:uppercase}
-    .portrait-panel{position:relative;min-width:0;height:100%;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:clamp(28px,4vh,48px) clamp(18px,2.5vw,42px) 0;background:linear-gradient(90deg,#f2eadc 0,#d1ad89 100%)}
-    .portrait-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ivory) 0,rgba(251,247,233,.45) 8%,transparent 25%);z-index:1;pointer-events:none}
-    .portrait{position:relative;z-index:2;display:block;width:auto;height:auto;max-width:100%;max-height:calc(100svh - clamp(28px,4vh,48px));object-fit:contain;object-position:center bottom;opacity:0;transform:translateY(18px) scale(.985);animation:portraitIn 1s var(--ease) .12s forwards}
-    .shape{position:absolute;z-index:3;pointer-events:none}.shape.red{width:clamp(86px,11vw,160px);aspect-ratio:1;background:var(--red);right:-4%;top:10%;border-radius:50% 0 50% 50%;opacity:.94}.shape.yellow{width:clamp(76px,9vw,130px);aspect-ratio:1;background:var(--yellow);left:2%;bottom:-3%;border-radius:50% 50% 0 50%;opacity:.96}.shape.green{width:clamp(48px,6vw,84px);height:31%;right:0;bottom:13%;background:var(--green);opacity:.92}
+    .portrait-panel{position:relative;min-width:0;height:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:clamp(42px,6vh,76px) clamp(34px,5vw,78px);background:linear-gradient(135deg,#f3ecdf 0%,var(--sand) 100%)}
+    .portrait-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ivory) 0,rgba(251,247,233,.5) 8%,transparent 25%);z-index:1;pointer-events:none}
+    .portrait-frame{position:relative;z-index:2;width:min(78%,690px);height:min(calc(100dvh - clamp(84px,12vh,152px)),820px);min-height:430px;overflow:hidden;background:#eadbc8;border:2px solid var(--blue);box-shadow:clamp(12px,1.6vw,22px) clamp(12px,1.6vw,22px) 0 var(--red);opacity:0;transform:translateY(26px) rotate(.4deg);animation:frameIn 1s var(--ease) .12s forwards}
+    .portrait-frame:after{content:"";position:absolute;inset:14px;border:1px solid rgba(251,247,233,.78);z-index:3;pointer-events:none}
+    .portrait-frame picture{display:block;width:100%;height:100%}
+    .portrait{display:block;width:100%;height:100%;object-fit:cover;object-position:center 18%;transform:scale(1.035);animation:photoSettle 1.4s var(--ease) .14s both}
+    .shape{position:absolute;z-index:3;pointer-events:none}.shape.red{width:clamp(86px,11vw,160px);aspect-ratio:1;background:var(--red);right:-4%;top:10%;border-radius:50% 0 50% 50%;opacity:.94;animation:drift 8s ease-in-out 1.2s infinite alternate}.shape.yellow{width:clamp(76px,9vw,130px);aspect-ratio:1;background:var(--yellow);left:2%;bottom:-3%;border-radius:50% 50% 0 50%;opacity:.96;animation:driftReverse 9s ease-in-out 1.5s infinite alternate}.shape.green{width:clamp(48px,6vw,84px);height:31%;right:0;bottom:13%;background:var(--green);opacity:.92}
     .vertical{position:absolute;z-index:4;right:21px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;color:white;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.25)}
-    @keyframes in{to{opacity:1;transform:none}}@keyframes cardIn{to{opacity:1;transform:none}}@keyframes portraitIn{to{opacity:1;transform:translateY(0) scale(1)}}
-    @media(max-width:900px){.home{grid-template-columns:minmax(365px,48vw) minmax(0,1fr)}.identity{padding-left:25px;padding-right:25px}.cards{gap:8px}.card{min-height:96px;padding:14px}.card h2{left:14px;right:14px;bottom:13px;font-size:1rem}}
-    @media(max-width:680px){.home{grid-template-columns:1fr;grid-template-rows:22% 43% 35%}.frame{inset:8px}.identity{display:contents}.logo{grid-row:1;align-self:center;width:calc(100% - 38px);margin:14px auto 0;z-index:6}.role,.nav-title{display:none}.portrait-panel{grid-row:2;padding:8px 14px 0}.portrait{max-height:100%;max-width:100%;object-fit:contain;object-position:center bottom}.shape.red{width:68px;top:4%}.shape.yellow{width:58px}.shape.green,.vertical{display:none}.cards{grid-row:3;z-index:7;align-self:stretch;grid-template-columns:repeat(2,1fr);gap:7px;padding:7px 14px 16px;background:var(--ivory)}.card{min-height:0;padding:12px}.card h2{left:12px;right:12px;bottom:11px;font-size:clamp(.78rem,3.7vw,.98rem)}.card-top{font-size:.52rem}}
-    @media(max-height:650px) and (min-width:681px){.identity{padding-top:30px;padding-bottom:26px}.card{min-height:86px}.portrait-panel{padding-top:24px}.portrait{max-height:calc(100svh - 24px)}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.logo,.role,.card,.portrait{opacity:1;transform:none}}
+    @keyframes in{to{opacity:1;transform:none}}
+    @keyframes logoIn{to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
+    @keyframes cardIn{to{opacity:1;transform:none}}
+    @keyframes frameIn{to{opacity:1;transform:translateY(0) rotate(0)}}
+    @keyframes photoSettle{from{transform:scale(1.075)}to{transform:scale(1.035)}}
+    @keyframes drift{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(-14px,12px,0) rotate(7deg)}}
+    @keyframes driftReverse{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(12px,-10px,0) rotate(-6deg)}}
+    @keyframes mobileOrbit{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(-12px,9px,0) rotate(8deg)}}
+    @media(max-width:900px){.home{grid-template-columns:minmax(365px,48vw) minmax(0,1fr)}.identity{padding-left:25px;padding-right:25px}.cards{gap:8px}.card{min-height:96px;padding:14px}.card h2{left:14px;right:14px;bottom:13px;font-size:1rem}.portrait-panel{padding-left:28px;padding-right:38px}.portrait-frame{width:88%}}
+    @media(max-width:680px){
+      .home{grid-template-columns:1fr;grid-template-rows:22% 44% 34%}
+      .frame{inset:8px}
+      .identity{display:contents}
+      .logo{grid-row:1;align-self:center;width:calc(100% - 38px);margin:14px auto 0;z-index:6;animation-duration:.8s}
+      .role,.nav-title{display:none}
+      .portrait-panel{grid-row:2;padding:8px 18px 10px;align-items:center;background:linear-gradient(145deg,#f3ecdf 0%,#d9b896 100%)}
+      .portrait-frame{width:min(72vw,390px);height:100%;min-height:0;max-height:none;box-shadow:8px 8px 0 var(--red);transform:translateY(20px) rotate(.6deg);animation-duration:.85s}
+      .portrait-frame:after{inset:8px}
+      .portrait{object-position:center 16%;transform:scale(1.025);animation-duration:1.1s}
+      .shape.red{width:68px;top:3%;right:-10px;animation:mobileOrbit 6s ease-in-out 1s infinite}
+      .shape.yellow{width:58px;left:-10px;bottom:-7px;animation:mobileOrbit 7.5s ease-in-out 1.3s infinite reverse}
+      .shape.green,.vertical{display:none}
+      .cards{grid-row:3;z-index:7;align-self:stretch;grid-template-columns:repeat(2,1fr);gap:7px;padding:7px 14px 16px;background:var(--ivory)}
+      .card{min-height:0;padding:12px;animation-duration:.62s}
+      .card h2{left:12px;right:12px;bottom:11px;font-size:clamp(.78rem,3.7vw,.98rem)}
+      .card-top{font-size:.52rem}
+      .card:active{transform:scale(.975);filter:saturate(1.08)}
+      .card:before{animation:mobileOrbit 8s ease-in-out 1.6s infinite}
+      .card:nth-child(2):before{animation-delay:2.2s}.card:nth-child(3):before{animation-delay:2.8s}.card:nth-child(4):before{animation-delay:3.4s}
+    }
+    @media(max-height:650px) and (min-width:681px){.identity{padding-top:30px;padding-bottom:26px}.card{min-height:86px}.portrait-panel{padding-top:32px;padding-bottom:32px}.portrait-frame{height:calc(100dvh - 64px);min-height:0}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.logo,.role,.card,.portrait-frame{opacity:1;transform:none;clip-path:none}.portrait{transform:none}}
   </style>
 </head>
 <body>
   <main class="home">
     <div class="frame" aria-hidden="true"></div>
     <section class="identity" aria-label="Identidad y áreas de trabajo">
-      <div class="logo"><img src="assets/logo-valentina.webp" alt="VALENTINA"></div>
+      <div class="logo">
+        <picture>
+          <source srcset="assets/logo-valentina.webp" type="image/webp">
+          <img src="assets/Logotipo%20Bauhaus%20tipogr%C3%A1fico%20VALENTINA.png" alt="VALENTINA" loading="eager" decoding="async">
+        </picture>
+      </div>
       <p class="role">Valentina Galaz · Flautista · Investigadora · Directora artística</p>
       <div class="nav-title">Selecciona un área</div>
       <nav class="cards" aria-label="Áreas de trabajo">
@@ -57,7 +94,12 @@
       </nav>
     </section>
     <section class="portrait-panel" aria-label="Retrato de Valentina Galaz">
-      <img class="portrait" src="assets/valentina-home.webp" alt="Valentina Galaz de cuerpo completo sosteniendo una flauta traversa">
+      <div class="portrait-frame">
+        <picture>
+          <source srcset="assets/valentina-home.webp" type="image/webp">
+          <img class="portrait" src="assets/ChatGPT%20Image%2030%20may%202026%2C%2013_55_32%20%281%29.png" alt="Valentina Galaz sosteniendo una flauta traversa" loading="eager" decoding="async" fetchpriority="high">
+        </picture>
+      </div>
       <span class="shape red" aria-hidden="true"></span>
       <span class="shape yellow" aria-hidden="true"></span>
       <span class="shape green" aria-hidden="true"></span>
