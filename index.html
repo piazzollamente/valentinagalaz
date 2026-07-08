@@ -14,26 +14,38 @@
     a{color:inherit}
     .home{position:fixed;inset:0;min-height:100dvh;display:grid;grid-template-columns:minmax(420px,46vw) minmax(0,1fr);overflow:hidden;background:var(--ivory)}
     .frame{position:absolute;inset:14px;border:2px solid var(--blue);pointer-events:none;z-index:20}
-    .identity{position:relative;z-index:4;display:flex;flex-direction:column;min-width:0;min-height:0;padding:clamp(34px,4.4vh,58px) clamp(30px,4vw,64px) clamp(34px,4.4vh,58px)}
+    .identity{position:relative;z-index:4;display:flex;flex-direction:column;min-width:0;min-height:0;padding:clamp(34px,4.4vh,58px) clamp(30px,4vw,64px) clamp(30px,4vh,52px)}
     .logo{width:min(100%,720px);max-height:clamp(116px,22vh,210px);overflow:visible;background:transparent;opacity:0;transform:translateY(-14px);clip-path:inset(0 100% 0 0);animation:logoIn .9s var(--ease) .05s forwards}
     .logo picture{display:block;width:100%;height:auto}
     .logo img{display:block;width:100%;height:auto;max-height:clamp(116px,22vh,210px);object-fit:contain;object-position:left center}
     .role{margin:16px 3px 0;font-size:clamp(.64rem,.75vw,.82rem);line-height:1.5;letter-spacing:.17em;text-transform:uppercase;font-weight:700;opacity:0;animation:in .7s var(--ease) .3s forwards}
     .role:before{content:"";display:inline-block;width:34px;height:3px;background:var(--red);margin-right:12px;vertical-align:middle}
     .nav-title{margin-top:auto;margin-bottom:14px;font-size:.62rem;letter-spacing:.21em;text-transform:uppercase;font-weight:800;opacity:.65}
-    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px;padding:0 12px 12px 0}
-    .card{--c:var(--blue);--shadow:var(--yellow);position:relative;min-height:clamp(86px,12.4vh,120px);padding:18px;overflow:hidden;background:var(--c);color:var(--ivory);text-decoration:none;border:2px solid var(--blue);box-shadow:9px 9px 0 var(--shadow);opacity:0;transform:translateY(18px);animation:cardIn .7s var(--ease) forwards;transition:transform .36s var(--ease),box-shadow .36s var(--ease),filter .36s var(--ease);will-change:transform}
-    .card:nth-child(1){animation-delay:.42s}.card:nth-child(2){animation-delay:.52s}.card:nth-child(3){animation-delay:.62s}.card:nth-child(4){animation-delay:.72s}
-    .card.yellow{--c:var(--yellow);--shadow:var(--blue);color:var(--blue)}
-    .card.red{--c:var(--red);--shadow:var(--green)}
-    .card.green{--c:var(--green);--shadow:var(--red)}
-    .card:before{content:"";position:absolute;width:96px;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-40px;top:-48px;opacity:.32;transition:transform .55s var(--ease),border-radius .55s var(--ease)}
-    .card:after{content:"";position:absolute;width:55px;height:55px;right:-14px;bottom:-20px;background:rgba(255,255,255,.18);transform:rotate(45deg);transition:transform .55s var(--ease)}
-    .card:hover,.card:focus-visible{transform:translate(-4px,-4px) scale(1.012);filter:saturate(1.08);box-shadow:13px 13px 0 var(--shadow),0 18px 38px rgba(9,35,91,.15);outline:none;z-index:3}
-    .card:hover:before,.card:focus-visible:before{transform:translate(-22px,22px) scale(1.14);border-radius:0 50% 50% 50%}
-    .card:hover:after,.card:focus-visible:after{transform:translate(-20px,-12px) rotate(0)}
-    .card-top{position:relative;z-index:2;display:flex;justify-content:space-between;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.85}
-    .card h2{position:absolute;z-index:2;left:18px;right:18px;bottom:16px;margin:0;font-size:clamp(.95rem,1.45vw,1.42rem);line-height:.92;letter-spacing:-.035em;text-transform:uppercase}
+    .vln-nav{position:relative;width:min(100%,520px);aspect-ratio:1/1.02;margin-right:12px;opacity:0;transform:translateY(18px);animation:cardIn .7s var(--ease) .42s forwards}
+    .vln-piece{position:absolute;display:block;text-decoration:none;outline:none;transition:transform .36s var(--ease),filter .36s var(--ease);z-index:2}
+    .vln-piece:hover,.vln-piece:focus-visible{transform:translate(-4px,-4px);filter:saturate(1.08);z-index:6}
+    .vln-piece span{position:absolute;display:block}
+    .vln-piece .label{z-index:5;text-transform:uppercase;font-weight:800;letter-spacing:.14em;line-height:1.02}
+    .v-shape{left:2%;top:4%;width:34%;height:68%}
+    .v-shape .v-left,.v-shape .v-right{width:20%;height:100%;bottom:0;background:var(--yellow);border:2px solid var(--blue);box-shadow:9px 9px 0 rgba(200,50,45,.22);transform-origin:bottom center}
+    .v-shape .v-left{left:12%;transform:skewX(-18deg)}
+    .v-shape .v-right{right:12%;transform:skewX(18deg)}
+    .v-shape .label{right:4%;top:8%;bottom:10%;writing-mode:vertical-rl;transform:rotate(180deg);color:var(--blue);font-size:clamp(.68rem,1vw,.92rem)}
+    .l-shape{left:34%;top:20%;width:42%;height:46%}
+    .l-shape .l-vertical{left:0;top:0;width:32%;height:100%;background:var(--red);border:2px solid var(--blue);box-shadow:10px 10px 0 rgba(47,133,135,.28)}
+    .l-shape .l-horizontal{left:0;bottom:0;width:100%;height:30%;background:var(--red);border:2px solid var(--blue)}
+    .l-shape .label{left:37%;right:6%;top:12%;color:var(--ivory);font-size:clamp(.68rem,.98vw,.9rem)}
+    .n-blue{left:8%;bottom:2%;width:26%;height:28%}
+    .n-blue .n-left{left:0;bottom:0;width:34%;height:56%;background:var(--blue);border:2px solid var(--blue);box-shadow:8px 8px 0 rgba(223,160,46,.42)}
+    .n-blue .n-diagonal{right:0;top:0;width:36%;height:56%;background:var(--blue);border:2px solid var(--blue);border-radius:50%}
+    .n-blue .label{left:4%;bottom:4%;width:52%;color:var(--ivory);font-size:clamp(.54rem,.82vw,.74rem)}
+    .n-green{left:66%;top:32%;width:24%;height:54%}
+    .n-green .n-right{right:0;top:0;width:42%;height:100%;background:var(--green);border:2px solid var(--blue);box-shadow:9px 9px 0 rgba(200,50,45,.28)}
+    .n-green .n-base{left:0;bottom:0;width:42%;height:26%;background:var(--green);border:2px solid var(--blue)}
+    .n-green .label{left:8%;top:10%;bottom:10%;writing-mode:vertical-rl;transform:rotate(180deg);color:var(--ivory);font-size:clamp(.52rem,.82vw,.72rem)}
+    .accent{position:absolute;z-index:1;pointer-events:none}
+    .circle-red{left:-2%;top:26%;width:12%;aspect-ratio:1;border-radius:50%;background:var(--red)}
+    .circle-blue{left:51%;top:0;width:11%;aspect-ratio:1;border-radius:50%;background:#1f6fbe}
     .portrait-panel{position:relative;min-width:0;height:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:clamp(42px,6vh,76px) clamp(34px,5vw,78px);background:linear-gradient(135deg,#f3ecdf 0%,var(--sand) 100%)}
     .portrait-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ivory) 0,rgba(251,247,233,.5) 8%,transparent 25%);z-index:1;pointer-events:none}
     .portrait-frame{position:relative;z-index:2;width:min(78%,690px);height:min(calc(100dvh - clamp(84px,12vh,152px)),820px);min-height:430px;overflow:hidden;background:#eadbc8;border:2px solid var(--blue);box-shadow:clamp(12px,1.6vw,22px) clamp(12px,1.6vw,22px) 0 var(--red);opacity:0;transform:translateY(26px) rotate(.4deg);animation:frameIn 1s var(--ease) .12s forwards}
@@ -50,9 +62,9 @@
     @keyframes drift{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(-14px,12px,0) rotate(7deg)}}
     @keyframes driftReverse{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(12px,-10px,0) rotate(-6deg)}}
     @keyframes mobileOrbit{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(-12px,9px,0) rotate(8deg)}}
-    @media(max-width:900px){.home{grid-template-columns:minmax(365px,48vw) minmax(0,1fr)}.identity{padding-left:25px;padding-right:25px}.cards{gap:14px 16px}.card{min-height:84px;padding:14px;box-shadow:7px 7px 0 var(--shadow)}.card h2{left:14px;right:14px;bottom:13px;font-size:1rem}.portrait-panel{padding-left:28px;padding-right:38px}.portrait-frame{width:88%}}
+    @media(max-width:900px){.home{grid-template-columns:minmax(365px,48vw) minmax(0,1fr)}.identity{padding-left:25px;padding-right:25px}.vln-nav{width:min(100%,470px)}.portrait-panel{padding-left:28px;padding-right:38px}.portrait-frame{width:88%}}
     @media(max-width:680px){
-      .home{grid-template-columns:1fr;grid-template-rows:20% 44% 36%}
+      .home{grid-template-columns:1fr;grid-template-rows:19% 42% 39%}
       .frame{inset:8px}
       .identity{display:contents}
       .logo{grid-row:1;align-self:center;width:calc(100% - 38px);max-height:16vh;margin:10px auto 0;z-index:6;animation-duration:.8s}
@@ -65,16 +77,16 @@
       .shape.red{width:68px;top:3%;right:-10px;animation:mobileOrbit 6s ease-in-out 1s infinite}
       .shape.yellow{width:58px;left:-10px;bottom:-7px;animation:mobileOrbit 7.5s ease-in-out 1.3s infinite reverse}
       .shape.green,.vertical{display:none}
-      .cards{grid-row:3;z-index:7;align-self:stretch;grid-template-columns:repeat(2,1fr);gap:11px 12px;padding:8px 20px 18px 14px;background:var(--ivory)}
-      .card{min-height:0;padding:12px;border-width:1.5px;box-shadow:5px 5px 0 var(--shadow);animation-duration:.62s}
-      .card h2{left:12px;right:12px;bottom:11px;font-size:clamp(.78rem,3.7vw,.98rem)}
-      .card-top{font-size:.52rem}
-      .card:active{transform:translate(2px,2px) scale(.985);filter:saturate(1.08);box-shadow:3px 3px 0 var(--shadow)}
-      .card:before{animation:mobileOrbit 8s ease-in-out 1.6s infinite}
-      .card:nth-child(2):before{animation-delay:2.2s}.card:nth-child(3):before{animation-delay:2.8s}.card:nth-child(4):before{animation-delay:3.4s}
+      .vln-nav{grid-row:3;z-index:7;align-self:center;justify-self:center;width:min(calc(100% - 26px),390px);aspect-ratio:1/1;padding:2px 8px 6px;background:var(--ivory)}
+      .vln-piece:hover,.vln-piece:focus-visible{transform:none}
+      .vln-piece:active{transform:translate(2px,2px) scale(.985);filter:saturate(1.08)}
+      .v-shape .label{font-size:clamp(.62rem,2.4vw,.82rem)}
+      .l-shape .label{font-size:clamp(.58rem,2.1vw,.78rem)}
+      .n-blue .label{font-size:clamp(.5rem,1.9vw,.68rem)}
+      .n-green .label{font-size:clamp(.48rem,1.8vw,.64rem)}
     }
-    @media(max-height:650px) and (min-width:681px){.identity{padding-top:26px;padding-bottom:28px}.logo{width:min(100%,620px);max-height:150px}.logo img{max-height:150px}.card{min-height:78px}.portrait-panel{padding-top:32px;padding-bottom:32px}.portrait-frame{height:calc(100dvh - 64px);min-height:0}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.logo,.role,.card,.portrait-frame{opacity:1;transform:none;clip-path:none}.portrait{transform:none}}
+    @media(max-height:650px) and (min-width:681px){.identity{padding-top:24px;padding-bottom:26px}.logo{width:min(100%,620px);max-height:146px}.logo img{max-height:146px}.vln-nav{width:min(100%,455px)}.portrait-panel{padding-top:32px;padding-bottom:32px}.portrait-frame{height:calc(100dvh - 64px);min-height:0}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.logo,.role,.vln-nav,.portrait-frame{opacity:1;transform:none;clip-path:none}.portrait{transform:none}}
   </style>
 </head>
 <body>
@@ -89,11 +101,13 @@
       </div>
       <p class="role">Valentina Galaz · Flautista · Investigadora · Directora artística</p>
       <div class="nav-title">Selecciona un área</div>
-      <nav class="cards" aria-label="Áreas de trabajo">
-        <a class="card" href="investigacion/"><span class="card-top"><span>01</span><span>→</span></span><h2>Investigación</h2></a>
-        <a class="card yellow" href="interpretacion/"><span class="card-top"><span>02</span><span>→</span></span><h2>Interpretación</h2></a>
-        <a class="card red" href="piazzollamente/"><span class="card-top"><span>03</span><span>→</span></span><h2>Piazzollamente</h2></a>
-        <a class="card green" href="escuela-de-flautistas/"><span class="card-top"><span>04</span><span>→</span></span><h2>Escuela de<br>Flautistas</h2></a>
+      <nav class="vln-nav" aria-label="Áreas de trabajo">
+        <a class="vln-piece v-shape" href="interpretacion/" aria-label="Interpretación"><span class="label">Interpretación</span><span class="v-left"></span><span class="v-right"></span></a>
+        <a class="vln-piece l-shape" href="piazzollamente/" aria-label="Piazzollamente"><span class="label">Piazzollamente</span><span class="l-vertical"></span><span class="l-horizontal"></span></a>
+        <a class="vln-piece n-blue" href="investigacion/" aria-label="Investigación"><span class="label">Investigación</span><span class="n-left"></span><span class="n-diagonal"></span></a>
+        <a class="vln-piece n-green" href="escuela-de-flautistas/" aria-label="Escuela de Flautistas"><span class="label">Escuela de<br>Flautistas</span><span class="n-right"></span><span class="n-base"></span></a>
+        <span class="accent circle-red" aria-hidden="true"></span>
+        <span class="accent circle-blue" aria-hidden="true"></span>
       </nav>
     </section>
     <section class="portrait-panel" aria-label="Retrato de Valentina Galaz">
