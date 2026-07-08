@@ -83,20 +83,22 @@
     }
 
     @media(max-width:680px){
-      .home{grid-template-columns:1fr;grid-template-rows:auto minmax(330px,46svh) auto;padding-bottom:0}
+      .home{grid-template-columns:1fr;grid-template-rows:auto auto minmax(330px,46svh) auto;padding-bottom:0}
       .frame{inset:8px}
       .identity{display:contents}
-      .logo-safe{grid-row:1;align-self:center;justify-self:center;width:min(calc(100% - 40px),470px);margin:16px auto 8px;z-index:6}
+      .logo-safe{grid-row:1;align-self:center;justify-self:center;width:min(calc(100% - 40px),470px);margin:16px auto 4px;z-index:6}
       .logo-safe img{object-position:center}
-      .role,.nav-title{display:none}
-      .portrait-panel{grid-row:2;min-height:0;padding:12px 24px 14px;background:var(--white)}
+      .role{grid-row:2;display:block;justify-self:center;width:min(calc(100% - 44px),470px);margin:0 auto 14px;padding:0 4px;text-align:center;font-size:.62rem;line-height:1.55;letter-spacing:.12em;opacity:0;z-index:6}
+      .role:before{display:block;width:34px;height:3px;margin:0 auto 10px}
+      .nav-title{display:none}
+      .portrait-panel{grid-row:3;min-height:0;padding:12px 24px 14px;background:var(--white)}
       .portrait-frame{width:min(76vw,405px);height:100%;min-height:0;box-shadow:8px 8px 0 var(--fuchsia);background:var(--white)}
       .portrait-frame:after{inset:8px}
       .portrait{max-width:100%;max-height:100%;object-fit:contain;object-position:center bottom}
       .shape.fuchsia{width:68px;top:2%;right:-10px}
       .shape.green{width:60px;left:-10px;bottom:-7px}
       .vertical{display:none}
-      .cards{grid-row:3;z-index:7;justify-self:center;width:min(calc(100% - 28px),520px);grid-template-columns:1fr;gap:8px;padding:12px 0 28px;background:var(--white)}
+      .cards{grid-row:4;z-index:7;justify-self:center;width:min(calc(100% - 28px),520px);grid-template-columns:1fr;gap:8px;padding:12px 0 28px;background:var(--white)}
       .card{min-height:102px;padding:14px}
       .card h2{left:14px;right:14px;bottom:13px;font-size:clamp(.9rem,5vw,1.12rem)}
       .card-top{font-size:.5rem}
