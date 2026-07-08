@@ -15,13 +15,14 @@
       --ease:cubic-bezier(.2,.75,.25,1);
     }
     *{box-sizing:border-box}
-    html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--white);font-family:Arial,Helvetica,sans-serif;color:var(--blue)}
-    body{min-height:100dvh}
+    html{scroll-behavior:smooth;overflow-x:hidden;background:var(--white)}
+    body{margin:0;min-height:100%;overflow-x:hidden;background:var(--white);font-family:Arial,Helvetica,sans-serif;color:var(--blue)}
     a{color:inherit}
-    .home{position:fixed;inset:0;min-height:100dvh;display:grid;grid-template-columns:minmax(430px,47vw) minmax(0,1fr);overflow:hidden;background:var(--white)}
+
+    .home{position:relative;min-height:100svh;display:grid;grid-template-columns:minmax(430px,47vw) minmax(0,1fr);overflow:hidden;background:var(--white);padding-bottom:18px}
     .frame{position:absolute;inset:16px;border:2px solid var(--blue);pointer-events:none;z-index:20}
 
-    .identity{position:relative;z-index:4;display:flex;flex-direction:column;min-width:0;min-height:0;padding:clamp(38px,5vh,68px) clamp(42px,5vw,78px) clamp(30px,4vh,54px);background:var(--white)}
+    .identity{position:relative;z-index:4;display:flex;flex-direction:column;min-width:0;min-height:100svh;padding:clamp(38px,5vh,68px) clamp(42px,5vw,78px) clamp(46px,6vh,74px);background:var(--white)}
     .logo-safe{display:flex;align-items:center;justify-content:flex-start;width:min(100%,640px);margin:0 0 16px;opacity:0;transform:translateY(-12px);animation:in .8s var(--ease) .05s forwards}
     .logo-safe img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;object-position:left center}
     .role{margin:2px 8px 0;font-size:clamp(.62rem,.72vw,.8rem);line-height:1.5;letter-spacing:.17em;text-transform:uppercase;font-weight:700;opacity:0;animation:in .7s var(--ease) .24s forwards}
@@ -29,7 +30,7 @@
     .nav-title{margin-top:auto;margin-bottom:14px;font-size:.62rem;letter-spacing:.21em;text-transform:uppercase;font-weight:800;opacity:.62}
 
     .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(100%,560px)}
-    .card{position:relative;min-height:clamp(105px,15vh,148px);padding:18px;overflow:hidden;text-decoration:none;color:white;background:var(--blue);border:2px solid var(--blue);opacity:0;transform:translateY(18px);animation:cardIn .65s var(--ease) forwards;transition:transform .35s var(--ease),box-shadow .35s var(--ease),filter .35s var(--ease)}
+    .card{position:relative;min-height:clamp(112px,15vh,148px);padding:18px;overflow:hidden;text-decoration:none;color:white;background:var(--blue);border:2px solid var(--blue);opacity:0;transform:translateY(18px);animation:cardIn .65s var(--ease) forwards;transition:transform .35s var(--ease),box-shadow .35s var(--ease),filter .35s var(--ease)}
     .card:nth-child(1){animation-delay:.36s}.card:nth-child(2){animation-delay:.46s}.card:nth-child(3){animation-delay:.56s}.card:nth-child(4){animation-delay:.66s}
     .card.green{background:var(--green)}
     .card.fuchsia{background:var(--fuchsia)}
@@ -42,8 +43,8 @@
     .card-top{position:relative;z-index:2;display:flex;justify-content:space-between;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.82}
     .card h2{position:absolute;z-index:2;left:18px;right:18px;bottom:16px;margin:0;font-size:clamp(.95rem,1.35vw,1.34rem);line-height:.94;letter-spacing:-.03em;text-transform:uppercase}
 
-    .portrait-panel{position:relative;min-width:0;height:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:clamp(48px,6vh,82px) clamp(42px,5vw,82px);background:var(--white)}
-    .portrait-frame{position:relative;z-index:2;width:min(78%,700px);height:min(calc(100dvh - clamp(96px,12vh,164px)),850px);min-height:430px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:var(--white);border:2px solid var(--blue);box-shadow:clamp(12px,1.6vw,22px) clamp(12px,1.6vw,22px) 0 var(--fuchsia);opacity:0;transform:translateY(24px);animation:frameIn .95s var(--ease) .12s forwards}
+    .portrait-panel{position:relative;min-width:0;min-height:100svh;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:clamp(48px,6vh,82px) clamp(42px,5vw,82px);background:var(--white)}
+    .portrait-frame{position:relative;z-index:2;width:min(78%,700px);height:min(calc(100svh - clamp(96px,12vh,164px)),850px);min-height:430px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:var(--white);border:2px solid var(--blue);box-shadow:clamp(12px,1.6vw,22px) clamp(12px,1.6vw,22px) 0 var(--fuchsia);opacity:0;transform:translateY(24px);animation:frameIn .95s var(--ease) .12s forwards}
     .portrait-frame:after{content:"";position:absolute;inset:14px;border:1px solid rgba(22,42,82,.16);z-index:3;pointer-events:none}
     .portrait-frame picture{display:flex;align-items:flex-end;justify-content:center;width:100%;height:100%}
     .portrait{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:center bottom;animation:photoSettle 1.2s var(--ease) .14s both}
@@ -51,6 +52,18 @@
     .shape.fuchsia{width:clamp(90px,11vw,166px);aspect-ratio:1;background:var(--fuchsia);right:-4%;top:9%;border-radius:50% 0 50% 50%;opacity:.95}
     .shape.green{width:clamp(78px,9vw,134px);aspect-ratio:1;background:var(--green);left:2%;bottom:-3%;border-radius:50% 50% 0 50%;opacity:.96}
     .vertical{position:absolute;z-index:4;right:21px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;color:var(--blue);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800}
+
+    .contact{background:var(--blue);color:var(--white);padding:72px clamp(28px,6vw,96px) 34px}
+    .contact-inner{width:min(1180px,100%);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:56px;align-items:start}
+    .contact-kicker{margin:0 0 18px;color:var(--green);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+    .contact h2{margin:0;font-size:clamp(2.4rem,5vw,5.2rem);line-height:.9;letter-spacing:-.055em;text-transform:uppercase}
+    .contact-copy{max-width:620px;margin:24px 0 0;color:rgba(255,255,255,.76);font-size:1rem;line-height:1.7}
+    .contact-side{display:grid;gap:28px;padding-top:8px}
+    .contact-label{margin:0 0 10px;color:var(--fuchsia);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800}
+    .contact-links{display:grid;gap:9px}
+    .contact-links a{width:max-content;max-width:100%;text-decoration:none;font-size:clamp(.98rem,1.3vw,1.2rem);line-height:1.35;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:3px;transition:border-color .25s ease,color .25s ease}
+    .contact-links a:hover,.contact-links a:focus-visible{color:var(--green);border-color:var(--green);outline:none}
+    .contact-bottom{width:min(1180px,100%);margin:52px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);font-size:.72rem;letter-spacing:.08em;color:rgba(255,255,255,.58)}
 
     @keyframes in{to{opacity:1;transform:none}}
     @keyframes cardIn{to{opacity:1;transform:none}}
@@ -66,33 +79,37 @@
     }
 
     @media(max-width:680px){
-      html,body{overflow:auto;background:var(--white)}
-      .home{position:relative;min-height:100svh;grid-template-columns:1fr;grid-template-rows:auto minmax(320px,44svh) auto;overflow:hidden;background:var(--white)}
+      .home{grid-template-columns:1fr;grid-template-rows:auto minmax(330px,46svh) auto;padding-bottom:0}
       .frame{inset:8px}
       .identity{display:contents}
       .logo-safe{grid-row:1;align-self:center;justify-self:center;width:min(calc(100% - 40px),470px);margin:16px auto 8px;z-index:6}
       .logo-safe img{object-position:center}
       .role,.nav-title{display:none}
-      .portrait-panel{grid-row:2;padding:12px 24px 14px;background:var(--white)}
+      .portrait-panel{grid-row:2;min-height:0;padding:12px 24px 14px;background:var(--white)}
       .portrait-frame{width:min(76vw,405px);height:100%;min-height:0;box-shadow:8px 8px 0 var(--fuchsia);background:var(--white)}
       .portrait-frame:after{inset:8px}
       .portrait{max-width:100%;max-height:100%;object-fit:contain;object-position:center bottom}
       .shape.fuchsia{width:68px;top:2%;right:-10px}
       .shape.green{width:60px;left:-10px;bottom:-7px}
       .vertical{display:none}
-      .cards{grid-row:3;z-index:7;justify-self:center;width:min(calc(100% - 28px),520px);grid-template-columns:repeat(2,1fr);gap:8px;padding:8px 0 20px;background:var(--white)}
-      .card{min-height:110px;padding:13px}
-      .card h2{left:13px;right:13px;bottom:12px;font-size:clamp(.78rem,3.7vw,1rem)}
+      .cards{grid-row:3;z-index:7;justify-self:center;width:min(calc(100% - 28px),520px);grid-template-columns:1fr;gap:8px;padding:12px 0 28px;background:var(--white)}
+      .card{min-height:102px;padding:14px}
+      .card h2{left:14px;right:14px;bottom:13px;font-size:clamp(.9rem,5vw,1.12rem)}
       .card-top{font-size:.5rem}
+      .contact{padding:56px 24px 28px}
+      .contact-inner{grid-template-columns:1fr;gap:38px}
+      .contact h2{font-size:clamp(2.4rem,14vw,4.5rem)}
+      .contact-side{padding-top:0}
+      .contact-bottom{margin-top:38px}
     }
 
     @media(max-height:650px) and (min-width:681px){
-      .identity{padding-top:24px;padding-bottom:22px}
+      .identity{padding-top:24px;padding-bottom:34px}
       .logo-safe{width:min(100%,520px);margin-bottom:8px}
       .cards{gap:8px}
       .card{min-height:88px}
       .portrait-panel{padding-top:34px;padding-bottom:34px}
-      .portrait-frame{height:calc(100dvh - 68px);min-height:0}
+      .portrait-frame{height:calc(100svh - 68px);min-height:0}
     }
 
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.logo-safe,.role,.card,.portrait-frame{opacity:1;transform:none}}
@@ -142,5 +159,35 @@
       <span class="vertical">Valentina Galaz</span>
     </section>
   </main>
+
+  <footer class="contact" id="contacto">
+    <div class="contact-inner">
+      <div>
+        <p class="contact-kicker">Contacto</p>
+        <h2>Valentina<br>Galaz</h2>
+        <p class="contact-copy">Para conciertos, colaboraciones artísticas, prensa, programación cultural o proyectos escénicos.</p>
+      </div>
+
+      <div class="contact-side">
+        <div>
+          <p class="contact-label">Contacto directo</p>
+          <div class="contact-links">
+            <a href="tel:+56981527088">+56 9 8152 7088</a>
+            <a href="mailto:valen.galaz@gmail.com">valen.galaz@gmail.com</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="contact-label">Proyectos</p>
+          <div class="contact-links">
+            <a href="https://escueladeflautistas.cl/" target="_blank" rel="noreferrer">Escuela de Flautistas</a>
+            <a href="https://piazzollamente.cl/" target="_blank" rel="noreferrer">Piazzollamente</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-bottom">© 2026 Valentina Galaz. Todos los derechos reservados.</div>
+  </footer>
 </body>
 </html>
