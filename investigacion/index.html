@@ -2,33 +2,77 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Valentina Galaz</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon-vg.svg?v=2">
+  <link rel="shortcut icon" href="../assets/favicon-vg.svg?v=2">
+  <meta name="theme-color" content="#162A52">
   <style>
-    :root{--ivory:#fbf7e9;--blue:#09235b;--yellow:#dfa02e;--red:#c8322d;--green:#2f8587}
-    *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;background:var(--area,var(--blue));color:var(--ivory);font-family:Arial,Helvetica,sans-serif;padding:28px}.box{width:min(860px,100%);border:2px solid currentColor;padding:clamp(28px,7vw,80px)}.num{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75}h1{font-size:clamp(2.6rem,8vw,7rem);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:28px 0}p{font-size:1rem;line-height:1.6;max-width:560px}a{display:inline-block;margin-top:28px;color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px;text-transform:uppercase;font-size:.7rem;letter-spacing:.17em;font-weight:700}
+    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7;--area:var(--blue);--area-text:var(--white)}
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:var(--white);color:var(--blue);font-family:Arial,Helvetica,sans-serif}
+    body{min-height:100svh;padding:16px}
+    .page{position:relative;min-height:calc(100svh - 32px);border:2px solid var(--blue);display:grid;grid-template-rows:auto 1fr;overflow:hidden;background:var(--white)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px clamp(22px,4vw,54px);border-bottom:2px solid var(--blue)}
+    .brand{display:block;width:min(280px,46vw)}
+    .brand img{display:block;width:100%;height:auto}
+    .back{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
+    .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);min-height:0}
+    .panel{position:relative;overflow:hidden;background:var(--area);color:var(--area-text);padding:clamp(38px,7vw,92px);display:flex;flex-direction:column;justify-content:center}
+    .panel:before{content:"";position:absolute;width:clamp(120px,18vw,260px);aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-8%;top:-14%;opacity:.28}
+    .panel:after{content:"";position:absolute;width:clamp(80px,11vw,150px);aspect-ratio:1;background:rgba(255,255,255,.16);right:-3%;bottom:-8%;transform:rotate(45deg)}
+    .num{position:relative;z-index:1;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;opacity:.78}
+    h1{position:relative;z-index:1;margin:24px 0 0;font-size:clamp(2.8rem,8vw,7.8rem);line-height:.86;letter-spacing:-.065em;text-transform:uppercase;overflow-wrap:anywhere}
+    .info{padding:clamp(38px,6vw,82px);display:flex;flex-direction:column;justify-content:center;background:var(--white)}
+    .eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--fuchsia);margin:0 0 18px}
+    .info p{margin:0;max-width:520px;font-size:clamp(1rem,1.45vw,1.2rem);line-height:1.7;color:#48536d}
+    .rule{width:42px;height:4px;background:var(--green);margin:28px 0 0}
+    @media(max-width:760px){
+      body{padding:8px}
+      .page{min-height:calc(100svh - 16px)}
+      header{padding:16px 18px;gap:14px}
+      .brand{width:min(210px,55vw)}
+      .back{font-size:.58rem;letter-spacing:.12em}
+      .hero{grid-template-columns:1fr;grid-template-rows:auto auto}
+      .panel{min-height:43svh;padding:42px 24px}
+      h1{font-size:clamp(2.6rem,16vw,5.2rem);max-width:100%}
+      .info{padding:34px 24px 42px}
+    }
   </style>
 </head>
 <body>
-  <main class="box">
-    <div class="num" id="num"></div>
-    <h1 id="title"></h1>
-    <p>Esta sección comenzará a construirse en la siguiente etapa del sitio.</p>
-    <a href="../">← Volver al inicio</a>
+  <main class="page">
+    <header>
+      <a class="brand" href="../" aria-label="Volver al inicio"><img src="../assets/Fondo%20marfil.png" alt="Valentina Galaz"></a>
+      <a class="back" href="../">← Volver al inicio</a>
+    </header>
+    <section class="hero">
+      <div class="panel">
+        <div class="num" id="num"></div>
+        <h1 id="title"></h1>
+      </div>
+      <div class="info">
+        <p class="eyebrow">Área de trabajo</p>
+        <p id="description"></p>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+    </section>
   </main>
   <script>
     const key=location.pathname.split('/').filter(Boolean).pop()||'';
     const areas={
-      'investigacion':['01','Investigación','#09235b'],
-      'interpretacion':['02','Interpretación','#dfa02e'],
-      'piazzollamente':['03','Piazzollamente','#c8322d'],
-      'escuela-de-flautistas':['04','Escuela de Flautistas','#2f8587']
+      'investigacion':{num:'01',title:'Investigación',color:'#162a52',text:'#ffffff',description:'Investigación musical, repertorio latinoamericano, archivo y pensamiento crítico en torno a la interpretación.'},
+      'interpretacion':{num:'02',title:'Interpretación',color:'#18b368',text:'#ffffff',description:'Trayectoria como flautista, música de cámara, repertorio contemporáneo y práctica escénica.'},
+      'piazzollamente':{num:'03',title:'Piazzollamente',color:'#e63aa7',text:'#ffffff',description:'Dirección artística y flauta en un proyecto dedicado a la música de Astor Piazzolla.'},
+      'escuela-de-flautistas':{num:'04',title:'Escuela de Flautistas',color:'#ffffff',text:'#162a52',description:'Formación para flautistas que integra técnica, sonido, interpretación y desarrollo artístico.'}
     };
-    const area=areas[key]||['','Valentina Galaz','#09235b'];
-    document.documentElement.style.setProperty('--area',area[2]);
-    document.getElementById('num').textContent=area[0];
-    document.getElementById('title').textContent=area[1];
-    document.title=area[1]+' — Valentina Galaz';
+    const area=areas[key]||areas.investigacion;
+    document.documentElement.style.setProperty('--area',area.color);
+    document.documentElement.style.setProperty('--area-text',area.text);
+    document.getElementById('num').textContent=area.num;
+    document.getElementById('title').textContent=area.title;
+    document.getElementById('description').textContent=area.description;
+    document.title=area.title+' — Valentina Galaz';
   </script>
 </body>
 </html>
