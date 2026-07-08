@@ -3,42 +3,223 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Valentina Galaz</title>
+  <title>Piazzollamente — Valentina Galaz</title>
+  <meta name="description" content="Piazzollamente: proyecto nacido en Argentina y desarrollado en Chile, con la flauta traversa en reemplazo del bandoneón y una lectura intensa de la música de Astor Piazzolla.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon-vg.svg?v=2">
   <link rel="shortcut icon" href="../assets/favicon-vg.svg?v=2">
-  <meta name="theme-color" content="#162A52">
+  <meta name="theme-color" content="#E63AA7">
   <style>
-    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7;--area:var(--blue);--area-text:var(--white)}
+    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7;--soft:#fff1f9;--ink:#44506a}
     *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;background:var(--white);color:var(--blue);font-family:Arial,Helvetica,sans-serif}
-    body{min-height:100svh;padding:16px}
-    .page{position:relative;min-height:calc(100svh - 32px);border:2px solid var(--blue);display:grid;grid-template-rows:auto 1fr;overflow:hidden;background:var(--white)}
-    header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px clamp(22px,4vw,54px);border-bottom:2px solid var(--blue)}
-    .brand{display:block;width:min(280px,46vw)}
-    .brand img{display:block;width:100%;height:auto}
-    .back{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
-    .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);min-height:0}
-    .panel{position:relative;overflow:hidden;background:var(--area);color:var(--area-text);padding:clamp(38px,7vw,92px);display:flex;flex-direction:column;justify-content:center}
-    .panel:before{content:"";position:absolute;width:clamp(120px,18vw,260px);aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-8%;top:-14%;opacity:.28}
-    .panel:after{content:"";position:absolute;width:clamp(80px,11vw,150px);aspect-ratio:1;background:rgba(255,255,255,.16);right:-3%;bottom:-8%;transform:rotate(45deg)}
-    .num{position:relative;z-index:1;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;opacity:.78}
-    h1{position:relative;z-index:1;margin:24px 0 0;font-size:clamp(2.8rem,8vw,7.8rem);line-height:.86;letter-spacing:-.065em;text-transform:uppercase;overflow-wrap:anywhere}
-    .info{padding:clamp(38px,6vw,82px);display:flex;flex-direction:column;justify-content:center;background:var(--white)}
-    .eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--fuchsia);margin:0 0 18px}
-    .info p{margin:0;max-width:520px;font-size:clamp(1rem,1.45vw,1.2rem);line-height:1.7;color:#48536d}
-    .rule{width:42px;height:4px;background:var(--green);margin:28px 0 0}
-    @media(max-width:760px){body{padding:8px}.page{min-height:calc(100svh - 16px)}header{padding:16px 18px;gap:14px}.brand{width:min(210px,55vw)}.back{font-size:.58rem;letter-spacing:.12em}.hero{grid-template-columns:1fr;grid-template-rows:auto auto}.panel{min-height:43svh;padding:42px 24px}h1{font-size:clamp(2.6rem,16vw,5.2rem);max-width:100%}.info{padding:34px 24px 42px}}
+    html{scroll-behavior:smooth;overflow-x:hidden;background:var(--white)}
+    body{margin:0;background:var(--white);color:var(--blue);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+    a{color:inherit}
+    img{display:block;max-width:100%}
+    .shell{margin:16px;border:2px solid var(--blue);overflow:hidden;background:var(--white)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px clamp(20px,4vw,54px);border-bottom:2px solid var(--blue);background:var(--white)}
+    .brand{width:min(280px,48vw)}.brand img{width:100%;height:auto}
+    .back{text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:.65rem;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
+
+    .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);min-height:calc(100svh - 105px)}
+    .hero-copy{position:relative;padding:clamp(48px,7vw,100px);background:var(--fuchsia);color:var(--white);display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+    .hero-copy:before{content:"";position:absolute;width:260px;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-82px;top:-84px;opacity:.3}
+    .hero-copy:after{content:"";position:absolute;width:150px;aspect-ratio:1;background:var(--green);right:-45px;bottom:-48px;transform:rotate(45deg)}
+    .kicker{position:relative;z-index:2;margin:0;font-size:.68rem;letter-spacing:.23em;text-transform:uppercase;font-weight:800}
+    h1{position:relative;z-index:2;margin:24px 0 28px;font-size:clamp(3.2rem,7.9vw,7.6rem);line-height:.82;letter-spacing:-.07em;text-transform:uppercase;max-width:10ch}
+    .hero-copy p{position:relative;z-index:2;margin:0;max-width:680px;font-size:clamp(1.02rem,1.5vw,1.27rem);line-height:1.72;color:rgba(255,255,255,.9)}
+    .hero-side{padding:clamp(42px,6vw,82px);display:flex;flex-direction:column;justify-content:center;background:var(--blue);color:var(--white)}
+    .hero-side .eyebrow{margin:0 0 18px;color:var(--green);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800}
+    .hero-side blockquote{margin:0;font-size:clamp(1.65rem,3vw,2.8rem);line-height:1.12;letter-spacing:-.04em;font-weight:700}
+    .hero-side p{margin:28px 0 0;line-height:1.7;color:rgba(255,255,255,.78)}
+    .hero-side .line{width:44px;height:5px;background:var(--fuchsia);margin-top:30px}
+
+    .origin{padding:clamp(72px,9vw,130px) clamp(24px,7vw,110px);display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(42px,7vw,105px)}
+    .origin h2{margin:0;font-size:clamp(2.8rem,5.8vw,6rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .origin h2 span{color:var(--fuchsia)}
+    .origin-copy{font-size:clamp(1.04rem,1.45vw,1.22rem);line-height:1.82;color:var(--ink)}
+    .origin-copy p{margin:0 0 22px}
+
+    .formation{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--blue);border-bottom:2px solid var(--blue)}
+    .formation article{min-height:270px;padding:30px;border-right:2px solid var(--blue);display:flex;flex-direction:column;justify-content:space-between}
+    .formation article:last-child{border-right:0}
+    .formation article:nth-child(1){background:var(--blue);color:var(--white)}
+    .formation article:nth-child(2){background:var(--green);color:var(--white)}
+    .formation article:nth-child(3){background:var(--fuchsia);color:var(--white)}
+    .formation span{font-size:.66rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800;opacity:.8}
+    .formation h3{margin:36px 0 14px;font-size:clamp(1.65rem,2.8vw,2.9rem);line-height:.95;letter-spacing:-.045em;text-transform:uppercase}
+    .formation p{margin:0;line-height:1.62;max-width:34ch}
+
+    .turning{display:grid;grid-template-columns:1fr 1fr;min-height:620px}
+    .turning-left{padding:clamp(52px,7vw,100px);background:var(--soft);display:flex;flex-direction:column;justify-content:center}
+    .turning-left h2{margin:0 0 26px;font-size:clamp(2.8rem,5.8vw,6rem);line-height:.88;letter-spacing:-.06em;text-transform:uppercase;max-width:8ch}
+    .turning-left p{margin:0;max-width:650px;line-height:1.78;color:var(--ink);font-size:clamp(1rem,1.35vw,1.18rem)}
+    .turning-right{position:relative;padding:clamp(52px,7vw,100px);background:var(--white);display:flex;flex-direction:column;justify-content:center;border-left:2px solid var(--blue);overflow:hidden}
+    .turning-right:before{content:"";position:absolute;width:180px;aspect-ratio:1;background:var(--green);border-radius:50%;right:-55px;top:-55px}
+    .turning-right strong{position:relative;z-index:2;font-size:clamp(4rem,8vw,8rem);line-height:.8;letter-spacing:-.08em;color:var(--fuchsia)}
+    .turning-right p{position:relative;z-index:2;margin:28px 0 0;max-width:530px;line-height:1.7;color:var(--ink)}
+
+    .emotion{padding:clamp(78px,9vw,130px) clamp(24px,7vw,110px);background:var(--blue);color:var(--white)}
+    .emotion-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:60px;align-items:start}
+    .emotion h2{margin:0;font-size:clamp(2.8rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .emotion-copy{font-size:clamp(1.08rem,1.55vw,1.3rem);line-height:1.78;color:rgba(255,255,255,.82)}
+    .emotion-copy p{margin:0 0 22px}
+    .emotion-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+    .emotion-tags span{border:1px solid rgba(255,255,255,.45);padding:10px 13px;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800}
+
+    .timeline-section{padding:clamp(76px,9vw,128px) clamp(24px,7vw,110px);background:var(--white)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:42px}
+    .section-head h2{margin:0;font-size:clamp(2.8rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .section-head p{margin:0;max-width:520px;color:var(--ink);line-height:1.65}
+    .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .moment{position:relative;min-height:280px;border:2px solid var(--blue);padding:28px;background:var(--white);overflow:hidden;display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease}
+    .moment:nth-child(2),.moment:nth-child(5),.moment:nth-child(8){background:var(--green);color:var(--white)}
+    .moment:nth-child(3),.moment:nth-child(6),.moment:nth-child(9){background:var(--fuchsia);color:var(--white)}
+    .moment:hover{transform:translateY(-5px);box-shadow:9px 9px 0 rgba(22,42,82,.14)}
+    .year{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800;opacity:.78}
+    .moment h3{margin:48px 0 14px;font-size:clamp(1.4rem,2.4vw,2.3rem);line-height:.95;letter-spacing:-.04em;text-transform:uppercase;max-width:16ch}
+    .moment p{margin:0;line-height:1.6;max-width:38ch}
+    .moment:after{content:"";position:absolute;width:80px;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-32px;top:-32px;opacity:.22}
+
+    .shows{padding:clamp(76px,9vw,128px) clamp(24px,7vw,110px);background:var(--soft)}
+    .shows h2{margin:0 0 42px;font-size:clamp(2.8rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .show-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .show{border:2px solid var(--blue);padding:32px;min-height:250px;background:var(--white)}
+    .show:nth-child(2){background:var(--fuchsia);color:var(--white)}
+    .show:nth-child(3){background:var(--green);color:var(--white)}
+    .show:nth-child(4){background:var(--blue);color:var(--white)}
+    .show small{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.76}
+    .show h3{margin:42px 0 15px;font-size:clamp(1.5rem,2.7vw,2.6rem);line-height:.95;letter-spacing:-.045em;text-transform:uppercase}
+    .show p{margin:0;line-height:1.62}
+
+    .records{padding:clamp(76px,9vw,128px) clamp(24px,7vw,110px)}
+    .records-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:42px}
+    .records h2{margin:0;font-size:clamp(2.8rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .records-head p{margin:0;max-width:520px;color:var(--ink);line-height:1.65}
+    .record-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .record{border:2px solid var(--blue);padding:28px;min-height:245px;display:flex;flex-direction:column;background:var(--white)}
+    .record:nth-child(2){background:var(--green);color:var(--white)}
+    .record:nth-child(3){background:var(--fuchsia);color:var(--white)}
+    .record small{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.76}
+    .record h3{margin:40px 0 14px;font-size:clamp(1.4rem,2.4vw,2.25rem);line-height:.96;letter-spacing:-.04em;text-transform:uppercase}
+    .record p{margin:0 0 26px;line-height:1.6}
+    .record a{margin-top:auto;width:max-content;max-width:100%;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+
+    .repertoire{padding:clamp(76px,9vw,128px) clamp(24px,7vw,110px);background:var(--blue);color:var(--white)}
+    .repertoire h2{margin:0 0 38px;font-size:clamp(2.8rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .repertoire-list{display:flex;flex-wrap:wrap;gap:10px}
+    .repertoire-list span{border:1px solid rgba(255,255,255,.42);padding:11px 14px;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;font-weight:800}
+
+    .closing{padding:clamp(78px,10vw,140px) clamp(24px,8vw,130px);background:var(--white)}
+    .closing p{margin:0;max-width:1050px;font-size:clamp(2rem,4.2vw,4.5rem);line-height:1.06;letter-spacing:-.045em;font-weight:700}
+    .closing p span{color:var(--fuchsia)}
+
+    footer{background:var(--fuchsia);color:var(--white);padding:34px clamp(24px,7vw,110px);display:flex;justify-content:space-between;gap:20px;align-items:center}
+    footer a{text-decoration:none;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:4px}
+    footer span{font-size:.72rem;opacity:.84}
+
+    @media(max-width:900px){.hero,.origin,.turning,.emotion-grid{grid-template-columns:1fr}.formation{grid-template-columns:1fr}.formation article{border-right:0;border-bottom:2px solid var(--blue)}.formation article:last-child{border-bottom:0}.turning-right{border-left:0;border-top:2px solid var(--blue)}.timeline{grid-template-columns:repeat(2,1fr)}.show-grid,.record-grid{grid-template-columns:1fr}.section-head,.records-head{display:block}.section-head p,.records-head p{margin-top:24px}}
+    @media(max-width:620px){.shell{margin:8px}header{padding:15px 16px;gap:12px}.brand{width:min(205px,55vw)}.back{font-size:.55rem;letter-spacing:.1em}.hero{min-height:0}.hero-copy,.hero-side{padding:48px 24px 54px}h1{font-size:clamp(3rem,17vw,5rem)}.origin,.emotion,.timeline-section,.shows,.records,.repertoire,.closing{padding:62px 24px}.timeline{grid-template-columns:1fr}.moment{min-height:240px}.formation article{min-height:230px}.turning-left,.turning-right{padding:56px 24px}.record,.show{min-height:220px}footer{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
-  <main class="page">
-    <header><a class="brand" href="../" aria-label="Volver al inicio"><img src="../assets/Fondo%20marfil.png" alt="Valentina Galaz"></a><a class="back" href="../">← Volver al inicio</a></header>
-    <section class="hero"><div class="panel"><div class="num" id="num"></div><h1 id="title"></h1></div><div class="info"><p class="eyebrow">Área de trabajo</p><p id="description"></p><span class="rule" aria-hidden="true"></span></div></section>
+  <main class="shell">
+    <header>
+      <a class="brand" href="../" aria-label="Volver al inicio"><img src="../assets/Fondo%20marfil.png" alt="Valentina Galaz"></a>
+      <a class="back" href="../">← Volver al inicio</a>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">03 · Piazzollamente</p>
+        <h1>Una búsqueda interior</h1>
+        <p>Piazzollamente nace de una relación profunda con la música de Astor Piazzolla: una música intensa, fuerte y melancólica que no se interpreta desde la superficie.</p>
+      </div>
+      <div class="hero-side">
+        <p class="eyebrow">Origen</p>
+        <blockquote>Piazzollamente surge en Argentina, dentro de los dieciséis años que viví en ese país.</blockquote>
+        <p>Allí pude estudiar, formarme y, sobre todo, dimensionar el valor cultural que tiene la música de Astor Piazzolla dentro de la historia del tango.</p>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <section class="origin">
+      <h2>Nació en <span>Argentina</span>.</h2>
+      <div class="origin-copy">
+        <p>Durante mis dieciséis años de residencia en Argentina, la música de Piazzolla dejó de ser sólo un repertorio para convertirse en una forma de comprender la historia del tango, sus rupturas y su enorme peso cultural.</p>
+        <p>Fue ahí donde comenzó a construirse Piazzollamente: no como una copia de un formato tradicional, sino como una lectura atravesada por mi propia historia, mi formación y mi identidad como flautista.</p>
+      </div>
+    </section>
+
+    <section class="formation">
+      <article><span>01 · Formación</span><div><h3>Cátedra Libre Astor Piazzolla</h3><p>Participé de esta formación especializada para profundizar en el lenguaje, la historia y la dimensión cultural de su música.</p></div></article>
+      <article><span>02 · Referentes</span><div><h3>Pipi Piazzolla y Nicolás Guerschberg</h3><p>Ambos me impulsaron a buscar una diferencia real y a construir una identidad propia desde la flauta.</p></div></article>
+      <article><span>03 · Decisión sonora</span><div><h3>La flauta en lugar del bandoneón</h3><p>Ese cambio no fue decorativo: se transformó en el centro sonoro, expresivo y escénico del proyecto.</p></div></article>
+    </section>
+
+    <section class="turning">
+      <div class="turning-left">
+        <h2>Volver a Chile</h2>
+        <p>En 2024, con mi regreso a Chile, Piazzollamente comenzó una nueva etapa. Desde entonces hemos tocado en numerosos escenarios y frente a públicos muy diversos, que han manifestado un profundo interés por la música de Astor Piazzolla.</p>
+      </div>
+      <div class="turning-right">
+        <strong>2024</strong>
+        <p>El retorno no significó empezar de cero. Significó traer conmigo dieciséis años de experiencia, escucha y formación para convertirlos en un proyecto escénico chileno con identidad propia.</p>
+      </div>
+    </section>
+
+    <section class="emotion">
+      <div class="emotion-grid">
+        <h2>Fuerte y melancólico</h2>
+        <div class="emotion-copy">
+          <p>La búsqueda de Piazzollamente es, sin duda, interior. Piazzolla es fuerza y melancolía. Es tensión, impulso, fragilidad y desborde.</p>
+          <p>Esas emociones intensas no sólo están presentes en el repertorio: se viven en cada espectáculo.</p>
+          <div class="emotion-tags"><span>Fuerza</span><span>Melancolía</span><span>Tensión</span><span>Impulso</span><span>Fragilidad</span><span>Desborde</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section">
+      <div class="section-head"><h2>Trayectoria</h2><p>Una línea de tiempo que muestra cómo el proyecto se fue consolidando entre Argentina y Chile.</p></div>
+      <div class="timeline">
+        <article class="moment"><span class="year">2023 · Argentina</span><h3>Academia Pianoforte</h3><p>Presentación con sobreventa y una recepción que confirmó el interés por esta lectura del repertorio.</p></article>
+        <article class="moment"><span class="year">2023 · Maipú</span><h3>Caminos del Vino</h3><p>Concierto agotado en dos horas dentro de uno de los circuitos culturales más importantes de Mendoza.</p></article>
+        <article class="moment"><span class="year">2023 · Mendoza</span><h3>Museo Carlos Alonso</h3><p>Presentación del proyecto en un espacio cultural de referencia.</p></article>
+        <article class="moment"><span class="year">2024 · Rancagua</span><h3>La Camorra</h3><p>Concierto en el Teatro Lucho Gatica, marcando una etapa decisiva del proyecto en Chile.</p></article>
+        <article class="moment"><span class="year">2025 · Santiago</span><h3>Teatro El Cachafaz</h3><p>Presentaciones que consolidaron el lenguaje escénico y la relación con el público.</p></article>
+        <article class="moment"><span class="year">2025 · Sala SCD</span><h3>Plaza Egaña</h3><p>Concierto con programa amplio y repertorio emblemático de Piazzolla.</p></article>
+        <article class="moment"><span class="year">2025 · Coquimbo</span><h3>Puentes, Caminos y Encuentros</h3><p>Gira financiada por MINCAP por Vicuña, Paihuano, Río Hurtado, Ovalle y Cuatro Esquinas.</p></article>
+        <article class="moment"><span class="year">2025 · Limache</span><h3>Las Estaciones Porteñas</h3><p>Programa centrado en el ciclo de las estaciones y su intensidad expresiva.</p></article>
+        <article class="moment"><span class="year">2025 · Sala Master</span><h3>Tango para el 3001</h3><p>Expansión escénica del proyecto con invitados vocales e instrumentales.</p></article>
+      </div>
+    </section>
+
+    <section class="shows">
+      <h2>Programas escénicos</h2>
+      <div class="show-grid">
+        <article class="show"><small>Programa</small><h3>La Camorra</h3><p>Una lectura de Piazzolla desde la tensión, la energía y el impulso rítmico.</p></article>
+        <article class="show"><small>Programa</small><h3>Piazzolla íntimo</h3><p>Un formato cercano que pone el foco en la escucha, la emoción y la relación directa con el público.</p></article>
+        <article class="show"><small>Programa</small><h3>Las Estaciones Porteñas</h3><p>Un recorrido por el tiempo, el cuerpo y los contrastes emocionales del ciclo porteño.</p></article>
+        <article class="show"><small>Programa</small><h3>Tango para el 3001</h3><p>Una propuesta de mayor escala, con cruces tímbricos, invitados y una identidad escénica futurista.</p></article>
+      </div>
+    </section>
+
+    <section class="records">
+      <div class="records-head"><h2>Registros y circulación</h2><p>Enlaces públicos para conocer el proyecto, escuchar sus lanzamientos y revisar su actividad escénica.</p></div>
+      <div class="record-grid">
+        <article class="record"><small>Sitio oficial</small><h3>Piazzollamente</h3><p>Información del proyecto, conciertos, repertorio y novedades.</p><a href="https://piazzollamente.cl/" target="_blank" rel="noreferrer">Visitar sitio ↗</a></article>
+        <article class="record"><small>Lanzamiento</small><h3>Milonga del Ángel</h3><p>Registro publicado y distribuido digitalmente.</p><a href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noreferrer">Escuchar ↗</a></article>
+        <article class="record"><small>Concierto</small><h3>Piazzolla íntimo</h3><p>Página del concierto realizado en Mesón Nerudiano.</p><a href="https://piazzollamente.cl/mesonnerudiano/" target="_blank" rel="noreferrer">Ver concierto ↗</a></article>
+      </div>
+    </section>
+
+    <section class="repertoire">
+      <h2>Repertorio</h2>
+      <div class="repertoire-list"><span>Michelangelo 70</span><span>Tanguedia</span><span>Fuga y Misterio</span><span>Primavera Porteña</span><span>Verano Porteño</span><span>Otoño Porteño</span><span>Invierno Porteño</span><span>Milonga del Ángel</span><span>Muerte del Ángel</span><span>Adiós Nonino</span><span>Libertango</span><span>Vuelvo al Sur</span><span>Chiquilín de Bachín</span><span>Balada para un loco</span><span>Pájaros Perdidos</span><span>Yo soy María</span><span>Milonga de la Anunciación</span><span>Preludio 3001</span></div>
+    </section>
+
+    <section class="closing"><p>Piazzollamente no nace desde la nostalgia. Nace desde el deseo de volver a una música poderosa y <span>crear una forma propia de habitarla</span>.</p></section>
+
+    <footer><span>Piazzollamente · Dirección artística de Valentina Galaz</span><a href="../">Volver al inicio →</a></footer>
   </main>
-  <script>
-    const key=location.pathname.split('/').filter(Boolean).pop()||'';
-    const areas={'investigacion':{num:'01',title:'Investigación',color:'#162a52',text:'#ffffff',description:'Investigación musical, repertorio latinoamericano, archivo y pensamiento crítico en torno a la interpretación.'},'interpretacion':{num:'02',title:'Interpretación',color:'#18b368',text:'#ffffff',description:'Trayectoria como flautista, música de cámara, repertorio contemporáneo y práctica escénica.'},'piazzollamente':{num:'03',title:'Piazzollamente',color:'#e63aa7',text:'#ffffff',description:'Dirección artística y flauta en un proyecto dedicado a la música de Astor Piazzolla.'},'escuela-de-flautistas':{num:'04',title:'Escuela de Flautistas',color:'#ffffff',text:'#162a52',description:'Formación para flautistas que integra técnica, sonido, interpretación y desarrollo artístico.'}};
-    const area=areas[key]||areas.investigacion;document.documentElement.style.setProperty('--area',area.color);document.documentElement.style.setProperty('--area-text',area.text);document.getElementById('num').textContent=area.num;document.getElementById('title').textContent=area.title;document.getElementById('description').textContent=area.description;document.title=area.title+' — Valentina Galaz';
-  </script>
 </body>
 </html>
