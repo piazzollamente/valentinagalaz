@@ -4,64 +4,231 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Escuela de Flautistas — Valentina Galaz</title>
+  <meta name="description" content="Escuela de Flautistas: formación, herramientas y recursos para comprender el cuerpo, organizar el estudio y construir una voz propia en la flauta.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon-vg.svg?v=2">
   <link rel="shortcut icon" href="../assets/favicon-vg.svg?v=2">
   <meta name="theme-color" content="#162A52">
   <style>
-    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7}
+    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7;--soft:#f5fbf8;--ink:#48536d}
     *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;background:var(--white);color:var(--blue);font-family:Arial,Helvetica,sans-serif}
-    body{min-height:100svh;padding:16px}
-    .page{position:relative;min-height:calc(100svh - 32px);border:2px solid var(--blue);display:grid;grid-template-rows:auto 1fr;overflow:hidden;background:var(--white)}
-    header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px clamp(22px,4vw,54px);border-bottom:2px solid var(--blue)}
-    .brand{display:block;width:min(280px,46vw)}
-    .brand img{display:block;width:100%;height:auto}
-    .back{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
-    .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);min-height:0}
-    .panel{position:relative;overflow:hidden;background:var(--white);color:var(--blue);padding:clamp(36px,6vw,78px);display:flex;flex-direction:column;justify-content:center;border-right:2px solid var(--blue)}
-    .panel:before{content:"";position:absolute;width:clamp(120px,17vw,250px);aspect-ratio:1;background:var(--green);border-radius:50%;right:-9%;top:-14%;opacity:.96}
-    .panel:after{content:"";position:absolute;width:clamp(90px,12vw,170px);aspect-ratio:1;background:var(--fuchsia);right:-4%;bottom:-10%;transform:rotate(45deg)}
-    .inner{position:relative;z-index:2;border:2px solid var(--blue);padding:clamp(28px,4.5vw,56px);background:rgba(255,255,255,.94);box-shadow:12px 12px 0 var(--green)}
-    .num{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--fuchsia)}
-    h1{margin:22px 0 0;font-size:clamp(2.5rem,6.3vw,6.4rem);line-height:.88;letter-spacing:-.06em;text-transform:uppercase;max-width:8.8ch}
-    h1 span{display:block}
-    .info{padding:clamp(38px,6vw,82px);display:flex;flex-direction:column;justify-content:center;background:var(--blue);color:var(--white)}
-    .eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--green);margin:0 0 18px}
-    .info p{margin:0;max-width:520px;font-size:clamp(1rem,1.45vw,1.2rem);line-height:1.7;color:rgba(255,255,255,.82)}
-    .rule{width:42px;height:4px;background:var(--fuchsia);margin:28px 0 0}
-    @media(max-width:760px){
-      body{padding:8px}
-      .page{min-height:calc(100svh - 16px)}
-      header{padding:16px 18px;gap:14px}
-      .brand{width:min(210px,55vw)}
-      .back{font-size:.58rem;letter-spacing:.12em}
-      .hero{grid-template-columns:1fr;grid-template-rows:auto auto}
-      .panel{min-height:auto;padding:34px 20px 42px;border-right:0;border-bottom:2px solid var(--blue)}
-      .inner{padding:28px 22px;box-shadow:8px 8px 0 var(--green)}
-      h1{font-size:clamp(2.35rem,13vw,4.6rem);max-width:8.2ch}
-      .info{padding:34px 24px 42px}
-    }
+    html{scroll-behavior:smooth;overflow-x:hidden;background:var(--white)}
+    body{margin:0;background:var(--white);color:var(--blue);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+    a{color:inherit}
+    img{display:block;max-width:100%}
+    .shell{margin:16px;border:2px solid var(--blue);overflow:hidden;background:var(--white)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px clamp(20px,4vw,54px);border-bottom:2px solid var(--blue);background:var(--white)}
+    .brand{width:min(280px,48vw)}.brand img{width:100%;height:auto}
+    .back{text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:.65rem;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
+
+    .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);min-height:calc(100svh - 105px)}
+    .hero-main{position:relative;padding:clamp(48px,7vw,100px);background:var(--white);display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+    .hero-main:before{content:"";position:absolute;width:250px;aspect-ratio:1;background:var(--green);border-radius:50%;right:-85px;top:-80px}
+    .hero-main:after{content:"";position:absolute;width:145px;aspect-ratio:1;background:var(--fuchsia);right:-40px;bottom:-42px;transform:rotate(45deg)}
+    .hero-card{position:relative;z-index:2;border:2px solid var(--blue);padding:clamp(32px,5vw,62px);background:rgba(255,255,255,.96);box-shadow:14px 14px 0 var(--green)}
+    .kicker{margin:0;color:var(--fuchsia);font-size:.68rem;letter-spacing:.23em;text-transform:uppercase;font-weight:800}
+    h1{margin:22px 0 28px;font-size:clamp(3.1rem,7.3vw,7rem);line-height:.84;letter-spacing:-.07em;text-transform:uppercase;max-width:9ch}
+    .hero-card p{margin:0;max-width:660px;font-size:clamp(1.03rem,1.45vw,1.24rem);line-height:1.72;color:var(--ink)}
+    .hero-side{background:var(--blue);color:var(--white);padding:clamp(42px,6vw,82px);display:flex;flex-direction:column;justify-content:center}
+    .hero-side .eyebrow{margin:0 0 18px;color:var(--green);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800}
+    .hero-side blockquote{margin:0;font-size:clamp(1.6rem,3vw,2.8rem);line-height:1.14;letter-spacing:-.04em;font-weight:700}
+    .hero-side p{margin:28px 0 0;line-height:1.72;color:rgba(255,255,255,.8)}
+    .hero-side .line{width:44px;height:5px;background:var(--fuchsia);margin-top:30px}
+
+    .why{padding:clamp(74px,9vw,130px) clamp(24px,7vw,110px);display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(42px,7vw,105px)}
+    .why h2{margin:0;font-size:clamp(2.8rem,5.8vw,6rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .why h2 span{color:var(--fuchsia)}
+    .why-copy{font-size:clamp(1.04rem,1.45vw,1.22rem);line-height:1.82;color:var(--ink)}
+    .why-copy p{margin:0 0 22px}
+
+    .principles{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--blue);border-bottom:2px solid var(--blue)}
+    .principle{min-height:250px;padding:28px;border-right:2px solid var(--blue);display:flex;flex-direction:column;justify-content:space-between}
+    .principle:last-child{border-right:0}.principle:nth-child(1){background:var(--blue);color:var(--white)}.principle:nth-child(2){background:var(--green);color:var(--white)}.principle:nth-child(3){background:var(--fuchsia);color:var(--white)}
+    .principle small{font-size:.64rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800;opacity:.8}
+    .principle h3{margin:36px 0 12px;font-size:clamp(1.55rem,2.5vw,2.6rem);line-height:.95;letter-spacing:-.04em;text-transform:uppercase}
+    .principle p{margin:0;line-height:1.6}
+
+    .method{padding:clamp(76px,9vw,128px) clamp(24px,7vw,110px);background:var(--soft)}
+    .method-head{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:60px;align-items:end;margin-bottom:46px}
+    .method h2{margin:0;font-size:clamp(2.8rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .method-head p{margin:0;line-height:1.72;color:var(--ink);max-width:650px}
+    .question-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .question{border:2px solid var(--blue);background:var(--white);padding:28px;min-height:160px;display:flex;align-items:flex-end;font-size:clamp(1.25rem,2.2vw,2rem);line-height:1.15;letter-spacing:-.03em;font-weight:700}
+    .question:nth-child(2){background:var(--green);color:var(--white)}.question:nth-child(3){background:var(--fuchsia);color:var(--white)}.question:nth-child(4){background:var(--blue);color:var(--white)}
+
+    .created{padding:clamp(76px,9vw,128px) clamp(24px,7vw,110px)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:42px}
+    .section-head h2{margin:0;font-size:clamp(2.8rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .section-head p{margin:0;max-width:520px;line-height:1.65;color:var(--ink)}
+    .create-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .create-card{border:2px solid var(--blue);padding:28px;min-height:250px;display:flex;flex-direction:column;background:var(--white)}
+    .create-card:nth-child(2){background:var(--green);color:var(--white)}.create-card:nth-child(3){background:var(--fuchsia);color:var(--white)}.create-card:nth-child(5){background:var(--blue);color:var(--white)}
+    .create-card small{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.76}
+    .create-card h3{margin:42px 0 14px;font-size:clamp(1.45rem,2.4vw,2.3rem);line-height:.96;letter-spacing:-.04em;text-transform:uppercase}
+    .create-card p{margin:0;line-height:1.6}
+
+    .youtube{padding:clamp(76px,9vw,128px) clamp(24px,7vw,110px);background:var(--blue);color:var(--white)}
+    .youtube-head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:60px;margin-bottom:44px;align-items:end}
+    .youtube h2{margin:0;font-size:clamp(2.8rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .youtube-head p{margin:0;line-height:1.72;color:rgba(255,255,255,.8);max-width:680px}
+    .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .video-card{background:var(--white);color:var(--blue);border:2px solid var(--white);overflow:hidden;display:flex;flex-direction:column}
+    .video-frame{aspect-ratio:16/9;background:#000}
+    .video-frame iframe{width:100%;height:100%;border:0}
+    .video-copy{padding:22px;display:flex;flex-direction:column;flex:1}
+    .video-copy small{color:var(--fuchsia);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+    .video-copy h3{margin:14px 0 12px;font-size:clamp(1.2rem,2vw,1.8rem);line-height:1;letter-spacing:-.035em;text-transform:uppercase}
+    .video-copy p{margin:0 0 22px;line-height:1.58;color:var(--ink)}
+    .video-copy a{margin-top:auto;width:max-content;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+    .youtube-footer{margin-top:28px}
+    .youtube-footer a{display:inline-flex;background:var(--fuchsia);color:var(--white);padding:14px 18px;text-decoration:none;font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+
+    .student{padding:clamp(76px,9vw,128px) clamp(24px,7vw,110px);display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:60px}
+    .student h2{margin:0;font-size:clamp(2.8rem,5.8vw,6rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .student-copy{font-size:clamp(1.04rem,1.45vw,1.22rem);line-height:1.82;color:var(--ink)}
+    .student-copy p{margin:0 0 22px}
+
+    .tools{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--blue);border-bottom:2px solid var(--blue)}
+    .tool{padding:clamp(48px,7vw,90px);min-height:420px;display:flex;flex-direction:column;justify-content:center}
+    .tool:first-child{background:var(--green);color:var(--white)}.tool:last-child{background:var(--fuchsia);color:var(--white);border-left:2px solid var(--blue)}
+    .tool small{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.8}
+    .tool h2{margin:24px 0 18px;font-size:clamp(2.4rem,5vw,5rem);line-height:.9;letter-spacing:-.055em;text-transform:uppercase}
+    .tool p{margin:0 0 28px;line-height:1.68;max-width:560px}
+    .tool a{width:max-content;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+
+    .offer{padding:clamp(76px,9vw,128px) clamp(24px,7vw,110px);background:var(--soft)}
+    .offer h2{margin:0 0 42px;font-size:clamp(2.8rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .offer-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);border:2px solid var(--blue);background:var(--white)}
+    .offer-copy{padding:clamp(36px,5.5vw,72px)}
+    .offer-copy small{display:inline-block;background:var(--fuchsia);color:var(--white);padding:8px 11px;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+    .offer-copy h3{margin:26px 0 20px;font-size:clamp(2.1rem,4.3vw,4.5rem);line-height:.92;letter-spacing:-.055em;text-transform:uppercase}
+    .offer-copy p{margin:0 0 28px;line-height:1.72;color:var(--ink)}
+    .offer-copy a{display:inline-flex;background:var(--blue);color:var(--white);padding:14px 18px;text-decoration:none;font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+    .offer-side{background:var(--blue);color:var(--white);padding:clamp(36px,5vw,68px);display:flex;flex-direction:column;justify-content:space-between}
+    .offer-side strong{font-size:clamp(4rem,8vw,8rem);line-height:.8;letter-spacing:-.08em;color:var(--green)}
+    .offer-side p{margin:30px 0 0;line-height:1.65;color:rgba(255,255,255,.8)}
+
+    .closing{padding:clamp(78px,10vw,140px) clamp(24px,8vw,130px)}
+    .closing p{margin:0;max-width:1050px;font-size:clamp(2rem,4.2vw,4.5rem);line-height:1.06;letter-spacing:-.045em;font-weight:700}
+    .closing p span{color:var(--fuchsia)}
+    .closing-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .closing-links a{padding:14px 18px;text-decoration:none;font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;border:2px solid var(--blue)}
+    .closing-links a:first-child{background:var(--blue);color:var(--white)}.closing-links a:nth-child(2){background:var(--green);color:var(--white)}.closing-links a:nth-child(3){background:var(--fuchsia);color:var(--white)}
+
+    footer{background:var(--blue);color:var(--white);padding:34px clamp(24px,7vw,110px);display:flex;justify-content:space-between;gap:20px;align-items:center}
+    footer a{text-decoration:none;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:4px}
+    footer span{font-size:.72rem;opacity:.84}
+
+    @media(max-width:1000px){.principles{grid-template-columns:repeat(2,1fr)}.principle:nth-child(2){border-right:0}.principle:nth-child(-n+2){border-bottom:2px solid var(--blue)}.create-grid,.video-grid{grid-template-columns:1fr 1fr}.video-card:last-child{grid-column:1/-1}}
+    @media(max-width:820px){.hero,.why,.method-head,.youtube-head,.student,.offer-card{grid-template-columns:1fr}.question-grid,.tools{grid-template-columns:1fr}.tool:last-child{border-left:0;border-top:2px solid var(--blue)}.section-head{display:block}.section-head p{margin-top:24px}.create-grid,.video-grid{grid-template-columns:1fr}.video-card:last-child{grid-column:auto}}
+    @media(max-width:620px){.shell{margin:8px}header{padding:15px 16px;gap:12px}.brand{width:min(205px,55vw)}.back{font-size:.55rem;letter-spacing:.1em}.hero{min-height:0}.hero-main,.hero-side{padding:48px 24px 54px}.hero-card{padding:28px 22px;box-shadow:9px 9px 0 var(--green)}h1{font-size:clamp(3rem,17vw,5rem)}.why,.method,.created,.youtube,.student,.offer,.closing{padding:62px 24px}.principles{grid-template-columns:1fr}.principle{border-right:0;border-bottom:2px solid var(--blue);min-height:210px}.principle:last-child{border-bottom:0}.question-grid{grid-template-columns:1fr}.tool{padding:58px 24px;min-height:340px}.create-card,.video-card{min-height:0}footer{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
-  <main class="page">
+  <main class="shell">
     <header>
       <a class="brand" href="../" aria-label="Volver al inicio"><img src="../assets/Fondo%20marfil.png" alt="Valentina Galaz"></a>
       <a class="back" href="../">← Volver al inicio</a>
     </header>
+
     <section class="hero">
-      <div class="panel">
-        <div class="inner">
-          <div class="num">04</div>
-          <h1><span>Escuela de</span><span>Flautistas</span></h1>
+      <div class="hero-main">
+        <div class="hero-card">
+          <p class="kicker">04 · Escuela de Flautistas</p>
+          <h1>La técnica también puede sentirse</h1>
+          <p>Escuela de Flautistas es el espacio pedagógico que creé para acompañar a quienes quieren comprender lo que hacen, organizar su estudio y construir una relación más consciente con su sonido.</p>
         </div>
       </div>
-      <div class="info">
-        <p class="eyebrow">Área de formación</p>
-        <p>Formación para flautistas que integra técnica, sonido, interpretación y desarrollo artístico.</p>
-        <span class="rule" aria-hidden="true"></span>
+      <div class="hero-side">
+        <p class="eyebrow">La idea central</p>
+        <blockquote>La técnica no es una colección de ejercicios. Es una forma de organizar el cuerpo, la escucha y la atención para que aparezca una voz propia.</blockquote>
+        <p>No me interesa que una persona repita una instrucción porque “así se hace”. Me interesa que pueda comprender qué necesita y tomar decisiones con mayor autonomía.</p>
+        <span class="line" aria-hidden="true"></span>
       </div>
     </section>
+
+    <section class="why">
+      <h2>¿Por qué nació la <span>escuela</span>?</h2>
+      <div class="why-copy">
+        <p>Durante muchos años vi a flautistas estudiar con esfuerzo, acumular ejercicios y aun así sentirse estancados. No porque les faltara disciplina, sino porque nadie les había enseñado a observar qué estaba ocurriendo realmente en su cuerpo, su respiración y su sonido.</p>
+        <p>Escuela de Flautistas nació para abrir ese espacio de comprensión. Para que estudiar deje de ser una repetición ciega y se transforme en un proceso más claro, consciente y sostenible.</p>
+      </div>
+    </section>
+
+    <section class="principles" aria-label="Principios pedagógicos">
+      <article class="principle"><small>01 · Cuerpo</small><div><h3>Observar antes de corregir</h3><p>La técnica comienza por comprender tensiones, apoyos, movimientos y hábitos.</p></div></article>
+      <article class="principle"><small>02 · Sonido</small><div><h3>Construir, no perseguir</h3><p>El sonido nace de la respiración, la embocadura, la escucha y la intención.</p></div></article>
+      <article class="principle"><small>03 · Estudio</small><div><h3>Organizar la atención</h3><p>Estudiar no es repetir más veces. Es decidir mejor qué observar y cómo avanzar.</p></div></article>
+      <article class="principle"><small>04 · Identidad</small><div><h3>Una voz propia</h3><p>La meta no es sonar como otra persona, sino desarrollar una relación personal con la flauta.</p></div></article>
+    </section>
+
+    <section class="method">
+      <div class="method-head"><h2>Tu voz en la flauta</h2><p>Mi forma de enseñar integra técnica, percepción corporal, sonido, afinación, movimiento, concentración y expresividad. Cada proceso parte de preguntas concretas.</p></div>
+      <div class="question-grid">
+        <div class="question">¿Qué está haciendo realmente el cuerpo?</div>
+        <div class="question">¿Dónde aparece una tensión innecesaria?</div>
+        <div class="question">¿Qué información está entregando el sonido?</div>
+        <div class="question">¿Qué decisión musical hay detrás de cada ejercicio?</div>
+      </div>
+    </section>
+
+    <section class="created">
+      <div class="section-head"><h2>Lo que he creado</h2><p>La escuela se ha convertido en una plataforma de formación, recursos digitales y herramientas propias.</p></div>
+      <div class="create-grid">
+        <article class="create-card"><small>Formación</small><h3>Tu Voz en la Flauta</h3><p>Mentoría orientada a sonido, técnica, afinación, expresividad y autonomía.</p></article>
+        <article class="create-card"><small>Formación</small><h3>El Camino del Flautista Moderno</h3><p>Programa de trabajo progresivo para organizar la técnica y el repertorio.</p></article>
+        <article class="create-card"><small>Formación</small><h3>Inmersión Técnica</h3><p>Proceso de doce semanas centrado en dedos, respiración, movimiento y sincronización.</p></article>
+        <article class="create-card"><small>Experiencias</small><h3>Escuela de Verano y Flautistas Protagonistas</h3><p>Instancias grupales para estudiar, compartir y construir comunidad.</p></article>
+        <article class="create-card"><small>Contenido</small><h3>Masterclasses y cursos</h3><p>Sonido, técnica, interpretación, tango, repertorio y práctica organizada.</p></article>
+        <article class="create-card"><small>Recursos</small><h3>Pistas, tablas y video-partituras</h3><p>Materiales concretos para acompañar el estudio fuera de la clase.</p></article>
+      </div>
+    </section>
+
+    <section class="youtube">
+      <div class="youtube-head"><h2>Tutoriales desde casa</h2><p>Durante la pandemia comencé a publicar tutoriales en mi canal de YouTube. Fueron una manera de seguir acompañando a otros flautistas y también un primer laboratorio de la metodología que hoy sostiene Escuela de Flautistas.</p></div>
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="video-frame"><iframe src="https://www.youtube.com/embed/JGJsXKycFg0" title="Video-partitura para flauta" loading="lazy" allowfullscreen></iframe></div>
+          <div class="video-copy"><small>Materiales para estudiar mejor</small><h3>Video-partitura</h3><p>Una forma de acompañar el estudio integrando partitura, referencia audiovisual y seguimiento musical en tiempo real.</p><a href="https://www.youtube.com/watch?v=JGJsXKycFg0" target="_blank" rel="noreferrer">Ver en YouTube ↗</a></div>
+        </article>
+        <article class="video-card">
+          <div class="video-frame"><iframe src="https://www.youtube.com/embed/JV3kOQb1mtc" title="Qué flauta me compro" loading="lazy" allowfullscreen></iframe></div>
+          <div class="video-copy"><small>Primeras decisiones del flautista</small><h3>¿Qué flauta me compro?</h3><p>Una guía para entender qué conviene observar antes de elegir instrumento según nivel, presupuesto y necesidades reales.</p><a href="https://www.youtube.com/watch?v=JV3kOQb1mtc" target="_blank" rel="noreferrer">Ver en YouTube ↗</a></div>
+        </article>
+        <article class="video-card">
+          <div class="video-frame"><iframe src="https://www.youtube.com/embed/1h3LYjdVVE8" title="Tres formas de afinar la flauta traversa" loading="lazy" allowfullscreen></iframe></div>
+          <div class="video-copy"><small>Técnica y afinación</small><h3>3 formas de afinar la flauta traversa</h3><p>Un tutorial para comprender la afinación desde acciones concretas y dejar de depender únicamente de perseguir la aguja.</p><a href="https://www.youtube.com/watch?v=1h3LYjdVVE8" target="_blank" rel="noreferrer">Ver en YouTube ↗</a></div>
+        </article>
+      </div>
+      <div class="youtube-footer"><a href="https://www.youtube.com/@ValentinaGalaz" target="_blank" rel="noreferrer">Visitar el canal completo ↗</a></div>
+    </section>
+
+    <section class="student">
+      <h2>Personas reales, tiempos reales</h2>
+      <div class="student-copy">
+        <p>La escuela acompaña especialmente a flautistas con formación previa que sienten que algo no termina de organizarse.</p>
+        <p>Muchas son personas adultas, trabajan en otras áreas y disponen de poco tiempo para estudiar. No necesitan más culpa ni más instrucciones aisladas: necesitan comprender sus dificultades, recuperar confianza y volver a disfrutar el proceso.</p>
+      </div>
+    </section>
+
+    <section class="tools">
+      <article class="tool"><small>Herramienta propia</small><h2>Afinador Escuela de Flautistas</h2><p>Un afinador cromático creado para estudiar con escucha y criterio, sin convertir la práctica en una persecución compulsiva de la aguja.</p><a href="https://escueladeflautistas.cl/afinador/" target="_blank" rel="noreferrer">Usar afinador ↗</a></article>
+      <article class="tool"><small>Desarrollo pedagógico</small><h2>Recursos que acompañan</h2><p>Tablas de digitaciones, pistas, video-partituras, e-books, guías progresivas y materiales audiovisuales creados para problemas concretos.</p><a href="https://escueladeflautistas.cl/" target="_blank" rel="noreferrer">Conocer la escuela ↗</a></article>
+    </section>
+
+    <section class="offer">
+      <h2>Una experiencia concreta</h2>
+      <article class="offer-card">
+        <div class="offer-copy"><small>Desafío de 21 días</small><h3>Embocadura Organizada</h3><p>Un proceso breve y progresivo para que la embocadura deje de sentirse como una posición rígida que hay que copiar. A través de ejercicios concretos, los participantes aprenden a observar tensiones, movilidad, contacto, dirección del aire y organización muscular.</p><a href="https://escueladeflautistas.cl/embocadura-organizada/?utm_source=web&utm_medium=popup&utm_campaign=desafio_21_dias&utm_content=desafio_abierto_global" target="_blank" rel="noreferrer">Conocer el desafío ↗</a></div>
+        <div class="offer-side"><strong>21</strong><p>Días de práctica guiada para convertir la observación en una herramienta de estudio.</p></div>
+      </article>
+    </section>
+
+    <section class="closing">
+      <p>No quiero enseñar a las personas a obedecer una lista de instrucciones. Quiero que puedan <span>escucharse, comprenderse y decidir con mayor libertad</span>.</p>
+      <div class="closing-links"><a href="https://escueladeflautistas.cl/" target="_blank" rel="noreferrer">Visitar la escuela ↗</a><a href="https://escueladeflautistas.cl/afinador/" target="_blank" rel="noreferrer">Usar el afinador ↗</a><a href="https://www.youtube.com/@ValentinaGalaz" target="_blank" rel="noreferrer">Ver tutoriales ↗</a></div>
+    </section>
+
+    <footer><span>Escuela de Flautistas · Creada y dirigida por Valentina Galaz</span><a href="../">Volver al inicio →</a></footer>
   </main>
 </body>
 </html>
