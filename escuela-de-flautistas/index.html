@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Valentina Galaz</title>
+  <style>
+    :root{--ivory:#fbf7e9;--blue:#09235b;--yellow:#dfa02e;--red:#c8322d;--green:#2f8587}
+    *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;background:var(--area,var(--blue));color:var(--ivory);font-family:Arial,Helvetica,sans-serif;padding:28px}.box{width:min(860px,100%);border:2px solid currentColor;padding:clamp(28px,7vw,80px)}.num{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75}h1{font-size:clamp(2.6rem,8vw,7rem);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:28px 0}p{font-size:1rem;line-height:1.6;max-width:560px}a{display:inline-block;margin-top:28px;color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px;text-transform:uppercase;font-size:.7rem;letter-spacing:.17em;font-weight:700}
+  </style>
+</head>
+<body>
+  <main class="box">
+    <div class="num" id="num"></div>
+    <h1 id="title"></h1>
+    <p>Esta sección comenzará a construirse en la siguiente etapa del sitio.</p>
+    <a href="../">← Volver al inicio</a>
+  </main>
+  <script>
+    const key=location.pathname.split('/').filter(Boolean).pop()||'';
+    const areas={
+      'investigacion':['01','Investigación','#09235b'],
+      'interpretacion':['02','Interpretación','#dfa02e'],
+      'piazzollamente':['03','Piazzollamente','#c8322d'],
+      'escuela-de-flautistas':['04','Escuela de Flautistas','#2f8587']
+    };
+    const area=areas[key]||['','Valentina Galaz','#09235b'];
+    document.documentElement.style.setProperty('--area',area[2]);
+    document.getElementById('num').textContent=area[0];
+    document.getElementById('title').textContent=area[1];
+    document.title=area[1]+' — Valentina Galaz';
+  </script>
+</body>
+</html>
