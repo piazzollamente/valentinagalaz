@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Valentina Galaz</title>
+  <title>Escuela de Flautistas — Valentina Galaz</title>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon-vg.svg?v=2">
   <link rel="shortcut icon" href="../assets/favicon-vg.svg?v=2">
   <meta name="theme-color" content="#162A52">
   <style>
-    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7;--area:var(--blue);--area-text:var(--white)}
+    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7}
     *{box-sizing:border-box}
     html,body{margin:0;min-height:100%;background:var(--white);color:var(--blue);font-family:Arial,Helvetica,sans-serif}
     body{min-height:100svh;padding:16px}
@@ -17,28 +17,51 @@
     .brand{display:block;width:min(280px,46vw)}
     .brand img{display:block;width:100%;height:auto}
     .back{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
-    .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);min-height:0}
-    .panel{position:relative;overflow:hidden;background:var(--area);color:var(--area-text);padding:clamp(38px,7vw,92px);display:flex;flex-direction:column;justify-content:center}
-    .panel:before{content:"";position:absolute;width:clamp(120px,18vw,260px);aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-8%;top:-14%;opacity:.28}
-    .panel:after{content:"";position:absolute;width:clamp(80px,11vw,150px);aspect-ratio:1;background:rgba(255,255,255,.16);right:-3%;bottom:-8%;transform:rotate(45deg)}
-    .num{position:relative;z-index:1;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;opacity:.78}
-    h1{position:relative;z-index:1;margin:24px 0 0;font-size:clamp(2.8rem,8vw,7.8rem);line-height:.86;letter-spacing:-.065em;text-transform:uppercase;overflow-wrap:anywhere}
-    .info{padding:clamp(38px,6vw,82px);display:flex;flex-direction:column;justify-content:center;background:var(--white)}
-    .eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--fuchsia);margin:0 0 18px}
-    .info p{margin:0;max-width:520px;font-size:clamp(1rem,1.45vw,1.2rem);line-height:1.7;color:#48536d}
-    .rule{width:42px;height:4px;background:var(--green);margin:28px 0 0}
-    @media(max-width:760px){body{padding:8px}.page{min-height:calc(100svh - 16px)}header{padding:16px 18px;gap:14px}.brand{width:min(210px,55vw)}.back{font-size:.58rem;letter-spacing:.12em}.hero{grid-template-columns:1fr;grid-template-rows:auto auto}.panel{min-height:43svh;padding:42px 24px}h1{font-size:clamp(2.6rem,16vw,5.2rem);max-width:100%}.info{padding:34px 24px 42px}}
+    .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);min-height:0}
+    .panel{position:relative;overflow:hidden;background:var(--white);color:var(--blue);padding:clamp(36px,6vw,78px);display:flex;flex-direction:column;justify-content:center;border-right:2px solid var(--blue)}
+    .panel:before{content:"";position:absolute;width:clamp(120px,17vw,250px);aspect-ratio:1;background:var(--green);border-radius:50%;right:-9%;top:-14%;opacity:.96}
+    .panel:after{content:"";position:absolute;width:clamp(90px,12vw,170px);aspect-ratio:1;background:var(--fuchsia);right:-4%;bottom:-10%;transform:rotate(45deg)}
+    .inner{position:relative;z-index:2;border:2px solid var(--blue);padding:clamp(28px,4.5vw,56px);background:rgba(255,255,255,.94);box-shadow:12px 12px 0 var(--green)}
+    .num{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--fuchsia)}
+    h1{margin:22px 0 0;font-size:clamp(2.5rem,6.3vw,6.4rem);line-height:.88;letter-spacing:-.06em;text-transform:uppercase;max-width:8.8ch}
+    h1 span{display:block}
+    .info{padding:clamp(38px,6vw,82px);display:flex;flex-direction:column;justify-content:center;background:var(--blue);color:var(--white)}
+    .eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--green);margin:0 0 18px}
+    .info p{margin:0;max-width:520px;font-size:clamp(1rem,1.45vw,1.2rem);line-height:1.7;color:rgba(255,255,255,.82)}
+    .rule{width:42px;height:4px;background:var(--fuchsia);margin:28px 0 0}
+    @media(max-width:760px){
+      body{padding:8px}
+      .page{min-height:calc(100svh - 16px)}
+      header{padding:16px 18px;gap:14px}
+      .brand{width:min(210px,55vw)}
+      .back{font-size:.58rem;letter-spacing:.12em}
+      .hero{grid-template-columns:1fr;grid-template-rows:auto auto}
+      .panel{min-height:auto;padding:34px 20px 42px;border-right:0;border-bottom:2px solid var(--blue)}
+      .inner{padding:28px 22px;box-shadow:8px 8px 0 var(--green)}
+      h1{font-size:clamp(2.35rem,13vw,4.6rem);max-width:8.2ch}
+      .info{padding:34px 24px 42px}
+    }
   </style>
 </head>
 <body>
   <main class="page">
-    <header><a class="brand" href="../" aria-label="Volver al inicio"><img src="../assets/Fondo%20marfil.png" alt="Valentina Galaz"></a><a class="back" href="../">← Volver al inicio</a></header>
-    <section class="hero"><div class="panel"><div class="num" id="num"></div><h1 id="title"></h1></div><div class="info"><p class="eyebrow">Área de trabajo</p><p id="description"></p><span class="rule" aria-hidden="true"></span></div></section>
+    <header>
+      <a class="brand" href="../" aria-label="Volver al inicio"><img src="../assets/Fondo%20marfil.png" alt="Valentina Galaz"></a>
+      <a class="back" href="../">← Volver al inicio</a>
+    </header>
+    <section class="hero">
+      <div class="panel">
+        <div class="inner">
+          <div class="num">04</div>
+          <h1><span>Escuela de</span><span>Flautistas</span></h1>
+        </div>
+      </div>
+      <div class="info">
+        <p class="eyebrow">Área de formación</p>
+        <p>Formación para flautistas que integra técnica, sonido, interpretación y desarrollo artístico.</p>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+    </section>
   </main>
-  <script>
-    const key=location.pathname.split('/').filter(Boolean).pop()||'';
-    const areas={'investigacion':{num:'01',title:'Investigación',color:'#162a52',text:'#ffffff',description:'Investigación musical, repertorio latinoamericano, archivo y pensamiento crítico en torno a la interpretación.'},'interpretacion':{num:'02',title:'Interpretación',color:'#18b368',text:'#ffffff',description:'Trayectoria como flautista, música de cámara, repertorio contemporáneo y práctica escénica.'},'piazzollamente':{num:'03',title:'Piazzollamente',color:'#e63aa7',text:'#ffffff',description:'Dirección artística y flauta en un proyecto dedicado a la música de Astor Piazzolla.'},'escuela-de-flautistas':{num:'04',title:'Escuela de Flautistas',color:'#ffffff',text:'#162a52',description:'Formación para flautistas que integra técnica, sonido, interpretación y desarrollo artístico.'}};
-    const area=areas[key]||areas.investigacion;document.documentElement.style.setProperty('--area',area.color);document.documentElement.style.setProperty('--area-text',area.text);document.getElementById('num').textContent=area.num;document.getElementById('title').textContent=area.title;document.getElementById('description').textContent=area.description;document.title=area.title+' — Valentina Galaz';
-  </script>
 </body>
 </html>
