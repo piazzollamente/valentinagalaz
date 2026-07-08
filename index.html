@@ -14,20 +14,22 @@
     a{color:inherit}
     .home{position:fixed;inset:0;min-height:100dvh;display:grid;grid-template-columns:minmax(420px,46vw) minmax(0,1fr);overflow:hidden;background:var(--ivory)}
     .frame{position:absolute;inset:14px;border:2px solid var(--blue);pointer-events:none;z-index:20}
-    .identity{position:relative;z-index:4;display:flex;flex-direction:column;min-width:0;padding:clamp(36px,5vh,64px) clamp(30px,4vw,64px) clamp(28px,4vh,52px)}
-    .logo{width:min(100%,720px);opacity:0;transform:translateY(-14px);clip-path:inset(0 100% 0 0);animation:logoIn .9s var(--ease) .05s forwards}
-    .logo picture,.logo img{display:block;width:100%;height:auto}
-    .logo img{object-fit:contain}
-    .role{margin:18px 3px 0;font-size:clamp(.64rem,.75vw,.82rem);line-height:1.5;letter-spacing:.17em;text-transform:uppercase;font-weight:700;opacity:0;animation:in .7s var(--ease) .3s forwards}
+    .identity{position:relative;z-index:4;display:flex;flex-direction:column;min-width:0;min-height:0;padding:clamp(34px,4.4vh,58px) clamp(30px,4vw,64px) clamp(34px,4.4vh,58px)}
+    .logo{width:min(100%,720px);aspect-ratio:3.55/1;overflow:hidden;background:var(--ivory);opacity:0;transform:translateY(-14px);clip-path:inset(0 100% 0 0);animation:logoIn .9s var(--ease) .05s forwards}
+    .logo picture,.logo img{display:block;width:100%;height:100%}
+    .logo img{object-fit:cover;object-position:center}
+    .role{margin:16px 3px 0;font-size:clamp(.64rem,.75vw,.82rem);line-height:1.5;letter-spacing:.17em;text-transform:uppercase;font-weight:700;opacity:0;animation:in .7s var(--ease) .3s forwards}
     .role:before{content:"";display:inline-block;width:34px;height:3px;background:var(--red);margin-right:12px;vertical-align:middle}
-    .nav-title{margin-top:auto;margin-bottom:12px;font-size:.62rem;letter-spacing:.21em;text-transform:uppercase;font-weight:800;opacity:.65}
-    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    .card{--c:var(--blue);position:relative;min-height:clamp(100px,15vh,146px);padding:18px;overflow:hidden;background:var(--c);color:var(--ivory);text-decoration:none;opacity:0;transform:translateY(18px);animation:cardIn .7s var(--ease) forwards;transition:transform .4s var(--ease),box-shadow .4s var(--ease),filter .4s var(--ease);will-change:transform}
+    .nav-title{margin-top:auto;margin-bottom:14px;font-size:.62rem;letter-spacing:.21em;text-transform:uppercase;font-weight:800;opacity:.65}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px;padding:0 12px 12px 0}
+    .card{--c:var(--blue);--shadow:var(--yellow);position:relative;min-height:clamp(86px,12.4vh,120px);padding:18px;overflow:hidden;background:var(--c);color:var(--ivory);text-decoration:none;border:2px solid var(--blue);box-shadow:9px 9px 0 var(--shadow);opacity:0;transform:translateY(18px);animation:cardIn .7s var(--ease) forwards;transition:transform .36s var(--ease),box-shadow .36s var(--ease),filter .36s var(--ease);will-change:transform}
     .card:nth-child(1){animation-delay:.42s}.card:nth-child(2){animation-delay:.52s}.card:nth-child(3){animation-delay:.62s}.card:nth-child(4){animation-delay:.72s}
-    .card.yellow{--c:var(--yellow);color:var(--blue)}.card.red{--c:var(--red)}.card.green{--c:var(--green)}
+    .card.yellow{--c:var(--yellow);--shadow:var(--blue);color:var(--blue)}
+    .card.red{--c:var(--red);--shadow:var(--green)}
+    .card.green{--c:var(--green);--shadow:var(--red)}
     .card:before{content:"";position:absolute;width:96px;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-40px;top:-48px;opacity:.32;transition:transform .55s var(--ease),border-radius .55s var(--ease)}
     .card:after{content:"";position:absolute;width:55px;height:55px;right:-14px;bottom:-20px;background:rgba(255,255,255,.18);transform:rotate(45deg);transition:transform .55s var(--ease)}
-    .card:hover,.card:focus-visible{transform:translateY(-6px) scale(1.012);filter:saturate(1.08);box-shadow:0 18px 38px rgba(9,35,91,.18);outline:none;z-index:3}
+    .card:hover,.card:focus-visible{transform:translate(-4px,-4px) scale(1.012);filter:saturate(1.08);box-shadow:13px 13px 0 var(--shadow),0 18px 38px rgba(9,35,91,.15);outline:none;z-index:3}
     .card:hover:before,.card:focus-visible:before{transform:translate(-22px,22px) scale(1.14);border-radius:0 50% 50% 50%}
     .card:hover:after,.card:focus-visible:after{transform:translate(-20px,-12px) rotate(0)}
     .card-top{position:relative;z-index:2;display:flex;justify-content:space-between;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.85}
@@ -48,12 +50,12 @@
     @keyframes drift{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(-14px,12px,0) rotate(7deg)}}
     @keyframes driftReverse{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(12px,-10px,0) rotate(-6deg)}}
     @keyframes mobileOrbit{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(-12px,9px,0) rotate(8deg)}}
-    @media(max-width:900px){.home{grid-template-columns:minmax(365px,48vw) minmax(0,1fr)}.identity{padding-left:25px;padding-right:25px}.cards{gap:8px}.card{min-height:96px;padding:14px}.card h2{left:14px;right:14px;bottom:13px;font-size:1rem}.portrait-panel{padding-left:28px;padding-right:38px}.portrait-frame{width:88%}}
+    @media(max-width:900px){.home{grid-template-columns:minmax(365px,48vw) minmax(0,1fr)}.identity{padding-left:25px;padding-right:25px}.cards{gap:14px 16px}.card{min-height:84px;padding:14px;box-shadow:7px 7px 0 var(--shadow)}.card h2{left:14px;right:14px;bottom:13px;font-size:1rem}.portrait-panel{padding-left:28px;padding-right:38px}.portrait-frame{width:88%}}
     @media(max-width:680px){
-      .home{grid-template-columns:1fr;grid-template-rows:22% 44% 34%}
+      .home{grid-template-columns:1fr;grid-template-rows:20% 44% 36%}
       .frame{inset:8px}
       .identity{display:contents}
-      .logo{grid-row:1;align-self:center;width:calc(100% - 38px);margin:14px auto 0;z-index:6;animation-duration:.8s}
+      .logo{grid-row:1;align-self:center;width:calc(100% - 38px);aspect-ratio:3.55/1;margin:10px auto 0;z-index:6;animation-duration:.8s}
       .role,.nav-title{display:none}
       .portrait-panel{grid-row:2;padding:8px 18px 10px;align-items:center;background:linear-gradient(145deg,#f3ecdf 0%,#d9b896 100%)}
       .portrait-frame{width:min(72vw,390px);height:100%;min-height:0;max-height:none;box-shadow:8px 8px 0 var(--red);transform:translateY(20px) rotate(.6deg);animation-duration:.85s}
@@ -62,15 +64,15 @@
       .shape.red{width:68px;top:3%;right:-10px;animation:mobileOrbit 6s ease-in-out 1s infinite}
       .shape.yellow{width:58px;left:-10px;bottom:-7px;animation:mobileOrbit 7.5s ease-in-out 1.3s infinite reverse}
       .shape.green,.vertical{display:none}
-      .cards{grid-row:3;z-index:7;align-self:stretch;grid-template-columns:repeat(2,1fr);gap:7px;padding:7px 14px 16px;background:var(--ivory)}
-      .card{min-height:0;padding:12px;animation-duration:.62s}
+      .cards{grid-row:3;z-index:7;align-self:stretch;grid-template-columns:repeat(2,1fr);gap:11px 12px;padding:8px 20px 18px 14px;background:var(--ivory)}
+      .card{min-height:0;padding:12px;border-width:1.5px;box-shadow:5px 5px 0 var(--shadow);animation-duration:.62s}
       .card h2{left:12px;right:12px;bottom:11px;font-size:clamp(.78rem,3.7vw,.98rem)}
       .card-top{font-size:.52rem}
-      .card:active{transform:scale(.975);filter:saturate(1.08)}
+      .card:active{transform:translate(2px,2px) scale(.985);filter:saturate(1.08);box-shadow:3px 3px 0 var(--shadow)}
       .card:before{animation:mobileOrbit 8s ease-in-out 1.6s infinite}
       .card:nth-child(2):before{animation-delay:2.2s}.card:nth-child(3):before{animation-delay:2.8s}.card:nth-child(4):before{animation-delay:3.4s}
     }
-    @media(max-height:650px) and (min-width:681px){.identity{padding-top:30px;padding-bottom:26px}.card{min-height:86px}.portrait-panel{padding-top:32px;padding-bottom:32px}.portrait-frame{height:calc(100dvh - 64px);min-height:0}}
+    @media(max-height:650px) and (min-width:681px){.identity{padding-top:26px;padding-bottom:28px}.logo{width:min(100%,620px)}.card{min-height:78px}.portrait-panel{padding-top:32px;padding-bottom:32px}.portrait-frame{height:calc(100dvh - 64px);min-height:0}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.logo,.role,.card,.portrait-frame{opacity:1;transform:none;clip-path:none}.portrait{transform:none}}
   </style>
 </head>
