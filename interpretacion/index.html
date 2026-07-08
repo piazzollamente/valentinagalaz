@@ -73,6 +73,22 @@
     .visual-copy p{position:relative;z-index:2;margin:0;max-width:560px;line-height:1.75;font-size:clamp(1rem,1.35vw,1.18rem);color:rgba(255,255,255,.82)}
     .visual-copy .line{position:relative;z-index:2;width:44px;height:5px;background:var(--green);margin-top:30px}
 
+    .records{padding:clamp(72px,9vw,125px) clamp(24px,7vw,110px);background:var(--white)}
+    .records-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:42px}
+    .records h2{margin:0;font-size:clamp(2.7rem,6vw,6.2rem);line-height:.88;letter-spacing:-.06em;text-transform:uppercase;max-width:8ch}
+    .records-head p{margin:0;max-width:520px;color:#56617a;line-height:1.65}
+    .record-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .record{position:relative;min-height:260px;border:2px solid var(--blue);padding:28px;display:flex;flex-direction:column;overflow:hidden;transition:transform .24s ease,box-shadow .24s ease}
+    .record:nth-child(2){background:var(--green);color:var(--white)}
+    .record:nth-child(3){background:var(--fuchsia);color:var(--white)}
+    .record:nth-child(4){background:var(--blue);color:var(--white)}
+    .record:hover{transform:translateY(-5px);box-shadow:9px 9px 0 rgba(22,42,82,.14)}
+    .record small{font-size:.64rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800;opacity:.76}
+    .record h3{margin:44px 0 14px;font-size:clamp(1.45rem,2.5vw,2.35rem);line-height:.96;letter-spacing:-.04em;text-transform:uppercase;max-width:15ch}
+    .record p{margin:0 0 26px;line-height:1.6;max-width:48ch}
+    .record a{margin-top:auto;width:max-content;max-width:100%;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800}
+    .record:after{content:"";position:absolute;width:82px;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-31px;top:-31px;opacity:.22}
+
     .territories{padding:clamp(72px,9vw,125px) clamp(24px,7vw,110px)}
     .territories h2{margin:0 0 42px;font-size:clamp(2.7rem,6vw,6.2rem);line-height:.88;letter-spacing:-.06em;text-transform:uppercase}
     .country-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
@@ -86,10 +102,10 @@
     footer span{font-size:.72rem;opacity:.78}
 
     @media(max-width:900px){
-      .hero{grid-template-columns:1fr}.hero-photo{min-height:520px}.intro{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:2px solid var(--blue)}.timeline{grid-template-columns:repeat(2,1fr)}.visual-story{grid-template-columns:1fr}.visual-photo{min-height:500px}.country-grid{grid-template-columns:repeat(2,1fr)}.country:last-child{grid-column:1/-1}
+      .hero{grid-template-columns:1fr}.hero-photo{min-height:520px}.intro{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:2px solid var(--blue)}.timeline{grid-template-columns:repeat(2,1fr)}.visual-story{grid-template-columns:1fr}.visual-photo{min-height:500px}.record-grid{grid-template-columns:1fr}.records-head{display:block}.records-head p{margin-top:24px}.country-grid{grid-template-columns:repeat(2,1fr)}.country:last-child{grid-column:1/-1}
     }
     @media(max-width:620px){
-      .shell{margin:8px}.brand{width:min(205px,55vw)}header{padding:15px 16px;gap:12px}.back{font-size:.55rem;letter-spacing:.1em}.hero{min-height:0}.hero-copy{padding:48px 24px 54px}.hero-photo{min-height:430px}.hero-photo img{object-position:center 20%}h1{font-size:clamp(3.1rem,18vw,5rem)}.intro{padding:62px 24px}.stats{grid-template-columns:1fr}.stat{min-height:145px;border-right:0;border-bottom:2px solid var(--blue)}.stat:last-child{border-bottom:0}.section-head{display:block}.section-head p{margin-top:24px}.timeline{grid-template-columns:1fr}.moment{min-height:230px}.visual-photo{min-height:430px}.visual-copy{padding:58px 24px}.territories{padding:62px 24px}.country-grid{grid-template-columns:1fr}.country:last-child{grid-column:auto}.country{min-height:110px}footer{align-items:flex-start;flex-direction:column}
+      .shell{margin:8px}.brand{width:min(205px,55vw)}header{padding:15px 16px;gap:12px}.back{font-size:.55rem;letter-spacing:.1em}.hero{min-height:0}.hero-copy{padding:48px 24px 54px}.hero-photo{min-height:430px}.hero-photo img{object-position:center 20%}h1{font-size:clamp(3.1rem,18vw,5rem)}.intro{padding:62px 24px}.stats{grid-template-columns:1fr}.stat{min-height:145px;border-right:0;border-bottom:2px solid var(--blue)}.stat:last-child{border-bottom:0}.section-head{display:block}.section-head p{margin-top:24px}.timeline{grid-template-columns:1fr}.moment{min-height:230px}.visual-photo{min-height:430px}.visual-copy{padding:58px 24px}.records{padding:62px 24px}.record{min-height:235px}.territories{padding:62px 24px}.country-grid{grid-template-columns:1fr}.country:last-child{grid-column:auto}.country{min-height:110px}footer{align-items:flex-start;flex-direction:column}
     }
   </style>
 </head>
@@ -149,6 +165,39 @@
         <h2>La flauta como voz central</h2>
         <p>Durante mucho tiempo la flauta fue ubicada en lugares previsibles. Mi búsqueda ha sido otra: darle peso, carácter, sensualidad, tensión y una presencia escénica que no necesite pedir permiso.</p>
         <span class="line" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <section class="records">
+      <div class="records-head">
+        <h2>Registros de escena</h2>
+        <p>Una selección de registros públicos para escuchar, mirar y comprobar cómo esta trayectoria toma forma en conciertos, proyectos y grabaciones.</p>
+      </div>
+      <div class="record-grid">
+        <article class="record">
+          <small>2015 · Museo Lircunlauta</small>
+          <h3>Homenaje a Cirilo Vila a dos flautas</h3>
+          <p>Registro institucional del concierto realizado junto a Paulo Muñoz, dedicado a repertorio chileno contemporáneo.</p>
+          <a href="https://www.registromuseoschile.cl/663/w3-article-54713.html" target="_blank" rel="noreferrer">Ver registro ↗</a>
+        </article>
+        <article class="record">
+          <small>Archivo audiovisual</small>
+          <h3>Interpretación y escena</h3>
+          <p>Selección audiovisual de conciertos, proyectos de cámara y registros vinculados a mi trabajo con la flauta.</p>
+          <a href="https://www.youtube.com/playlist?list=PLZxdRdaEsOPkbja2SL1t1yS_rwrIPzPoK" target="_blank" rel="noreferrer">Ver playlist ↗</a>
+        </article>
+        <article class="record">
+          <small>Producción musical</small>
+          <h3>Milonga del Ángel</h3>
+          <p>Registro publicado de Piazzollamente, con la flauta traversa asumiendo una voz central dentro del universo sonoro de Piazzolla.</p>
+          <a href="https://ditto.fm/milonga-del-angel-piazzollamente" target="_blank" rel="noreferrer">Escuchar ↗</a>
+        </article>
+        <article class="record">
+          <small>Proyecto autoral</small>
+          <h3>Piazzollamente</h3>
+          <p>Conciertos, repertorio, dirección artística y una búsqueda escénica que cruza tango, cámara y creación contemporánea.</p>
+          <a href="https://piazzollamente.cl/" target="_blank" rel="noreferrer">Visitar proyecto ↗</a>
+        </article>
       </div>
     </section>
 
