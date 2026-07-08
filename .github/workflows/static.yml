@@ -43,10 +43,10 @@ jobs:
 
           cwebp -quiet -z 9 -mt \
             "assets/Logotipo Bauhaus tipográfico VALENTINA.png" \
-            -o "_site/assets/logo-valentina.webp"
+            -o "_site/assets/logo-valentina-v2.webp"
 
           echo "Optimized image sizes:"
-          du -h "_site/assets/valentina-home.webp" "_site/assets/logo-valentina.webp"
+          du -h "_site/assets/valentina-home.webp" "_site/assets/logo-valentina-v2.webp"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
