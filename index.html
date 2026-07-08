@@ -8,21 +8,20 @@
   <link rel="canonical" href="https://valentinagalaz.cl/">
   <style>
     :root{
-      --ivory:#fff8ed;
+      --white:#ffffff;
       --blue:#162a52;
       --green:#18b368;
       --fuchsia:#e63aa7;
-      --sand:#eadfce;
       --ease:cubic-bezier(.2,.75,.25,1);
     }
     *{box-sizing:border-box}
-    html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--ivory);font-family:Arial,Helvetica,sans-serif;color:var(--blue)}
+    html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--white);font-family:Arial,Helvetica,sans-serif;color:var(--blue)}
     body{min-height:100dvh}
     a{color:inherit}
-    .home{position:fixed;inset:0;min-height:100dvh;display:grid;grid-template-columns:minmax(430px,47vw) minmax(0,1fr);overflow:hidden;background:var(--ivory)}
+    .home{position:fixed;inset:0;min-height:100dvh;display:grid;grid-template-columns:minmax(430px,47vw) minmax(0,1fr);overflow:hidden;background:var(--white)}
     .frame{position:absolute;inset:16px;border:2px solid var(--blue);pointer-events:none;z-index:20}
 
-    .identity{position:relative;z-index:4;display:flex;flex-direction:column;min-width:0;min-height:0;padding:clamp(38px,5vh,68px) clamp(42px,5vw,78px) clamp(30px,4vh,54px)}
+    .identity{position:relative;z-index:4;display:flex;flex-direction:column;min-width:0;min-height:0;padding:clamp(38px,5vh,68px) clamp(42px,5vw,78px) clamp(30px,4vh,54px);background:var(--white)}
     .logo-safe{width:min(100%,760px);padding:clamp(18px,2.4vw,34px);margin:-8px 0 0 -8px;opacity:0;transform:translateY(-12px);animation:in .8s var(--ease) .05s forwards}
     .logo-safe img{display:block;width:100%;height:auto;max-height:clamp(150px,24vh,245px);object-fit:contain;object-position:left center}
     .role{margin:2px 8px 0;font-size:clamp(.62rem,.72vw,.8rem);line-height:1.5;letter-spacing:.17em;text-transform:uppercase;font-weight:700;opacity:0;animation:in .7s var(--ease) .24s forwards}
@@ -34,7 +33,7 @@
     .card:nth-child(1){animation-delay:.36s}.card:nth-child(2){animation-delay:.46s}.card:nth-child(3){animation-delay:.56s}.card:nth-child(4){animation-delay:.66s}
     .card.green{background:var(--green)}
     .card.fuchsia{background:var(--fuchsia)}
-    .card.ivory{background:var(--ivory);color:var(--blue)}
+    .card.white{background:var(--white);color:var(--blue)}
     .card:before{content:"";position:absolute;width:92px;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-40px;top:-45px;opacity:.35;transition:transform .45s var(--ease)}
     .card:after{content:"";position:absolute;width:54px;height:54px;right:-18px;bottom:-18px;background:rgba(255,255,255,.2);transform:rotate(45deg);transition:transform .45s var(--ease)}
     .card:hover,.card:focus-visible{transform:translateY(-5px);filter:saturate(1.08);box-shadow:10px 10px 0 rgba(22,42,82,.18);outline:none;z-index:3}
@@ -43,16 +42,15 @@
     .card-top{position:relative;z-index:2;display:flex;justify-content:space-between;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.82}
     .card h2{position:absolute;z-index:2;left:18px;right:18px;bottom:16px;margin:0;font-size:clamp(.95rem,1.35vw,1.34rem);line-height:.94;letter-spacing:-.03em;text-transform:uppercase}
 
-    .portrait-panel{position:relative;min-width:0;height:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:clamp(48px,6vh,82px) clamp(42px,5vw,82px);background:linear-gradient(145deg,#f6eee4 0%,var(--sand) 100%)}
-    .portrait-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ivory) 0,rgba(255,248,237,.52) 8%,transparent 24%);z-index:1;pointer-events:none}
-    .portrait-frame{position:relative;z-index:2;width:min(78%,700px);height:min(calc(100dvh - clamp(96px,12vh,164px)),850px);min-height:430px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:#eadbc8;border:2px solid var(--blue);box-shadow:clamp(12px,1.6vw,22px) clamp(12px,1.6vw,22px) 0 var(--fuchsia);opacity:0;transform:translateY(24px);animation:frameIn .95s var(--ease) .12s forwards}
-    .portrait-frame:after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,248,237,.8);z-index:3;pointer-events:none}
+    .portrait-panel{position:relative;min-width:0;height:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:clamp(48px,6vh,82px) clamp(42px,5vw,82px);background:var(--white)}
+    .portrait-frame{position:relative;z-index:2;width:min(78%,700px);height:min(calc(100dvh - clamp(96px,12vh,164px)),850px);min-height:430px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:var(--white);border:2px solid var(--blue);box-shadow:clamp(12px,1.6vw,22px) clamp(12px,1.6vw,22px) 0 var(--fuchsia);opacity:0;transform:translateY(24px);animation:frameIn .95s var(--ease) .12s forwards}
+    .portrait-frame:after{content:"";position:absolute;inset:14px;border:1px solid rgba(22,42,82,.16);z-index:3;pointer-events:none}
     .portrait-frame picture{display:flex;align-items:flex-end;justify-content:center;width:100%;height:100%}
     .portrait{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:center bottom;animation:photoSettle 1.2s var(--ease) .14s both}
     .shape{position:absolute;z-index:3;pointer-events:none}
     .shape.fuchsia{width:clamp(90px,11vw,166px);aspect-ratio:1;background:var(--fuchsia);right:-4%;top:9%;border-radius:50% 0 50% 50%;opacity:.95}
     .shape.green{width:clamp(78px,9vw,134px);aspect-ratio:1;background:var(--green);left:2%;bottom:-3%;border-radius:50% 50% 0 50%;opacity:.96}
-    .vertical{position:absolute;z-index:4;right:21px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;color:white;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+    .vertical{position:absolute;z-index:4;right:21px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;color:var(--blue);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800}
 
     @keyframes in{to{opacity:1;transform:none}}
     @keyframes cardIn{to{opacity:1;transform:none}}
@@ -68,21 +66,21 @@
     }
 
     @media(max-width:680px){
-      html,body{overflow:auto}
-      .home{position:relative;min-height:100svh;grid-template-columns:1fr;grid-template-rows:auto minmax(320px,44svh) auto;overflow:hidden}
+      html,body{overflow:auto;background:var(--white)}
+      .home{position:relative;min-height:100svh;grid-template-columns:1fr;grid-template-rows:auto minmax(320px,44svh) auto;overflow:hidden;background:var(--white)}
       .frame{inset:8px}
       .identity{display:contents}
       .logo-safe{grid-row:1;align-self:center;width:calc(100% - 34px);max-width:560px;padding:22px 24px 16px;margin:6px auto 0;z-index:6}
       .logo-safe img{max-height:22svh;object-position:center}
       .role,.nav-title{display:none}
-      .portrait-panel{grid-row:2;padding:12px 24px 14px;background:linear-gradient(145deg,#f6eee4 0%,#e3ccb3 100%)}
-      .portrait-frame{width:min(76vw,405px);height:100%;min-height:0;box-shadow:8px 8px 0 var(--fuchsia)}
+      .portrait-panel{grid-row:2;padding:12px 24px 14px;background:var(--white)}
+      .portrait-frame{width:min(76vw,405px);height:100%;min-height:0;box-shadow:8px 8px 0 var(--fuchsia);background:var(--white)}
       .portrait-frame:after{inset:8px}
       .portrait{max-width:100%;max-height:100%;object-fit:contain;object-position:center bottom}
       .shape.fuchsia{width:68px;top:2%;right:-10px}
       .shape.green{width:60px;left:-10px;bottom:-7px}
       .vertical{display:none}
-      .cards{grid-row:3;z-index:7;justify-self:center;width:min(calc(100% - 28px),520px);grid-template-columns:repeat(2,1fr);gap:8px;padding:8px 0 20px;background:var(--ivory)}
+      .cards{grid-row:3;z-index:7;justify-self:center;width:min(calc(100% - 28px),520px);grid-template-columns:repeat(2,1fr);gap:8px;padding:8px 0 20px;background:var(--white)}
       .card{min-height:110px;padding:13px}
       .card h2{left:13px;right:13px;bottom:12px;font-size:clamp(.78rem,3.7vw,1rem)}
       .card-top{font-size:.5rem}
@@ -107,7 +105,7 @@
 
     <section class="identity" aria-label="Identidad y áreas de trabajo">
       <div class="logo-safe">
-        <img src="assets/Fondo%20transparente.png" alt="Valentina Galaz" loading="eager" decoding="async">
+        <img src="assets/Fondo%20marfil.png" alt="Valentina Galaz" loading="eager" decoding="async">
       </div>
 
       <p class="role">Flautista · Investigadora · Directora artística</p>
@@ -126,7 +124,7 @@
           <span class="card-top"><span>03</span><span>→</span></span>
           <h2>Piazzollamente</h2>
         </a>
-        <a class="card ivory" href="escuela-de-flautistas/">
+        <a class="card white" href="escuela-de-flautistas/">
           <span class="card-top"><span>04</span><span>→</span></span>
           <h2>Escuela de<br>Flautistas</h2>
         </a>
