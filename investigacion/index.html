@@ -3,76 +3,201 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Valentina Galaz</title>
+  <title>Investigación — Valentina Galaz</title>
+  <meta name="description" content="Investigación musical de Valentina Galaz: Cirilo Vila, silencio, memoria, interpretación y repertorio chileno contemporáneo.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon-vg.svg?v=2">
   <link rel="shortcut icon" href="../assets/favicon-vg.svg?v=2">
   <meta name="theme-color" content="#162A52">
   <style>
-    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7;--area:var(--blue);--area-text:var(--white)}
+    :root{--white:#fff;--blue:#162a52;--green:#18b368;--fuchsia:#e63aa7;--soft:#f2f5fb;--ink:#42506d}
     *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;background:var(--white);color:var(--blue);font-family:Arial,Helvetica,sans-serif}
-    body{min-height:100svh;padding:16px}
-    .page{position:relative;min-height:calc(100svh - 32px);border:2px solid var(--blue);display:grid;grid-template-rows:auto 1fr;overflow:hidden;background:var(--white)}
-    header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px clamp(22px,4vw,54px);border-bottom:2px solid var(--blue)}
-    .brand{display:block;width:min(280px,46vw)}
-    .brand img{display:block;width:100%;height:auto}
-    .back{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
-    .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);min-height:0}
-    .panel{position:relative;overflow:hidden;background:var(--area);color:var(--area-text);padding:clamp(38px,7vw,92px);display:flex;flex-direction:column;justify-content:center}
-    .panel:before{content:"";position:absolute;width:clamp(120px,18vw,260px);aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-8%;top:-14%;opacity:.28}
-    .panel:after{content:"";position:absolute;width:clamp(80px,11vw,150px);aspect-ratio:1;background:rgba(255,255,255,.16);right:-3%;bottom:-8%;transform:rotate(45deg)}
-    .num{position:relative;z-index:1;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;opacity:.78}
-    h1{position:relative;z-index:1;margin:24px 0 0;font-size:clamp(2.8rem,8vw,7.8rem);line-height:.86;letter-spacing:-.065em;text-transform:uppercase;overflow-wrap:anywhere}
-    .info{padding:clamp(38px,6vw,82px);display:flex;flex-direction:column;justify-content:center;background:var(--white)}
-    .eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--fuchsia);margin:0 0 18px}
-    .info p{margin:0;max-width:520px;font-size:clamp(1rem,1.45vw,1.2rem);line-height:1.7;color:#48536d}
-    .rule{width:42px;height:4px;background:var(--green);margin:28px 0 0}
-    @media(max-width:760px){
-      body{padding:8px}
-      .page{min-height:calc(100svh - 16px)}
-      header{padding:16px 18px;gap:14px}
-      .brand{width:min(210px,55vw)}
-      .back{font-size:.58rem;letter-spacing:.12em}
-      .hero{grid-template-columns:1fr;grid-template-rows:auto auto}
-      .panel{min-height:43svh;padding:42px 24px}
-      h1{font-size:clamp(2.6rem,16vw,5.2rem);max-width:100%}
-      .info{padding:34px 24px 42px}
-    }
+    html{scroll-behavior:smooth;overflow-x:hidden;background:var(--white)}
+    body{margin:0;background:var(--white);color:var(--blue);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+    a{color:inherit}
+    img{display:block;max-width:100%}
+    .shell{margin:16px;border:2px solid var(--blue);overflow:hidden;background:var(--white)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px clamp(20px,4vw,54px);border-bottom:2px solid var(--blue);background:var(--white)}
+    .brand{width:min(280px,48vw)}
+    .brand img{width:100%;height:auto}
+    .back{text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:.65rem;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
+
+    .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);min-height:calc(100svh - 105px)}
+    .hero-copy{position:relative;padding:clamp(48px,7vw,100px);background:var(--blue);color:var(--white);display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+    .hero-copy:before{content:"";position:absolute;width:260px;aspect-ratio:1;border:2px solid var(--green);border-radius:50%;right:-80px;top:-80px;opacity:.75}
+    .hero-copy:after{content:"";position:absolute;width:150px;aspect-ratio:1;background:var(--fuchsia);right:-44px;bottom:-46px;transform:rotate(45deg)}
+    .kicker{position:relative;z-index:2;margin:0;font-size:.68rem;letter-spacing:.23em;text-transform:uppercase;font-weight:800;color:var(--green)}
+    h1{position:relative;z-index:2;margin:24px 0 28px;font-size:clamp(3.2rem,7.8vw,7.5rem);line-height:.84;letter-spacing:-.07em;text-transform:uppercase;max-width:9ch}
+    .hero-copy p{position:relative;z-index:2;margin:0;max-width:680px;font-size:clamp(1.02rem,1.5vw,1.27rem);line-height:1.72;color:rgba(255,255,255,.84)}
+    .hero-side{position:relative;background:var(--white);padding:clamp(42px,6vw,82px);display:flex;flex-direction:column;justify-content:center}
+    .hero-side .eyebrow{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--fuchsia);margin:0 0 18px}
+    .hero-side blockquote{margin:0;font-size:clamp(1.5rem,2.8vw,2.6rem);line-height:1.14;letter-spacing:-.035em;font-weight:700}
+    .hero-side small{display:block;margin-top:28px;line-height:1.6;color:var(--ink);font-size:.92rem}
+    .hero-side .line{width:44px;height:5px;background:var(--green);margin-top:30px}
+
+    .intro{padding:clamp(72px,9vw,128px) clamp(24px,7vw,110px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(42px,7vw,105px)}
+    .intro h2{margin:0;font-size:clamp(2.8rem,5.8vw,6rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .intro h2 span{color:var(--fuchsia)}
+    .intro-copy{font-size:clamp(1.04rem,1.45vw,1.22rem);line-height:1.8;color:var(--ink)}
+    .intro-copy p{margin:0 0 22px}
+
+    .axis{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--blue);border-bottom:2px solid var(--blue)}
+    .axis article{min-height:250px;padding:30px;border-right:2px solid var(--blue);display:flex;flex-direction:column;justify-content:space-between}
+    .axis article:last-child{border-right:0}
+    .axis article:nth-child(1){background:var(--blue);color:var(--white)}
+    .axis article:nth-child(2){background:var(--green);color:var(--white)}
+    .axis article:nth-child(3){background:var(--fuchsia);color:var(--white)}
+    .axis span{font-size:.66rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800;opacity:.82}
+    .axis h3{margin:30px 0 14px;font-size:clamp(1.7rem,2.8vw,2.9rem);line-height:.95;letter-spacing:-.04em;text-transform:uppercase}
+    .axis p{margin:0;line-height:1.58;max-width:32ch}
+
+    .core{padding:clamp(78px,9vw,130px) clamp(24px,7vw,110px);background:var(--soft)}
+    .core-head{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:60px;margin-bottom:46px;align-items:end}
+    .core h2{margin:0;font-size:clamp(2.8rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .core-head p{margin:0;line-height:1.7;color:var(--ink);max-width:650px}
+    .feature{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);border:2px solid var(--blue);background:var(--white)}
+    .feature-copy{padding:clamp(36px,5.5vw,72px)}
+    .feature-copy .tag{display:inline-block;background:var(--fuchsia);color:var(--white);padding:8px 11px;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+    .feature-copy h3{margin:26px 0 20px;font-size:clamp(2rem,4.3vw,4.4rem);line-height:.92;letter-spacing:-.055em;text-transform:uppercase}
+    .feature-copy p{margin:0 0 26px;line-height:1.72;color:var(--ink);max-width:720px}
+    .source-btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;background:var(--blue);color:var(--white);padding:14px 18px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;transition:transform .2s ease,box-shadow .2s ease}
+    .source-btn:hover{transform:translateY(-3px);box-shadow:7px 7px 0 var(--green)}
+    .feature-side{background:var(--blue);color:var(--white);padding:clamp(36px,5vw,68px);display:flex;flex-direction:column;justify-content:space-between}
+    .feature-side strong{font-size:clamp(4rem,8vw,8rem);line-height:.8;letter-spacing:-.08em;color:var(--green)}
+    .feature-side p{margin:30px 0 0;line-height:1.65;color:rgba(255,255,255,.8)}
+
+    .sources{padding:clamp(76px,9vw,128px) clamp(24px,7vw,110px)}
+    .sources-head{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:42px}
+    .sources h2{margin:0;font-size:clamp(2.8rem,6vw,6rem);line-height:.88;letter-spacing:-.065em;text-transform:uppercase}
+    .sources-head p{margin:0;max-width:470px;color:var(--ink);line-height:1.65}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .card{position:relative;min-height:270px;border:2px solid var(--blue);padding:28px;background:var(--white);display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease;overflow:hidden}
+    .card:hover{transform:translateY(-5px);box-shadow:9px 9px 0 rgba(22,42,82,.13)}
+    .card:nth-child(2){background:var(--green);color:var(--white)}
+    .card:nth-child(3){background:var(--fuchsia);color:var(--white)}
+    .card:nth-child(4){background:var(--blue);color:var(--white)}
+    .meta{font-size:.64rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800;opacity:.75}
+    .card h3{margin:42px 0 14px;font-size:clamp(1.45rem,2.6vw,2.45rem);line-height:.96;letter-spacing:-.04em;text-transform:uppercase;max-width:15ch}
+    .card p{margin:0 0 28px;line-height:1.6;max-width:48ch}
+    .card a{margin-top:auto;width:max-content;max-width:100%;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800}
+    .card:after{content:"";position:absolute;width:80px;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;right:-30px;top:-30px;opacity:.22}
+
+    .conversation{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--blue)}
+    .conversation-copy{padding:clamp(54px,7vw,95px);background:var(--blue);color:var(--white)}
+    .conversation-copy h2{margin:0 0 22px;font-size:clamp(2.6rem,5.5vw,5.8rem);line-height:.9;letter-spacing:-.06em;text-transform:uppercase}
+    .conversation-copy p{margin:0;line-height:1.7;color:rgba(255,255,255,.82)}
+    .conversation-links{display:grid;grid-template-rows:1fr 1fr}
+    .conversation-links a{position:relative;padding:34px;text-decoration:none;border-bottom:2px solid var(--blue);display:flex;align-items:flex-end;justify-content:space-between;gap:20px;font-size:clamp(1.25rem,2vw,2rem);font-weight:800;text-transform:uppercase;letter-spacing:-.03em}
+    .conversation-links a:last-child{border-bottom:0;background:var(--green);color:var(--white)}
+    .conversation-links a:first-child{background:var(--white)}
+    .conversation-links span{font-size:.7rem;letter-spacing:.12em}
+
+    footer{background:var(--fuchsia);color:var(--white);padding:34px clamp(24px,7vw,110px);display:flex;justify-content:space-between;gap:20px;align-items:center}
+    footer a{text-decoration:none;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:4px}
+    footer span{font-size:.72rem;opacity:.85}
+
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.intro,.core-head,.feature,.conversation{grid-template-columns:1fr}.axis{grid-template-columns:1fr}.axis article{border-right:0;border-bottom:2px solid var(--blue)}.axis article:last-child{border-bottom:0}.cards{grid-template-columns:1fr}.sources-head{display:block}.sources-head p{margin-top:24px}}
+    @media(max-width:620px){.shell{margin:8px}header{padding:15px 16px;gap:12px}.brand{width:min(205px,55vw)}.back{font-size:.55rem;letter-spacing:.1em}.hero{min-height:0}.hero-copy,.hero-side{padding:48px 24px 54px}h1{font-size:clamp(3rem,17vw,5rem)}.intro,.core,.sources{padding:62px 24px}.axis article{min-height:210px}.feature-copy,.feature-side{padding:32px 24px}.sources .card{min-height:245px}.conversation-copy{padding:58px 24px}.conversation-links a{padding:28px 24px}footer{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
-  <main class="page">
+  <main class="shell">
     <header>
       <a class="brand" href="../" aria-label="Volver al inicio"><img src="../assets/Fondo%20marfil.png" alt="Valentina Galaz"></a>
       <a class="back" href="../">← Volver al inicio</a>
     </header>
+
     <section class="hero">
-      <div class="panel">
-        <div class="num" id="num"></div>
-        <h1 id="title"></h1>
+      <div class="hero-copy">
+        <p class="kicker">01 · Investigación</p>
+        <h1>Escuchar también es pensar</h1>
+        <p>Mi investigación nace desde la práctica. No separo el análisis de la experiencia de tocar: estudio una obra para comprender qué pide, qué calla y qué memoria activa en el cuerpo de quien la interpreta.</p>
       </div>
-      <div class="info">
-        <p class="eyebrow">Área de trabajo</p>
-        <p id="description"></p>
-        <span class="rule" aria-hidden="true"></span>
+      <div class="hero-side">
+        <p class="eyebrow">Una pregunta que sigue abierta</p>
+        <blockquote>¿Qué puede decir un silencio cuando la música decide no explicarlo todo?</blockquote>
+        <small>Desde esa pregunta comencé a trabajar con <em>Hojas de otoño</em>, de Cirilo Vila. El proceso terminó convirtiéndose en una línea de investigación, interpretación y archivo que todavía sigue creciendo.</small>
+        <span class="line" aria-hidden="true"></span>
       </div>
     </section>
+
+    <section class="intro">
+      <h2>Investigar desde la <span>flauta</span>.</h2>
+      <div class="intro-copy">
+        <p>Mi forma de investigar parte del sonido real: de la respiración, del tiempo, de la resistencia física de una frase y de las decisiones que aparecen cuando una partitura deja de ser papel.</p>
+        <p>Me interesa especialmente la música chilena contemporánea, la relación entre silencio y memoria, y el lugar de la intérprete como alguien que no solo reproduce una obra, sino que también produce conocimiento sobre ella.</p>
+      </div>
+    </section>
+
+    <section class="axis" aria-label="Ejes de investigación">
+      <article><span>01 · Repertorio</span><div><h3>Música chilena contemporánea</h3><p>Obras que permiten leer territorio, memoria, tensión histórica y lenguaje musical desde la experiencia interpretativa.</p></div></article>
+      <article><span>02 · Método</span><div><h3>Interpretación como conocimiento</h3><p>La práctica instrumental como una forma de investigar: escuchar, probar, registrar, comparar y tomar decisiones.</p></div></article>
+      <article><span>03 · Pregunta</span><div><h3>Silencio, cuerpo y memoria</h3><p>Lo que ocurre entre los sonidos también construye sentido. A veces, incluso más que aquello que está escrito.</p></div></article>
+    </section>
+
+    <section class="core">
+      <div class="core-head">
+        <h2>El núcleo</h2>
+        <p>La obra de Cirilo Vila abrió una investigación que reunió análisis, interpretación, escritura académica, conciertos y circulación pública.</p>
+      </div>
+      <article class="feature">
+        <div class="feature-copy">
+          <span class="tag">Tesina de Licenciatura · 2019</span>
+          <h3>El silencio como metáfora en <em>Hojas de otoño</em></h3>
+          <p>Estudié esta obra para comprender cómo el silencio puede funcionar como materia expresiva, como estructura y también como una posible metáfora político-social. La investigación no nació lejos del instrumento: nació tocando.</p>
+          <a class="source-btn" href="https://www.academia.edu/39768545/_El_silencio_como_metáfora_en_la_obra_Hojas_de_otoño_égloga_para_solo_de_flauta_de_Cirilo_Vila_Valentina_Galaz" target="_blank" rel="noreferrer">Leer la investigación ↗</a>
+        </div>
+        <div class="feature-side">
+          <strong>VILA</strong>
+          <p>Una obra breve puede contener una época, una forma de escuchar y una pregunta que se expande mucho más allá de la partitura.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="sources">
+      <div class="sources-head">
+        <h2>Investigación en circulación</h2>
+        <p>Estos enlaces permiten recorrer cómo el trabajo pasó de la partitura a conciertos, congresos, publicaciones y conversación pública.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="meta">2015 · Registro institucional</span>
+          <h3>Homenaje a Cirilo Vila a dos flautas</h3>
+          <p>Concierto dedicado a la obra del compositor chileno, registrado en la programación del Museo Lircunlauta.</p>
+          <a href="https://www.registromuseoschile.cl/663/w3-article-54713.html" target="_blank" rel="noreferrer">Abrir registro ↗</a>
+        </article>
+        <article class="card">
+          <span class="meta">2021 · Congreso</span>
+          <h3>XI Congreso de la Sociedad Chilena de Musicología</h3>
+          <p>Presentación de la ponencia sobre <em>Hojas de otoño</em> en la mesa “Entre la poiesis y la praxis”.</p>
+          <a href="https://www.beethovenfm.cl/evento/xi-congreso-de-la-sociedad-chilena-de-musicologia/" target="_blank" rel="noreferrer">Ver programación ↗</a>
+        </article>
+        <article class="card">
+          <span class="meta">2022 · Publicación</span>
+          <h3>El silencio de la música en plural</h3>
+          <p>Una publicación que recoge y cita mi lectura sobre los silencios en la obra de Cirilo Vila.</p>
+          <a href="https://providencia.cl/provi/explora/noticias/cultura/el-silencio-de-la-musica-en-plural" target="_blank" rel="noreferrer">Leer publicación ↗</a>
+        </article>
+        <article class="card">
+          <span class="meta">Archivo audiovisual</span>
+          <h3>Interpretar también deja huella</h3>
+          <p>Selección de registros vinculados a repertorio, escena e investigación desarrollada desde la práctica musical.</p>
+          <a href="https://www.youtube.com/playlist?list=PLZxdRdaEsOPkbja2SL1t1yS_rwrIPzPoK" target="_blank" rel="noreferrer">Ver archivo ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="conversation">
+      <div class="conversation-copy">
+        <h2>Escribir y conversar</h2>
+        <p>La investigación también aparece cuando una experiencia profesional se transforma en artículo, entrevista o conversación compartida con otras personas.</p>
+      </div>
+      <div class="conversation-links">
+        <a href="https://thebabelflute.com/the-challenge-of-online-classes/" target="_blank" rel="noreferrer">The Challenge of Online Classes <span>Artículo ↗</span></a>
+        <a href="https://open.spotify.com/episode/3spUNK2yrEL9ldQ5SPEyjP" target="_blank" rel="noreferrer">Conversación en Spotify <span>Podcast ↗</span></a>
+      </div>
+    </section>
+
+    <footer><span>Investigación · Valentina Galaz</span><a href="../">Volver al inicio →</a></footer>
   </main>
-  <script>
-    const key=location.pathname.split('/').filter(Boolean).pop()||'';
-    const areas={
-      'investigacion':{num:'01',title:'Investigación',color:'#162a52',text:'#ffffff',description:'Investigación musical, repertorio latinoamericano, archivo y pensamiento crítico en torno a la interpretación.'},
-      'interpretacion':{num:'02',title:'Interpretación',color:'#18b368',text:'#ffffff',description:'Trayectoria como flautista, música de cámara, repertorio contemporáneo y práctica escénica.'},
-      'piazzollamente':{num:'03',title:'Piazzollamente',color:'#e63aa7',text:'#ffffff',description:'Dirección artística y flauta en un proyecto dedicado a la música de Astor Piazzolla.'},
-      'escuela-de-flautistas':{num:'04',title:'Escuela de Flautistas',color:'#ffffff',text:'#162a52',description:'Formación para flautistas que integra técnica, sonido, interpretación y desarrollo artístico.'}
-    };
-    const area=areas[key]||areas.investigacion;
-    document.documentElement.style.setProperty('--area',area.color);
-    document.documentElement.style.setProperty('--area-text',area.text);
-    document.getElementById('num').textContent=area.num;
-    document.getElementById('title').textContent=area.title;
-    document.getElementById('description').textContent=area.description;
-    document.title=area.title+' — Valentina Galaz';
-  </script>
 </body>
 </html>
